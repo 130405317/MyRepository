@@ -37,8 +37,8 @@ public class DietController {
 	
 	@RequestMapping("/diet_edit")
 	public  String toDietForm(HttpServletRequest request, Model model) throws IOException{
-		String pId = (String)request.getSession().getAttribute("pId");
-		//String pId = "o-1WTwnmE5MzetfXjm_02IjLG8m4";
+		//String pId = (String)request.getSession().getAttribute("pId");
+		String pId = "o-1WTwnmE5MzetfXjm_02IjLG8m4";
 		model.addAttribute("energy",dietService.getTargetEnergy(pId));
 		model.addAttribute("typeList",dietService.getTypeList(pId));
 		model.addAttribute("mainfoodList",CacheUtil.getInstance().getMainFoodList());
@@ -103,11 +103,23 @@ public class DietController {
 		return "diet/food_add";
 	}
 	
+	@RequestMapping("insert_newfood")
+	public void insertNewfood(HttpServletRequest request,HttpServletResponse response){
+		Map<String, Object> map = FormDataCollectUtil.getInstance().getFormData(request);
+		try {
+			String result = dietService.insertNewfood(map);
+			response.setContentType("text/html;charset=utf-8");
+			response.getWriter().print(result);
+			} catch (Exception e) {
+				log.error(e);
+			}
+	}
+	
 	@RequestMapping("/saveDiet")
 	public  void addUser(HttpServletRequest request,HttpServletResponse response){
 		Map<String, Object> map = FormDataCollectUtil.getInstance().getFormData(request);
-		String pId = request.getSession().getAttribute("pId").toString();
-		//String pId = "o-1WTwnmE5MzetfXjm_02IjLG8m4";
+		//String pId = request.getSession().getAttribute("pId").toString();
+		String pId = "o-1WTwnmE5MzetfXjm_02IjLG8m4";
 		map.put("pId", pId);
 		try {
 			String result = dietService.saveDiet(map);
@@ -231,7 +243,7 @@ public class DietController {
 		Map<String, Object> param = FormDataCollectUtil.getInstance().getFormData(request);
 		model.addAttribute("dietList", dietService.showDietInfo(param));
 		model.addAttribute("bg", dietService.showBloodGlucoseInfo(param));
-		model.addAttribute("sportInfo", dietService.showSportInfo(param));
+		model.addAttribute("sportInfo", dietService.getSportInfo(param));
 		model.addAttribute("advice", dietService.showAdviceInfo(param));
 		model.addAttribute("date", param.get("date"));
 		model.addAttribute("pId", param.get("pId"));

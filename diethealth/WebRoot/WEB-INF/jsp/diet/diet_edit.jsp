@@ -3,7 +3,8 @@
 <%@ taglib uri="http://www.springframework.org/tags" prefix="s"%>
 <%
 	String path = request.getContextPath();
-	String pId = session.getAttribute("pId").toString();
+//String pId = session.getAttribute("pId").toString();
+	String pId = "o-1WTwnmE5MzetfXjm_02IjLG8m4";
 %>
 <html>
 <head>
@@ -668,11 +669,11 @@ var pId = "";
 		var num = $('#'+id+'num'+idnum).val();
 		var html ='<div class="ui-block-a" style="border: 1px solid black;text-align:center;width:31%;border-style:none ridge ridge ridge;">'
 		+select[1]+'</div><div class="ui-block-b"style="border: 1px solid black;text-align:center;width:22.5%;border-style:none ridge ridge none;" name="energyinfo">'
-		+num*select[2]/100
+		+(num*select[2]/100).toFixed(2)
 		+'</div><div class="ui-block-c" style="border: 1px solid black;text-align:center;border-style:none ridge ridge none;">'
-		+num*select[3]/100+'</div>'
+		+(num*select[3]/100).toFixed(2)+'</div>'
 		+'<div class="ui-block-d" style="border: 1px solid black;text-align:center;width:21.5%;border-style:none ridge ridge none;">'
-		+num*select[4]/100
+		+(num*select[4]/100).toFixed(2)
 		+'</div>';
 			if($('#detail'+id+idnum).html()==undefined){
 				$('#detailtable').after("<div class='ui-grid-c' id='detail"+id+idnum+"'></div>");
@@ -687,11 +688,11 @@ var pId = "";
 		if(select != null){
 			var html ='<div class="ui-block-a" style="border: 1px solid black;text-align:center;width:31%;border-style:none ridge ridge ridge;">'
 				+select[1]+'</div><div class="ui-block-b"style="border: 1px solid black;text-align:center;width:22.5%;border-style:none ridge ridge none;" name="energyinfo">'
-				+num*select[2]/100
+				+(num*select[2]/100).toFixed(2)
 				+'</div><div class="ui-block-c" style="border: 1px solid black;text-align:center;border-style:none ridge ridge none;">'
-				+num*select[3]/100+'</div>'
+				+(num*select[3]/100).toFixed(2)+'</div>'
 				+'<div class="ui-block-d" style="border: 1px solid black;text-align:center;width:21.5%;border-style:none ridge ridge none;">'
-				+num*select[4]/100
+				+(num*select[4]/100).toFixed(2)
 				+'</div>';
 			$('#detail'+id+idnum).html(html);
 		}
@@ -699,12 +700,13 @@ var pId = "";
 	}
 	function removefood(id){
 		var divId = $('#'+id);
-		var len = countChange(id,false);
-		if(len>0){
+		var len = countChange(id,false)+1;
+		if(len>1){
 			$('#'+id+'type'+len).hide();
 			$('#'+id+'nums'+len).hide();
 			$('#detail'+id+len).remove();
-			$('$searchField_'+id+len).val("");
+			$('#searchField_'+id+len).val("");
+			removeselect(id,len);
 			updateEnergy();
 		}else{
 			alert("不可移除!");
@@ -730,12 +732,13 @@ var pId = "";
 	}
 	function removevegetables(){
 		var divId = $('#vegetables');
-		var len = countChange("vegetables",false);
-		if(len>0){
+		var len = countChange("vegetables",false)+1;
+		if(len>1){
 			$('#vegetablestype'+len).hide();
 			$('#vegetablesnums'+len).hide();
 			$('#detailvegetables'+len).remove();
-			$('$searchField_vegetables'+len).val("");
+			$('#searchField_vegetables'+len).val("");
+			removeselect("vegetables",len);
 			updateEnergy();
 		}else{
 			alert("不可移除!");
@@ -746,7 +749,7 @@ var pId = "";
 	function addvegetables(){
 		var divId = $('#vegetables');
 		var len = countChange("vegetables",true);
-		if(len<6){
+		if(len<11){
 			$('#vegetablestype'+len).show();
 			$('#vegetablesnums'+len).show();
 			var detailDiv = $('#detailvegetables'+(len-1)).clone(false);
@@ -756,6 +759,128 @@ var pId = "";
 		}else{
 			alert("已达上限！");
 			countChange("vegetables",false);
+		}
+	}
+	
+	function removeselect(id,len){
+		switch (id) {
+		case "mainfood":
+			if(len==1){
+				mainfood_select1.length = 0;
+			}
+			if(len==2){
+				mainfood_select2.length = 0;
+			}
+			if(len==3){
+				mainfood_select3.length = 0;
+			}
+			if(len==4){
+				mainfood_select4.length = 0;
+			}
+			if(len==5){
+				mainfood_select5.length = 0;
+			}
+			break;
+		case "meat":
+			if(len==1){
+				meat_select1.length = 0;
+			}
+			if(len==2){
+				meat_select2.length = 0;
+			}
+			if(len==3){
+				meat_select3.length = 0;
+			}
+			if(len==4){
+				meat_select4.length = 0;
+			}
+			if(len==5){
+				meat_select5.length = 0;
+			}
+			break;
+		case "vegetables":
+			if(len==1){
+				vegetables_select1.length = 0;
+			}
+			if(len==2){
+				vegetables_select2.length = 0;
+			}
+			if(len==3){
+				vegetables_select3.length = 0;
+			}
+			if(len==4){
+				vegetables_select4.length = 0;
+			}
+			if(len==5){
+				vegetables_select5.length = 0;
+			}
+			if(len==6){
+				vegetables_select6.length = 0;
+			}if(len==7){
+				vegetables_select7.length = 0;
+			}
+			
+			if(len==8){
+				vegetables_select8.length = 0;
+			}
+			if(len==9){
+				vegetables_select9.length = 0;
+			}
+			if(len==10){
+				vegetables_select10.length = 0;
+			}
+			break;
+		case "drink":
+			if(len==1){
+				drink_select1.length = 0;
+			}
+			if(len==2){
+				drink_select2.length = 0;
+			}
+			if(len==3){
+				drink_select3.length = 0;
+			}
+			if(len==4){
+				drink_select4.length = 0;
+			}
+			if(len==5){
+				drink_select5.length = 0;
+			}
+			break;
+		case "nut":
+			if(len==1){
+				nut_select1.length = 0;
+			}
+			if(len==2){
+				nut_select2.length = 0;
+			}
+			if(len==3){
+				nut_select3.length = 0;
+			}
+			if(len==4){
+				nut_select4.length = 0;
+			}
+			if(len==5){
+				nut_select5.length = 0;
+			}
+			break;
+		case "fruits":
+			if(len==1){
+				fruits_select1.length = 0;
+			}
+			if(len==2){
+				fruits_select2.length = 0;
+			}
+			if(len==3){
+				fruits_select3.length = 0;
+			}
+			if(len==4){
+				fruits_select4.length = 0;
+			}
+			if(len==5){
+				fruits_select5.length = 0;
+			}
+			break;
 		}
 	}
 	

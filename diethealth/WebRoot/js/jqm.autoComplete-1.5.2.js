@@ -70,8 +70,6 @@
 		if ($.isArray(str)) {
 			str = str.join('');
 		}
-		$(settings.target).html(str).listview("refresh");
-
 		// is there a callback?
 		if (settings.callback !== null && $.isFunction(settings.callback)) {
 			attachCallback(settings);

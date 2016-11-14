@@ -168,7 +168,20 @@ $("#pageone").bind("pageshow", function(e) {
 		    $("#searchField_mainfood1").autocomplete('clear'); // clear the listview
 		},
 		minLength: 1,
-		matchFromStart: false
+		matchFromStart: false,
+		onNoResults: function(){
+			alert("系统未录入该食物，请重新输入！");
+			$.post("../diet/insert_newfood",{foodname: $("#searchField_mainfood1").val()},
+					function (text){
+				if(text=="1"){
+					$("#searchField_mainfood1").val("");
+				}else{
+					alert("网络错误！");
+				}
+			});
+			
+			return 0;
+		}
 	});
 	
 	$('#mainfoodnum1').change(function(){
@@ -200,7 +213,20 @@ $("#pageone").bind("pageshow", function(e) {
 		    $("#searchField_mainfood2").autocomplete('clear'); // clear the listview
 		},
 		minLength: 1,
-		matchFromStart: false
+		matchFromStart: false,
+		onNoResults: function(){
+			alert("系统未录入该食物，请重新输入！");
+			$.post("../diet/insert_newfood",{foodname: $("#searchField_mainfood2").val()},
+					function (text){
+				if(text=="1"){
+					$("#searchField_mainfood2").val("");
+				}else{
+					alert("网络错误！");
+				}
+			});
+			
+			return 0;
+		}
 	});
 	
 	$('#mainfoodnum2').change(function(){
@@ -232,7 +258,20 @@ $("#pageone").bind("pageshow", function(e) {
 		    $("#searchField_mainfood3").autocomplete('clear'); // clear the listview
 		},
 		minLength: 1,
-		matchFromStart: false
+		matchFromStart: false,
+		onNoResults: function(){
+			alert("系统未录入该食物，请重新输入！");
+			$.post("../diet/insert_newfood",{foodname: $("#searchField_mainfood3").val()},
+					function (text){
+				if(text=="1"){
+					$("#searchField_mainfood3").val("");
+				}else{
+					alert("网络错误！");
+				}
+			});
+			
+			return 0;
+		}
 	});
 	
 	$('#mainfoodnum3').change(function(){
@@ -264,7 +303,20 @@ $("#pageone").bind("pageshow", function(e) {
 		    $("#searchField_mainfood4").autocomplete('clear'); // clear the listview
 		},
 		minLength: 1,
-		matchFromStart: false
+		matchFromStart: false,
+		onNoResults: function(){
+			alert("系统未录入该食物，请重新输入！");
+			$.post("../diet/insert_newfood",{foodname: $("#searchField_mainfood4").val()},
+					function (text){
+				if(text=="1"){
+					$("#searchField_mainfood4").val("");
+				}else{
+					alert("网络错误！");
+				}
+			});
+			
+			return 0;
+		}
 	});
 	
 	$('#mainfoodnum4').change(function(){
@@ -296,7 +348,20 @@ $("#pageone").bind("pageshow", function(e) {
 		    $("#searchField_mainfood5").autocomplete('clear'); // clear the listview
 		},
 		minLength: 1,
-		matchFromStart: false
+		matchFromStart: false,
+		onNoResults: function(){
+			alert("系统未录入该食物，请重新输入！");
+			$.post("../diet/insert_newfood",{foodname: $("#searchField_mainfood5").val()},
+					function (text){
+				if(text=="1"){
+					$("#searchField_mainfood5").val("");
+				}else{
+					alert("网络错误！");
+				}
+			});
+			
+			return 0;
+		}
 	});
 	
 	$('#mainfoodnum5').change(function(){
@@ -328,7 +393,20 @@ $("#pageone").bind("pageshow", function(e) {
 		    $("#searchField_meat1").autocomplete('clear'); // clear the listview
 		},
 		minLength: 1,
-		matchFromStart: false
+		matchFromStart: false,
+		onNoResults: function(){
+			alert("系统未录入该食物，请重新输入！");
+			$.post("../diet/insert_newfood",{foodname: $("#searchField_meat1").val()},
+					function (text){
+				if(text=="1"){
+					$("#searchField_meat1").val("");
+				}else{
+					alert("网络错误！");
+				}
+			});
+			
+			return 0;
+		}
 	});
 	
 	$('#meatnum1').change(function(){
@@ -361,7 +439,20 @@ $("#pageone").bind("pageshow", function(e) {
 		    $("#searchField_meat2").autocomplete('clear'); // clear the listview
 		},
 		minLength: 1,
-		matchFromStart: false
+		matchFromStart: false,
+		onNoResults: function(){
+			alert("系统未录入该食物，请重新输入！");
+			$.post("../diet/insert_newfood",{foodname: $("#searchField_meat2").val()},
+					function (text){
+				if(text=="1"){
+					$("#searchField_meat2").val("");
+				}else{
+					alert("网络错误！");
+				}
+			});
+			
+			return 0;
+		}
 	});
 	
 	$('#meatnum2').change(function(){
@@ -393,7 +484,20 @@ $("#pageone").bind("pageshow", function(e) {
 		    $("#searchField_meat3").autocomplete('clear'); // clear the listview
 		},
 		minLength: 1,
-		matchFromStart: false
+		matchFromStart: false,
+		onNoResults: function(){
+			alert("系统未录入该食物，请重新输入！");
+			$.post("../diet/insert_newfood",{foodname: $("#searchField_meat3").val()},
+					function (text){
+				if(text=="1"){
+					$("#searchField_meat3").val("");
+				}else{
+					alert("网络错误！");
+				}
+			});
+			
+			return 0;
+		}
 	});
 	
 	$('#meatnum3').change(function(){
@@ -425,7 +529,20 @@ $("#pageone").bind("pageshow", function(e) {
 		    $("#searchField_meat4").autocomplete('clear'); // clear the listview
 		},
 		minLength: 1,
-		matchFromStart: false
+		matchFromStart: false,
+		onNoResults: function(){
+			alert("系统未录入该食物，请重新输入！");
+			$.post("../diet/insert_newfood",{foodname: $("#searchField_meat4").val()},
+					function (text){
+				if(text=="1"){
+					$("#searchField_meat4").val("");
+				}else{
+					alert("网络错误！");
+				}
+			});
+			
+			return 0;
+		}
 	});
 	
 	$('#meatnum4').change(function(){
@@ -457,7 +574,20 @@ $("#pageone").bind("pageshow", function(e) {
 		    $("#searchField_meat5").autocomplete('clear'); // clear the listview
 		},
 		minLength: 1,
-		matchFromStart: false
+		matchFromStart: false,
+		onNoResults: function(){
+			alert("系统未录入该食物，请重新输入！");
+			$.post("../diet/insert_newfood",{foodname: $("#searchField_meat5").val()},
+					function (text){
+				if(text=="1"){
+					$("#searchField_meat5").val("");
+				}else{
+					alert("网络错误！");
+				}
+			});
+			
+			return 0;
+		}
 	});
 	
 	$('#meatnum5').change(function(){
@@ -490,7 +620,20 @@ $("#pageone").bind("pageshow", function(e) {
 		    $("#searchField_vegetables1").autocomplete('clear'); // clear the listview
 		},
 		minLength: 1,
-		matchFromStart: false
+		matchFromStart: false,
+		onNoResults: function(){
+			alert("系统未录入该食物，请重新输入！");
+			$.post("../diet/insert_newfood",{foodname: $("#searchField_vegetables1").val()},
+					function (text){
+				if(text=="1"){
+					$("#searchField_vegetables1").val("");
+				}else{
+					alert("网络错误！");
+				}
+			});
+			
+			return 0;
+		}
 	});
 	
 	$('#vegetablesnum1').change(function(){
@@ -523,7 +666,20 @@ $("#pageone").bind("pageshow", function(e) {
 		    $("#searchField_vegetables2").autocomplete('clear'); // clear the listview
 		},
 		minLength: 1,
-		matchFromStart: false
+		matchFromStart: false,
+		onNoResults: function(){
+			alert("系统未录入该食物，请重新输入！");
+			$.post("../diet/insert_newfood",{foodname: $("#searchField_vegetables2").val()},
+					function (text){
+				if(text=="1"){
+					$("#searchField_vegetables2").val("");
+				}else{
+					alert("网络错误！");
+				}
+			});
+			
+			return 0;
+		}
 	});
 	
 	$('#vegetablesnum2').change(function(){
@@ -555,7 +711,20 @@ $("#pageone").bind("pageshow", function(e) {
 		    $("#searchField_vegetables3").autocomplete('clear'); // clear the listview
 		},
 		minLength: 1,
-		matchFromStart: false
+		matchFromStart: false,
+		onNoResults: function(){
+			alert("系统未录入该食物，请重新输入！");
+			$.post("../diet/insert_newfood",{foodname: $("#searchField_vegetables3").val()},
+					function (text){
+				if(text=="1"){
+					$("#searchField_vegetables3").val("");
+				}else{
+					alert("网络错误！");
+				}
+			});
+			
+			return 0;
+		}
 	});
 	
 	$('#vegetablesnum3').change(function(){
@@ -587,7 +756,20 @@ $("#pageone").bind("pageshow", function(e) {
 		    $("#searchField_vegetables4").autocomplete('clear'); // clear the listview
 		},
 		minLength: 1,
-		matchFromStart: false
+		matchFromStart: false,
+		onNoResults: function(){
+			alert("系统未录入该食物，请重新输入！");
+			$.post("../diet/insert_newfood",{foodname: $("#searchField_vegetables4").val()},
+					function (text){
+				if(text=="1"){
+					$("#searchField_vegetables4").val("");
+				}else{
+					alert("网络错误！");
+				}
+			});
+			
+			return 0;
+		}
 	});
 	
 	$('#vegetablesnum4').change(function(){
@@ -619,7 +801,20 @@ $("#pageone").bind("pageshow", function(e) {
 		    $("#searchField_vegetables5").autocomplete('clear'); // clear the listview
 		},
 		minLength: 1,
-		matchFromStart: false
+		matchFromStart: false,
+		onNoResults: function(){
+			alert("系统未录入该食物，请重新输入！");
+			$.post("../diet/insert_newfood",{foodname: $("#searchField_vegetables5").val()},
+					function (text){
+				if(text=="1"){
+					$("#searchField_vegetables5").val("");
+				}else{
+					alert("网络错误！");
+				}
+			});
+			
+			return 0;
+		}
 	});
 	
 	$('#vegetablesnum5').change(function(){
@@ -651,7 +846,20 @@ $("#pageone").bind("pageshow", function(e) {
 		    $("#searchField_vegetables6").autocomplete('clear'); // clear the listview
 		},
 		minLength: 1,
-		matchFromStart: false
+		matchFromStart: false,
+		onNoResults: function(){
+			alert("系统未录入该食物，请重新输入！");
+			$.post("../diet/insert_newfood",{foodname: $("#searchField_vegetables6").val()},
+					function (text){
+				if(text=="1"){
+					$("#searchField_vegetables6").val("");
+				}else{
+					alert("网络错误！");
+				}
+			});
+			
+			return 0;
+		}
 	});
 	
 	$('#vegetablesnum6').change(function(){
@@ -683,7 +891,20 @@ $("#pageone").bind("pageshow", function(e) {
 		    $("#searchField_vegetables7").autocomplete('clear'); // clear the listview
 		},
 		minLength: 1,
-		matchFromStart: false
+		matchFromStart: false,
+		onNoResults: function(){
+			alert("系统未录入该食物，请重新输入！");
+			$.post("../diet/insert_newfood",{foodname: $("#searchField_vegetables7").val()},
+					function (text){
+				if(text=="1"){
+					$("#searchField_vegetables7").val("");
+				}else{
+					alert("网络错误！");
+				}
+			});
+			
+			return 0;
+		}
 	});
 	
 	$('#vegetablesnum7').change(function(){
@@ -715,7 +936,20 @@ $("#pageone").bind("pageshow", function(e) {
 		    $("#searchField_vegetables8").autocomplete('clear'); // clear the listview
 		},
 		minLength: 1,
-		matchFromStart: false
+		matchFromStart: false,
+		onNoResults: function(){
+			alert("系统未录入该食物，请重新输入！");
+			$.post("../diet/insert_newfood",{foodname: $("#searchField_vegetables8").val()},
+					function (text){
+				if(text=="1"){
+					$("#searchField_vegetables8").val("");
+				}else{
+					alert("网络错误！");
+				}
+			});
+			
+			return 0;
+		}
 	});
 	
 	$('#vegetablesnum8').change(function(){
@@ -747,7 +981,20 @@ $("#pageone").bind("pageshow", function(e) {
 		    $("#searchField_vegetables9").autocomplete('clear'); // clear the listview
 		},
 		minLength: 1,
-		matchFromStart: false
+		matchFromStart: false,
+		onNoResults: function(){
+			alert("系统未录入该食物，请重新输入！");
+			$.post("../diet/insert_newfood",{foodname: $("#searchField_vegetables9").val()},
+					function (text){
+				if(text=="1"){
+					$("#searchField_vegetables9").val("");
+				}else{
+					alert("网络错误！");
+				}
+			});
+			
+			return 0;
+		}
 	});
 	
 	$('#vegetablesnum9').change(function(){
@@ -779,7 +1026,20 @@ $("#pageone").bind("pageshow", function(e) {
 		    $("#searchField_vegetables10").autocomplete('clear'); // clear the listview
 		},
 		minLength: 1,
-		matchFromStart: false
+		matchFromStart: false,
+		onNoResults: function(){
+			alert("系统未录入该食物，请重新输入！");
+			$.post("../diet/insert_newfood",{foodname: $("#searchField_vegetables10").val()},
+					function (text){
+				if(text=="1"){
+					$("#searchField_vegetables10").val("");
+				}else{
+					alert("网络错误！");
+				}
+			});
+			
+			return 0;
+		}
 	});
 	
 	$('#vegetablesnum10').change(function(){
@@ -811,7 +1071,20 @@ $("#pageone").bind("pageshow", function(e) {
 		    $("#searchField_drink1").autocomplete('clear'); // clear the listview
 		},
 		minLength: 1,
-		matchFromStart: false
+		matchFromStart: false,
+		onNoResults: function(){
+			alert("系统未录入该食物，请重新输入！");
+			$.post("../diet/insert_newfood",{foodname: $("#searchField_drink1").val()},
+					function (text){
+				if(text=="1"){
+					$("#searchField_drink1").val("");
+				}else{
+					alert("网络错误！");
+				}
+			});
+			
+			return 0;
+		}
 	});
 	
 	$('#drinknum1').change(function(){
@@ -843,7 +1116,20 @@ $("#pageone").bind("pageshow", function(e) {
 		    $("#searchField_drink2").autocomplete('clear'); // clear the listview
 		},
 		minLength: 1,
-		matchFromStart: false
+		matchFromStart: false,
+		onNoResults: function(){
+			alert("系统未录入该食物，请重新输入！");
+			$.post("../diet/insert_newfood",{foodname: $("#searchField_drink2").val()},
+					function (text){
+				if(text=="1"){
+					$("#searchField_drink2").val("");
+				}else{
+					alert("网络错误！");
+				}
+			});
+			
+			return 0;
+		}
 	});
 	
 	$('#drinknum2').change(function(){
@@ -875,7 +1161,20 @@ $("#pageone").bind("pageshow", function(e) {
 		    $("#searchField_drink3").autocomplete('clear'); // clear the listview
 		},
 		minLength: 1,
-		matchFromStart: false
+		matchFromStart: false,
+		onNoResults: function(){
+			alert("系统未录入该食物，请重新输入！");
+			$.post("../diet/insert_newfood",{foodname: $("#searchField_drink3").val()},
+					function (text){
+				if(text=="1"){
+					$("#searchField_drink3").val("");
+				}else{
+					alert("网络错误！");
+				}
+			});
+			
+			return 0;
+		}
 	});
 	
 	$('#drinknum3').change(function(){
@@ -907,7 +1206,20 @@ $("#pageone").bind("pageshow", function(e) {
 		    $("#searchField_drink4").autocomplete('clear'); // clear the listview
 		},
 		minLength: 1,
-		matchFromStart: false
+		matchFromStart: false,
+		onNoResults: function(){
+			alert("系统未录入该食物，请重新输入！");
+			$.post("../diet/insert_newfood",{foodname: $("#searchField_drink4").val()},
+					function (text){
+				if(text=="1"){
+					$("#searchField_drink4").val("");
+				}else{
+					alert("网络错误！");
+				}
+			});
+			
+			return 0;
+		}
 	});
 	
 	$('#drinknum4').change(function(){
@@ -939,7 +1251,20 @@ $("#pageone").bind("pageshow", function(e) {
 		    $("#searchField_drink5").autocomplete('clear'); // clear the listview
 		},
 		minLength: 1,
-		matchFromStart: false
+		matchFromStart: false,
+		onNoResults: function(){
+			alert("系统未录入该食物，请重新输入！");
+			$.post("../diet/insert_newfood",{foodname: $("#searchField_drink5").val()},
+					function (text){
+				if(text=="1"){
+					$("#searchField_drink5").val("");
+				}else{
+					alert("网络错误！");
+				}
+			});
+			
+			return 0;
+		}
 	});
 	
 	$('#drinknum5').change(function(){
@@ -971,7 +1296,20 @@ $("#pageone").bind("pageshow", function(e) {
 		    $("#searchField_nut1").autocomplete('clear'); // clear the listview
 		},
 		minLength: 1,
-		matchFromStart: false
+		matchFromStart: false,
+		onNoResults: function(){
+			alert("系统未录入该食物，请重新输入！");
+			$.post("../diet/insert_newfood",{foodname: $("#searchField_nut1").val()},
+					function (text){
+				if(text=="1"){
+					$("#searchField_nut1").val("");
+				}else{
+					alert("网络错误！");
+				}
+			});
+			
+			return 0;
+		}
 	});
 	
 	$('#nutnum1').change(function(){
@@ -1003,7 +1341,20 @@ $("#pageone").bind("pageshow", function(e) {
 		    $("#searchField_nut2").autocomplete('clear'); // clear the listview
 		},
 		minLength: 1,
-		matchFromStart: false
+		matchFromStart: false,
+		onNoResults: function(){
+			alert("系统未录入该食物，请重新输入！");
+			$.post("../diet/insert_newfood",{foodname: $("#searchField_nut2").val()},
+					function (text){
+				if(text=="1"){
+					$("#searchField_nut2").val("");
+				}else{
+					alert("网络错误！");
+				}
+			});
+			
+			return 0;
+		}
 	});
 	
 	$('#nutnum2').change(function(){
@@ -1035,7 +1386,20 @@ $("#pageone").bind("pageshow", function(e) {
 		    $("#searchField_nut3").autocomplete('clear'); // clear the listview
 		},
 		minLength: 1,
-		matchFromStart: false
+		matchFromStart: false,
+		onNoResults: function(){
+			alert("系统未录入该食物，请重新输入！");
+			$.post("../diet/insert_newfood",{foodname: $("#searchField_nut3").val()},
+					function (text){
+				if(text=="1"){
+					$("#searchField_nut3").val("");
+				}else{
+					alert("网络错误！");
+				}
+			});
+			
+			return 0;
+		}
 	});
 	
 	$('#nutnum3').change(function(){
@@ -1067,7 +1431,20 @@ $("#pageone").bind("pageshow", function(e) {
 		    $("#searchField_nut4").autocomplete('clear'); // clear the listview
 		},
 		minLength: 1,
-		matchFromStart: false
+		matchFromStart: false,
+		onNoResults: function(){
+			alert("系统未录入该食物，请重新输入！");
+			$.post("../diet/insert_newfood",{foodname: $("#searchField_nut4").val()},
+					function (text){
+				if(text=="1"){
+					$("#searchField_nut4").val("");
+				}else{
+					alert("网络错误！");
+				}
+			});
+			
+			return 0;
+		}
 	});
 	
 	$('#nutnum4').change(function(){
@@ -1099,7 +1476,20 @@ $("#pageone").bind("pageshow", function(e) {
 		    $("#searchField_nut5").autocomplete('clear'); // clear the listview
 		},
 		minLength: 1,
-		matchFromStart: false
+		matchFromStart: false,
+		onNoResults: function(){
+			alert("系统未录入该食物，请重新输入！");
+			$.post("../diet/insert_newfood",{foodname: $("#searchField_nut5").val()},
+					function (text){
+				if(text=="1"){
+					$("#searchField_nut5").val("");
+				}else{
+					alert("网络错误！");
+				}
+			});
+			
+			return 0;
+		}
 	});
 	
 	$('#nutnum5').change(function(){
@@ -1131,7 +1521,20 @@ $("#pageone").bind("pageshow", function(e) {
 		    $("#searchField_fruits1").autocomplete('clear'); // clear the listview
 		},
 		minLength: 1,
-		matchFromStart: false
+		matchFromStart: false,
+		onNoResults: function(){
+			alert("系统未录入该食物，请重新输入！");
+			$.post("../diet/insert_newfood",{foodname: $("#searchField_fruits1").val()},
+					function (text){
+				if(text=="1"){
+					$("#searchField_fruits1").val("");
+				}else{
+					alert("网络错误！");
+				}
+			});
+			
+			return 0;
+		}
 	});
 	
 	$('#fruitsnum1').change(function(){
@@ -1163,7 +1566,20 @@ $("#pageone").bind("pageshow", function(e) {
 		    $("#searchField_fruits2").autocomplete('clear'); // clear the listview
 		},
 		minLength: 1,
-		matchFromStart: false
+		matchFromStart: false,
+		onNoResults: function(){
+			alert("系统未录入该食物，请重新输入！");
+			$.post("../diet/insert_newfood",{foodname: $("#searchField_fruits2").val()},
+					function (text){
+				if(text=="1"){
+					$("#searchField_fruits2").val("");
+				}else{
+					alert("网络错误！");
+				}
+			});
+			
+			return 0;
+		}
 	});
 	
 	$('#fruitsnum2').change(function(){
@@ -1195,7 +1611,20 @@ $("#pageone").bind("pageshow", function(e) {
 		    $("#searchField_fruits3").autocomplete('clear'); // clear the listview
 		},
 		minLength: 1,
-		matchFromStart: false
+		matchFromStart: false,
+		onNoResults: function(){
+			alert("系统未录入该食物，请重新输入！");
+			$.post("../diet/insert_newfood",{foodname: $("#searchField_fruits3").val()},
+					function (text){
+				if(text=="1"){
+					$("#searchField_fruits3").val("");
+				}else{
+					alert("网络错误！");
+				}
+			});
+			
+			return 0;
+		}
 	});
 	
 	$('#fruitsnum3').change(function(){
@@ -1227,7 +1656,20 @@ $("#pageone").bind("pageshow", function(e) {
 		    $("#searchField_fruits4").autocomplete('clear'); // clear the listview
 		},
 		minLength: 1,
-		matchFromStart: false
+		matchFromStart: false,
+		onNoResults: function(){
+			alert("系统未录入该食物，请重新输入！");
+			$.post("../diet/insert_newfood",{foodname: $("#searchField_fruits4").val()},
+					function (text){
+				if(text=="1"){
+					$("#searchField_fruits4").val("");
+				}else{
+					alert("网络错误！");
+				}
+			});
+			
+			return 0;
+		}
 	});
 	
 	$('#fruitsnum4').change(function(){
@@ -1259,7 +1701,20 @@ $("#pageone").bind("pageshow", function(e) {
 		    $("#searchField_fruits5").autocomplete('clear'); // clear the listview
 		},
 		minLength: 1,
-		matchFromStart: false
+		matchFromStart: false,
+		onNoResults: function(){
+			alert("系统未录入该食物，请重新输入！");
+			$.post("../diet/insert_newfood",{foodname: $("#searchField_fruits5").val()},
+					function (text){
+				if(text=="1"){
+					$("#searchField_fruits5").val("");
+				}else{
+					alert("网络错误！");
+				}
+			});
+			
+			return 0;
+		}
 	});
 	
 	$('#fruitsnum5').change(function(){

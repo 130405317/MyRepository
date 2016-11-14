@@ -82,4 +82,6 @@ public interface DietMapper {
 	int checkSportUpdate(Map<String, Object> param);
 
 	Map<String, Object> getSnacks(Map<String, Object> param);
+	
+	void insertNewfood(Map<String, Object> param);
 }

@@ -12,6 +12,8 @@ public interface  DietService {
 	 * @return
 	 */
 	public String saveDiet(Map<String, Object> param);
+	
+	public String insertNewfood(Map<String, Object> param);
 
 	public List<Map<String, Object>> getFoodListWithPage(Map<String, Object> map);
 

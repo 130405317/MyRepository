@@ -206,5 +206,9 @@
 		SELECT * FROM advice t where t.p_id = #{pId} and t.date = #{date}
 	</select>
 	
+	<insert id="insertNewfood" parameterType="object">
+	INSERT INTO new_food(name)
+	values(#{foodname})
+	</insert>
 	
 </mapper>                     
