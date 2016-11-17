@@ -3,8 +3,8 @@
 <%@ taglib uri="http://www.springframework.org/tags" prefix="s"%>
 <%
 	String path = request.getContextPath();
-//String pId = session.getAttribute("pId").toString();
-	String pId = "o-1WTwnmE5MzetfXjm_02IjLG8m4";
+	String pId = session.getAttribute("pId").toString();
+	//String pId = "o-1WTwnmE5MzetfXjm_02IjLG8m4";
 %>
 <html>
 <head>
@@ -22,7 +22,6 @@
 <link rel="stylesheet"
 	href="<%=path%>/jquerymobile/jquery.mobile.structure-1.4.5.min.css" />
 
-<script src="<%=path%>/js/search-select.js"></script>
 <script src="<%=path%>/js/jquery-2.2.2.min.js"></script>
 <script src="<%=path%>/jquerymobile/jquery.mobile-1.4.5.min.js"></script>
 <script src="<%=path%>/js/jqm.autoComplete-1.5.2.js"></script>
@@ -41,6 +40,7 @@
 		</div>
 		<div data-role="content">
 			<div data-role="fieldcontain">
+				<p style="text-align: center; color: red">如果您输入的食物没有选项，请重新选择并反馈！</p>
 				<p style="text-align: center;">
 					目标能量(kal)：<span id="targetenergy"></span>
 				</p>

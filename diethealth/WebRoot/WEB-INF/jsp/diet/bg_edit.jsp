@@ -113,7 +113,7 @@ String pId = session.getAttribute("pId").toString();
     </div>
    
      <div data-role="fieldcontain">
-     <button onclick="onSubmit();">提交</button>
+     <input type="button" onclick="onSubmit();" value="提交"/>
    </div>
 </form>
 </div>
@@ -136,12 +136,12 @@ function onSubmit(){
 		if(isNaN(bloodGlucoseBeforeBreakfast)){
 			alert("血糖格式不正确！");
 			setTimeout(1000);
-			window.location.href="../user/user_index";
+			//window.location.href="../user/user_index";
 			isSuccess = false;
 		}else if(parseFloat(bloodGlucoseBeforeBreakfast)<0||parseFloat(bloodGlucoseBeforeBreakfast)>20){
 			alert("血糖范围不正确！");
 			setTimeout(1000);
-			window.location.href="../user/user_index";
+			//window.location.href="../user/user_index";
 			isSuccess = false;
 		}
 	}
@@ -149,12 +149,12 @@ function onSubmit(){
 		if(isNaN(bloodGlucoseAfterBreakfast)){
 			alert("血糖格式不正确！");
 			setTimeout(1000);
-			window.location.href="../user/user_index";
+			//window.location.href="../user/user_index";
 			isSuccess = false;
 		}else if(parseFloat(bloodGlucoseAfterBreakfast)<0||parseFloat(bloodGlucoseAfterBreakfast)>20){
 			alert("血糖范围不正确！");
 			setTimeout(1000);
-			window.location.href="../user/user_index";
+			//window.location.href="../user/user_index";
 			isSuccess = false;
 		}
 	}
@@ -162,12 +162,12 @@ function onSubmit(){
 		if(isNaN(bloodGlucoseBeforeLunch)){
 			alert("血糖格式不正确！");
 			setTimeout(1000);
-			window.location.href="../user/user_index";
+			//window.location.href="../user/user_index";
 			isSuccess = false;
 		}else if(parseFloat(bloodGlucoseBeforeLunch)<0||parseFloat(bloodGlucoseBeforeLunch)>20){
 			alert("血糖范围不正确！");
 			setTimeout(1000);
-			window.location.href="../user/user_index";
+			//window.location.href="../user/user_index";
 			isSuccess = false;
 		}
 	}
@@ -175,12 +175,12 @@ function onSubmit(){
 		if(isNaN(bloodGlucoseAfterLunch)){
 			alert("血糖格式不正确！");
 			setTimeout(1000);
-			window.location.href="../user/user_index";
+			//window.location.href="../user/user_index";
 			isSuccess = false;
 		}else if(parseFloat(bloodGlucoseAfterLunch)<0||parseFloat(bloodGlucoseAfterLunch)>20){
 			alert("血糖范围不正确！");
 			setTimeout(1000);
-			window.location.href="../user/user_index";
+			//window.location.href="../user/user_index";
 			isSuccess = false;
 		}
 	}
@@ -188,12 +188,12 @@ function onSubmit(){
 		if(isNaN(bloodGlucoseBeforeDinner)){
 			alert("血糖格式不正确！");
 			setTimeout(1000);
-			window.location.href="../user/user_index";
+			//window.location.href="../user/user_index";
 			isSuccess = false;
 		}else if(parseFloat(bloodGlucoseBeforeDinner)<0||parseFloat(bloodGlucoseBeforeDinner)>20){
 			alert("血糖范围不正确！");
 			setTimeout(1000);
-			window.location.href="../user/user_index";
+			//window.location.href="../user/user_index";
 			isSuccess = false;
 		}
 	}
@@ -201,12 +201,12 @@ function onSubmit(){
 		if(isNaN(bloodGlucoseAfterDinner)){
 			alert("血糖格式不正确！");
 			setTimeout(1000);
-			window.location.href="../user/user_index";
+			//window.location.href="../user/user_index";
 			isSuccess = false;
 		}else if(parseFloat(bloodGlucoseAfterDinner)<0||parseFloat(bloodGlucoseAfterDinner)>20){
 			alert("血糖范围不正确！");
 			setTimeout(1000);
-			window.location.href="../user/user_index";
+			//window.location.href="../user/user_index";
 			isSuccess = false;
 		}
 	}
@@ -214,12 +214,12 @@ function onSubmit(){
 		if(isNaN(bloodGlucoseBeforeSleep)){
 			alert("血糖格式不正确！");
 			setTimeout(1000);
-			window.location.href="../user/user_index";
+			//window.location.href="../user/user_index";
 			isSuccess = false;
 		}else if(parseFloat(bloodGlucoseBeforeSleep)<0||parseFloat(bloodGlucoseBeforeSleep)>20){
 			alert("血糖范围不正确！");
 			setTimeout(1000);
-			window.location.href="../user/user_index";
+			//window.location.href="../user/user_index";
 			isSuccess = false;
 		}
 	}

@@ -54,7 +54,7 @@ String userImage = session.getAttribute("userImage").toString();
 				</div>
 				<p class="weui_grid_label">信息修改</p>
 			</a> <a class="weui_grid js_grid" data-id="cell"
-				onclick="window.location.href='../diet/bg_edit'">
+				onclick="window.location.href='../diet/bg_edit1'">
 				<div class="weui_grid_icon">
 					<img src="<%=path %>/weUI/example/images/icon_nav_tab.png"
 						alt="血糖录入">

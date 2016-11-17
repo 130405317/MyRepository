@@ -120,4 +120,15 @@
 	<select id="getAdviceInfo" parameterType="object" resultType="hashmap">
 		SELECT * FROM advice where p_id = #{pId} and date = #{date}
 	</select>
+	
+	<select id="checkOpenId" parameterType="object" resultType="int">
+		SELECT count(*) FROM message where openid = #{openid}
+	</select>
+	 <insert id="saveOpenId" parameterType="object">
+	INSERT INTO message(openid) values(#{openid})
+	</insert>
+	
+	 <delete id="deleteOpenId">
+     DELETE FROM message WHERE openid = #{openId}
+    </delete>
 </mapper>

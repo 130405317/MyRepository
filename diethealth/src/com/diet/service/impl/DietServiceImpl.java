@@ -272,6 +272,7 @@ public class DietServiceImpl implements DietService {
 		if(param==null){
 			return param;
 		}
+		param.remove("pinyin");
 		NumberFormat nf = NumberFormat.getNumberInstance() ; 
 		nf.setMaximumFractionDigits(2); 
 		for(Entry<String, Object> entry : param.entrySet()){

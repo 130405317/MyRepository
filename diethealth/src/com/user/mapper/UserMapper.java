@@ -85,5 +85,11 @@ public interface UserMapper {
 	int countAdviceTotal(Map<String, Object> map);
 
 	void deleteDoctorInfo(Map<String, Object> param);
+	
+    public int checkOpenId(String openid);
+	
+	public void saveOpenId(String openId);
+	
+	public void deleteOpenId(String openId);
     
 }

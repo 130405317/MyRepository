@@ -77,5 +77,11 @@ public interface  UserService {
 	public int countAdviceTotal(Map<String, Object> map);
 
 	public String delectDoctor(Map<String, Object> param);
+	
+	public int checkOpenId(String openid);
+	
+	public void saveOpenId(String openId);
+
+	public void deleteOpenId(String openId);
 
 }

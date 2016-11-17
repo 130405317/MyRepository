@@ -12,6 +12,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.log4j.Logger;
 
+import com.user.service.UserService;
+
 public class WeiXinServlet extends HttpServlet{
 
 	/**
@@ -41,11 +43,30 @@ public class WeiXinServlet extends HttpServlet{
 	            String content = requestMap.get("Content");// text内容
 	            String event = requestMap.get("Event");// event内容
 	            String eventKey = requestMap.get("EventKey");
-	            
-	            respXmlMsg= "<xml><ToUserName><![CDATA["+fromUserName+"]]></ToUserName><FromUserName><![CDATA["+toUserName
-	            		+"]]></FromUserName><CreateTime>"+new Date().getTime()+"</CreateTime><MsgType><![CDATA[text]]></MsgType><Content>"
-	            				+ "<![CDATA[欢迎加入孕糖宝，先选择绑定的身份（不可更改）。如果您是准妈妈会有医生为您提供及时的饮食指导希望您能认真填写每天的饮食、运动、血糖情况。]]></Content></xml>";
-//	            respXmlMsg = "success";
+	            UserService userService = (UserService)SpringContextUtil.getBeanByClass(UserService.class);
+	            if("subscribe".equals(event)){
+	            	respXmlMsg = "<xml><ToUserName><![CDATA["+fromUserName+"]]></ToUserName><FromUserName><![CDATA["+toUserName
+	            			+"]]></FromUserName><CreateTime>"+new Date().getTime()+"</CreateTime><MsgType><![CDATA[text]]></MsgType><Content>"
+	            			+ "<![CDATA[        亲，终于等到你 /::B                     欢迎加入孕糖宝！/:rose                  请先选择绑定您的身份（身份不可变更，医生需审核通过）。"
+	            			+ " 如果您是准麻麻会有医生为您提供及时的饮食指导认真及时地填写每天的饮食、运动及血糖情况将有助于医生给出更合理的建议。"
+	            			+ "                           主页中'加餐偏好'中选择习惯的加餐种类（以默认三餐，选择加餐类型），宝宝为您量身计算每餐目标能量]]></Content></xml>";
+	            	userService.saveOpenId(fromUserName);
+	            }else if("unsubscribe".equals(event)){
+	            	userService.deleteOpenId(fromUserName);
+	            //	 if(userService.checkOpenId(fromUserName)>0){
+	 	            	
+	 	           /* }else{
+	 	            	respXmlMsg= "<xml><ToUserName><![CDATA["+fromUserName+"]]></ToUserName><FromUserName><![CDATA["+toUserName
+	 	            			+"]]></FromUserName><CreateTime>"+new Date().getTime()+"</CreateTime><MsgType><![CDATA[text]]></MsgType><Content>"
+	 	            			+ "<![CDATA[亲，终于等到你  欢迎加入孕糖宝       请先选择绑定您的身份（身份不可变更，医生需审核通过）。"
+	 	            			+ "   如果您是准麻麻会有医生为您提供及时的饮食指导认真及时地填写每天的饮食、运动及血糖情况将有助于医生给出更合理的建议"
+	 	            			+ "主页中'加餐偏好'中选择习惯的加餐种类（以默认三餐，选择加餐类型），宝宝为您量身计算每餐目标能量]]></Content></xml>";
+	 	            	userService.saveOpenId(fromUserName);
+	 	            }*/
+	            }else{
+	            	respXmlMsg = "success";
+	            }
+	           
 	            out = response.getWriter();
 	            out.print(respXmlMsg);
 	        } catch (Exception e) {

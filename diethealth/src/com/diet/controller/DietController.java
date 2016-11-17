@@ -37,8 +37,8 @@ public class DietController {
 	
 	@RequestMapping("/diet_edit")
 	public  String toDietForm(HttpServletRequest request, Model model) throws IOException{
-		//String pId = (String)request.getSession().getAttribute("pId");
-		String pId = "o-1WTwnmE5MzetfXjm_02IjLG8m4";
+		String pId = (String)request.getSession().getAttribute("pId");
+		//String pId = "o-1WTwnmE5MzetfXjm_02IjLG8m4";
 		model.addAttribute("energy",dietService.getTargetEnergy(pId));
 		model.addAttribute("typeList",dietService.getTypeList(pId));
 		model.addAttribute("mainfoodList",CacheUtil.getInstance().getMainFoodList());
@@ -118,8 +118,8 @@ public class DietController {
 	@RequestMapping("/saveDiet")
 	public  void addUser(HttpServletRequest request,HttpServletResponse response){
 		Map<String, Object> map = FormDataCollectUtil.getInstance().getFormData(request);
-		//String pId = request.getSession().getAttribute("pId").toString();
-		String pId = "o-1WTwnmE5MzetfXjm_02IjLG8m4";
+		String pId = request.getSession().getAttribute("pId").toString();
+		//String pId = "o-1WTwnmE5MzetfXjm_02IjLG8m4";
 		map.put("pId", pId);
 		try {
 			String result = dietService.saveDiet(map);
@@ -151,6 +151,7 @@ public class DietController {
 	public String getDietListWithPage(HttpServletRequest request,Model model){
 		Map<String, Object> map = FormDataCollectUtil.getInstance().getFormDataWithPage(request);
 		HttpSession session = request.getSession();
+		//String pId = "o-1WTwnmE5MzetfXjm_02IjLG8m4";
 		String pId = (String)session.getAttribute("pId");
 		map.put("pId", pId);
 		List<Map<String, Object>> list = dietService.getDietList(map);
@@ -250,7 +251,7 @@ public class DietController {
 		return "diet/dietary_info";
 	}
 	
-	@RequestMapping("bg_edit")
+	@RequestMapping("bg_edit1")
 	public String bloodGlucoseEdit(HttpServletRequest request, Model model){
 		HttpSession session = request.getSession();
 		String pId = (String)session.getAttribute("pId");

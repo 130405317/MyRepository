@@ -176,4 +176,21 @@ public class UserServiceImpl implements UserService {
 		return "1";
 	}
 
+	@Override
+	public int checkOpenId(String openid) {
+		return userDao.checkOpenId(openid);
+	}
+
+	@Override
+	public void saveOpenId(String openId) {
+		userDao.saveOpenId(openId);
+		
+	}
+
+	@Override
+	public void deleteOpenId(String openId) {
+		userDao.deleteOpenId(openId);
+		
+	}
+
 }
