@@ -37,10 +37,13 @@
 			<a href="" data-role="button"
 				onclick="window.location.href='../user/user_index'">主页</a>
 			<h1>饮食录入</h1>
+			<a href="" data-role="button"
+				onclick="window.location.href='../diet/add_newfood'">新食物</a>
 		</div>
 		<div data-role="content">
 			<div data-role="fieldcontain">
-				<p style="text-align: center; color: red">如果您输入的食物没有选项，请重新选择并反馈！</p>
+				<p style="text-align: center; color: red">1.如果您输入的食物没有选项，请重新输入并点击“新食物”反馈！</p>
+				<p style="text-align: center; color: red">2.如果您是果粉，输入食物没有选项，请换拼音全健输入！</p>
 				<p style="text-align: center;">
 					目标能量(kal)：<span id="targetenergy"></span>
 				</p>

@@ -384,6 +384,11 @@ public class DietController {
 		}
 	}
 	
+	@RequestMapping("/add_newfood")
+	public String addNewFood(HttpServletRequest request){
+		return "diet/add_newfood";
+	}
+	
 }
 
 
