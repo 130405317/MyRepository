@@ -180,6 +180,10 @@ public class DietServiceImpl implements DietService {
 	@Override
 	public List<Map<String, Object>> showDietInfo(Map<String, Object> param) {
 		List<Map<String, Object>> list = dietDao.showDietInfo(param);
+		int energy = 0;
+		Double protein = 0.0;
+		Double fat = 0.0;
+		Double carbohydrate = 0.0;
 		for(int i=0; i<list.size(); i++){
 			String mainfood = (String)list.get(i).get("mainfood");
 			String mainfoodNum = (String)list.get(i).get("mainfoodNum");
@@ -196,26 +200,56 @@ public class DietServiceImpl implements DietService {
 			if(!"".equals(mainfood)&&mainfood!=null){
 				List<Map<String, Object>> tmpList = getFoodListByIds(mainfood,"1",mainfoodNum);
 				list.get(i).put("mainfood", tmpList);
+				if(tmpList.size() != 0){
+					protein +=Double.parseDouble(String.valueOf(tmpList.get(0).get("protein")));
+					fat +=Double.parseDouble(String.valueOf(tmpList.get(0).get("fat")));
+					carbohydrate +=Double.parseDouble(String.valueOf(tmpList.get(0).get("carbohydrate")));
+				}
 			}
 			if(!"".equals(meat)&&meat!=null){
 				List<Map<String, Object>> tmpList = getFoodListByIds(meat,"2",meatNum);
 				list.get(i).put("meat", tmpList);
+				if(tmpList.size() != 0){
+					protein +=Double.parseDouble(String.valueOf(tmpList.get(0).get("protein")));
+					fat +=Double.parseDouble(String.valueOf(tmpList.get(0).get("fat")));
+					carbohydrate +=Double.parseDouble(String.valueOf(tmpList.get(0).get("carbohydrate")));
+				}
 			}
 			if(!"".equals(vegetables)&&vegetables!=null){
 				List<Map<String, Object>> tmpList = getFoodListByIds(vegetables,"3",vegetablesNum);
 				list.get(i).put("vegetables", tmpList);
+				if(tmpList.size() != 0){
+					protein +=Double.parseDouble(String.valueOf(tmpList.get(0).get("protein")));
+					fat +=Double.parseDouble(String.valueOf(tmpList.get(0).get("fat")));
+					carbohydrate +=Double.parseDouble(String.valueOf(tmpList.get(0).get("carbohydrate")));
+				}
 			}
 			if(!"".equals(drink)&&drink!=null){
 				List<Map<String, Object>> tmpList = getFoodListByIds(drink,"4",drinkNum);
 				list.get(i).put("drink", tmpList);
+				if(tmpList.size() != 0){
+					protein +=Double.parseDouble(String.valueOf(tmpList.get(0).get("protein")));
+					fat +=Double.parseDouble(String.valueOf(tmpList.get(0).get("fat")));
+					carbohydrate +=Double.parseDouble(String.valueOf(tmpList.get(0).get("carbohydrate")));
+				}
 			}
 			if(!"".equals(nut)&&nut!=null){
 				List<Map<String, Object>> tmpList = getFoodListByIds(nut,"5",nutNum);
 				list.get(i).put("nut", tmpList);
+				if(tmpList.size() != 0){
+					protein +=Double.parseDouble(String.valueOf(tmpList.get(0).get("protein")));
+					fat +=Double.parseDouble(String.valueOf(tmpList.get(0).get("fat")));
+					carbohydrate +=Double.parseDouble(String.valueOf(tmpList.get(0).get("carbohydrate")));
+				}  
 			}
 			if(!"".equals(fruits)&&fruits!=null){
 				List<Map<String, Object>> tmpList = getFoodListByIds(fruits,"6",fruitsNum);
 				list.get(i).put("fruits", tmpList);
+				if(tmpList.size() != 0){
+					protein +=Double.parseDouble(String.valueOf(tmpList.get(0).get("protein")));
+					fat +=Double.parseDouble(String.valueOf(tmpList.get(0).get("fat")));
+					carbohydrate +=Double.parseDouble(String.valueOf(tmpList.get(0).get("carbohydrate")));
+				}
 			}
 			int type = (Integer)list.get(i).get("type");
 			switch(type){
@@ -247,6 +281,9 @@ public class DietServiceImpl implements DietService {
 					list.get(i).put("type","夜宵");
 				}
 			}
+		}
+		for(int j=0; j<list.size(); j++){
+			energy +=Integer.parseInt(String.valueOf(list.get(j).get("energy")));
 		}
 		return list;
 	}
@@ -423,25 +460,32 @@ public class DietServiceImpl implements DietService {
 		List<Map<String, Object>> list = dictionaryService.getDictionaryListByType("6");
 		for(Map<String, Object> tmp : list){
 			if(tmp.get("id").toString().equals(map.get("beforebreakfasttype"))){
-				map.put("beforebreakfasttype",tmp.get("name"));
+				 String beforebreakfasttype = sporttype(String.valueOf(tmp.get("name")));
+				map.put("beforebreakfasttype",beforebreakfasttype);
 			}
 			if(tmp.get("id").toString().equals(map.get("afterbreakfasttype"))){
-				map.put("afterbreakfasttype",tmp.get("name"));
+				String afterbreakfasttype = sporttype(String.valueOf(tmp.get("name")));
+				map.put("afterbreakfasttype",afterbreakfasttype);
 			}
 			if(tmp.get("id").toString().equals(map.get("beforelaunchtype"))){
-				map.put("beforelaunchtype",tmp.get("name"));
+				String beforelaunchtype = sporttype(String.valueOf(tmp.get("name")));
+				map.put("beforelaunchtype",beforelaunchtype);
 			}
 			if(tmp.get("id").toString().equals(map.get("afterlaunchtype"))){
-				map.put("afterlaunchtype",tmp.get("name"));
+				String afterlaunchtype = sporttype(String.valueOf(tmp.get("name")));
+				map.put("afterlaunchtype",afterlaunchtype);
 			}
 			if(tmp.get("id").toString().equals(map.get("beforedinnertype"))){
-				map.put("beforedinnertype",tmp.get("name"));
+				String beforedinnertype = sporttype(String.valueOf(tmp.get("name")));
+				map.put("beforedinnertype",beforedinnertype);
 			}
 			if(tmp.get("id").toString().equals(map.get("afterdinnertype"))){
-				map.put("afterdinnertype",tmp.get("name"));
+				String afterdinnertype = sporttype(String.valueOf(tmp.get("name")));
+				map.put("afterdinnertype",afterdinnertype);
 			}
 			if(tmp.get("id").toString().equals(map.get("beforesleeptype"))){
-				map.put("beforesleeptype",tmp.get("name"));
+				String beforesleeptype = sporttype(String.valueOf(tmp.get("name")));
+				map.put("beforesleeptype",beforesleeptype);
 			}
 		}
 		return map;
@@ -451,5 +495,98 @@ public class DietServiceImpl implements DietService {
 	public String insertNewfood(Map<String, Object> param) {
 		dietDao.insertNewfood(param);
 		return "1";
+	}
+
+	@Override
+	public Map<String, Object> showDietEnergy(Map<String, Object> param) {
+		List<Map<String, Object>> list = dietDao.showDietInfo(param);
+		int energy = 0;
+		Double protein = 0.0;
+		Double fat = 0.0;
+		Double carbohydrate = 0.0;
+		for(int i=0; i<list.size(); i++){
+			String mainfood = (String)list.get(i).get("mainfood");
+			String mainfoodNum = (String)list.get(i).get("mainfoodNum");
+			String meat = (String)list.get(i).get("meat");
+			String meatNum = (String)list.get(i).get("meatNum");
+			String vegetables = (String)list.get(i).get("vegetables");
+			String vegetablesNum = (String)list.get(i).get("vegetablesNum");
+			String drink = (String)list.get(i).get("drink");
+			String drinkNum = (String)list.get(i).get("drinkNum");
+			String nut = (String)list.get(i).get("nut");
+			String nutNum = (String)list.get(i).get("nutNum");
+			String fruits = (String)list.get(i).get("fruits");
+			String fruitsNum = (String)list.get(i).get("fruitsNum");
+			if(!"".equals(mainfood)&&mainfood!=null){
+				List<Map<String, Object>> tmpList = getFoodListByIds(mainfood,"1",mainfoodNum);
+				if(tmpList.size() != 0){
+					protein +=Double.parseDouble(String.valueOf(tmpList.get(0).get("protein")));
+					fat +=Double.parseDouble(String.valueOf(tmpList.get(0).get("fat")));
+					carbohydrate +=Double.parseDouble(String.valueOf(tmpList.get(0).get("carbohydrate")));
+				}
+			}
+			if(!"".equals(meat)&&meat!=null){
+				List<Map<String, Object>> tmpList = getFoodListByIds(meat,"2",meatNum);
+				if(tmpList.size() != 0){
+					protein +=Double.parseDouble(String.valueOf(tmpList.get(0).get("protein")));
+					fat +=Double.parseDouble(String.valueOf(tmpList.get(0).get("fat")));
+					carbohydrate +=Double.parseDouble(String.valueOf(tmpList.get(0).get("carbohydrate")));
+				}
+			}
+			if(!"".equals(vegetables)&&vegetables!=null){
+				List<Map<String, Object>> tmpList = getFoodListByIds(vegetables,"3",vegetablesNum);
+				if(tmpList.size() != 0){
+					protein +=Double.parseDouble(String.valueOf(tmpList.get(0).get("protein")));
+					fat +=Double.parseDouble(String.valueOf(tmpList.get(0).get("fat")));
+					carbohydrate +=Double.parseDouble(String.valueOf(tmpList.get(0).get("carbohydrate")));
+				}
+			}
+			if(!"".equals(drink)&&drink!=null){
+				List<Map<String, Object>> tmpList = getFoodListByIds(drink,"4",drinkNum);
+				if(tmpList.size() != 0){
+					protein +=Double.parseDouble(String.valueOf(tmpList.get(0).get("protein")));
+					fat +=Double.parseDouble(String.valueOf(tmpList.get(0).get("fat")));
+					carbohydrate +=Double.parseDouble(String.valueOf(tmpList.get(0).get("carbohydrate")));
+				}
+			}
+			if(!"".equals(nut)&&nut!=null){
+				List<Map<String, Object>> tmpList = getFoodListByIds(nut,"5",nutNum);
+				if(tmpList.size() != 0){
+					protein +=Double.parseDouble(String.valueOf(tmpList.get(0).get("protein")));
+					fat +=Double.parseDouble(String.valueOf(tmpList.get(0).get("fat")));
+					carbohydrate +=Double.parseDouble(String.valueOf(tmpList.get(0).get("carbohydrate")));
+				}  
+			}
+			if(!"".equals(fruits)&&fruits!=null){
+				List<Map<String, Object>> tmpList = getFoodListByIds(fruits,"6",fruitsNum);
+				if(tmpList.size() != 0){
+					protein +=Double.parseDouble(String.valueOf(tmpList.get(0).get("protein")));
+					fat +=Double.parseDouble(String.valueOf(tmpList.get(0).get("fat")));
+					carbohydrate +=Double.parseDouble(String.valueOf(tmpList.get(0).get("carbohydrate")));
+				}
+			}
+			
+		}
+		for(int j=0; j<list.size(); j++){
+			energy +=Integer.parseInt(String.valueOf(list.get(j).get("energy")));
+		} 
+		Map<String, Object> map =  new HashMap<String, Object>();;
+		map.put("energy", energy);
+		map.put("protein", protein);
+		map.put("fat", fat);
+		map.put("carbohydrate", carbohydrate);
+		return map;
+	}
+	
+	public String sporttype(String sport){
+		String result = "";
+		if("散步".equals(sport)){
+			result = "中";
+		}else if("慢跑".equals(sport)){
+			result = "强";
+		}else{
+			result = "弱";
+		}
+		return result;
 	}
 }

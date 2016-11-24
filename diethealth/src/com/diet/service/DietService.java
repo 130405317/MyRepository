@@ -54,6 +54,8 @@ public interface  DietService {
 	public int getTargetEnergy(String pId);
 
 	public List<Map<String, Object>> getTypeList(String pId);
+	
+	public Map<String, Object> showDietEnergy(Map<String, Object> param);
 
 	public String saveSportInfo(Map<String, Object> param);
 	

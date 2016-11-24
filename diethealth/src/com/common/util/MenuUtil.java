@@ -34,7 +34,9 @@ public class MenuUtil {
 		String menu = "{\"button\":[{\"type\":\"view\",\"name\":\"绑定业务\",\"url\":\"https://open.weixin.qq.com/connect/oauth2/authorize?appid="
 			    +APPID+"&redirect_uri=http://yuntangbao.top/diethealth/user/user_bind&response_type=code&scope=snsapi_userinfo&state="+new Random().nextInt(10000)+"#wechat_redirect\"},"
 				+"{\"type\":\"view\",\"name\":\"我的业务\",\"url\":\"https://open.weixin.qq.com/connect/oauth2/authorize?appid="
-			    +APPID+"&redirect_uri=http://yuntangbao.top/diethealth/user/toIndex&response_type=code&scope=snsapi_userinfo&state="+new Random().nextInt(10000)+"#wechat_redirect\"}";
+			    +APPID+"&redirect_uri=http://yuntangbao.top/diethealth/user/toIndex&response_type=code&scope=snsapi_userinfo&state="+new Random().nextInt(10000)+"#wechat_redirect\"},"
+			    + "{\"type\":\"view\",\"name\":\"使用说明 \",\"url\":\"https://open.weixin.qq.com/connect/oauth2/authorize?appid="
+			    +APPID+"&redirect_uri=http://yuntangbao.top/diethealth/user/indroduce&response_type=code&scope=snsapi_userinfo&state="+new Random().nextInt(10000)+"#wechat_redirect\"}]}";
 		/*String menu = "{\"button\":[{\"type\":\"view\",\"name\":\"绑定业务\",\"url\":\"https://open.weixin.qq.com/connect/oauth2/authorize?appid="
 			    +APPID+"&redirect_uri=http://rrgcll2mwr.proxy.qqbrowser.cc/diethealth/user/user_bind&response_type=code&scope=snsapi_base&state=1#wechat_redirect\"},"
 				+"{\"type\":\"view\",\"name\":\"我的业务\",\"url\":\"https://open.weixin.qq.com/connect/oauth2/authorize?appid="
@@ -43,7 +45,7 @@ public class MenuUtil {
 		String access_token = CommonUtil.getToken().getAccessToken();
 		String action = "https://api.weixin.qq.com/cgi-bin/menu/create?access_token="
 				+ access_token;
-		try {
+		try { 
 			URL url = new URL(action);
 			HttpURLConnection http = (HttpURLConnection) url.openConnection();
 

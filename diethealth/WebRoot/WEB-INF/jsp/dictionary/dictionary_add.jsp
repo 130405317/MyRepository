@@ -5,7 +5,7 @@ String path = request.getContextPath();
 <html>
 <head>
 
-<title>血糖录入</title>
+<title>新增字典</title>
 <meta http-equiv="pragma" content="no-cache">
 <meta http-equiv="cache-control" content="no-cache">
 <meta content="width=device-width" name="viewport" />

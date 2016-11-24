@@ -75,18 +75,18 @@
     </delete>
     
     <select id="showBloodGlucoseInfo" parameterType="object" resultType="map">
-	select p_id,substring(date,6) as date,bloodGlucoseBeforeSleep,bloodGlucoseAfterDinner,bloodGlucoseBeforeDinner,
+	select p_id,substring(date,6) as date,HbAlc,bloodGlucoseBeforeSleep,bloodGlucoseAfterDinner,bloodGlucoseBeforeDinner,
 	bloodGlucoseAfterLunch,bloodGlucoseBeforeLunch,bloodGlucoseAfterBreakfast,bloodGlucoseBeforeBreakfast
 	 FROM bloodglucose WHERE p_id = #{pId} and date = #{date}
 	</select>
 	
 	 <insert id="saveBloodGlucoseInfo" parameterType="object">
-	INSERT INTO bloodglucose(p_id,date,bloodGlucoseBeforeSleep,bloodGlucoseAfterDinner,bloodGlucoseBeforeDinner,bloodGlucoseAfterLunch,bloodGlucoseBeforeLunch,bloodGlucoseAfterBreakfast,bloodGlucoseBeforeBreakfast)
-	values(#{pId},#{date},#{bloodGlucoseBeforeSleep},#{bloodGlucoseAfterDinner},#{bloodGlucoseBeforeDinner},#{bloodGlucoseAfterLunch},#{bloodGlucoseBeforeLunch},#{bloodGlucoseAfterBreakfast},#{bloodGlucoseBeforeBreakfast})
+	INSERT INTO bloodglucose(p_id,date,HbAlc,bloodGlucoseBeforeSleep,bloodGlucoseAfterDinner,bloodGlucoseBeforeDinner,bloodGlucoseAfterLunch,bloodGlucoseBeforeLunch,bloodGlucoseAfterBreakfast,bloodGlucoseBeforeBreakfast)
+	values(#{pId},#{date},#{HbAlc},#{bloodGlucoseBeforeSleep},#{bloodGlucoseAfterDinner},#{bloodGlucoseBeforeDinner},#{bloodGlucoseAfterLunch},#{bloodGlucoseBeforeLunch},#{bloodGlucoseAfterBreakfast},#{bloodGlucoseBeforeBreakfast})
 	</insert>
 	
 	<update id="updateBloodGlucoseInfo" parameterType="object">
-	UPDATE bloodglucose SET bloodGlucoseBeforeSleep = #{bloodGlucoseBeforeSleep},bloodGlucoseAfterDinner = #{bloodGlucoseAfterDinner},bloodGlucoseBeforeDinner=#{bloodGlucoseBeforeDinner},bloodGlucoseAfterLunch=#{bloodGlucoseAfterLunch},
+	UPDATE bloodglucose SET HbAlc = #{HbAlc},bloodGlucoseBeforeSleep = #{bloodGlucoseBeforeSleep},bloodGlucoseAfterDinner = #{bloodGlucoseAfterDinner},bloodGlucoseBeforeDinner=#{bloodGlucoseBeforeDinner},bloodGlucoseAfterLunch=#{bloodGlucoseAfterLunch},
 	bloodGlucoseBeforeLunch=#{bloodGlucoseBeforeLunch},bloodGlucoseAfterBreakfast=#{bloodGlucoseAfterBreakfast},bloodGlucoseBeforeBreakfast=#{bloodGlucoseBeforeBreakfast}
 	WHERE p_id = #{pId} and date = #{date}
 	</update> 

@@ -11,12 +11,13 @@
 <meta http-equiv="pragma" content="no-cache">
 <meta http-equiv="cache-control" content="no-cache">
 <meta content="width=device-width" name="viewport" />
-<link rel="shortcut icon" href="<%=path %>/favicon.ico" />
+<link rel="shortcut icon" href="<%=path%>/favicon.ico" />
 <link rel="stylesheet" type="text/css"
-	href="<%=path%>/jquerymobile/green.min.css"> 
- <link rel="stylesheet" type="text/css"
-	href="<%=path%>/jquerymobile/green.icons.min.css"> 
-	<link rel="stylesheet" href="<%=path%>/jquerymobile/jquery.mobile.structure-1.4.5.min.css" />
+	href="<%=path%>/jquerymobile/green.min.css">
+<link rel="stylesheet" type="text/css"
+	href="<%=path%>/jquerymobile/green.icons.min.css">
+<link rel="stylesheet"
+	href="<%=path%>/jquerymobile/jquery.mobile.structure-1.4.5.min.css" />
 <!-- <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" /> -->
 </head>
 
@@ -28,438 +29,276 @@
 			<h1>饮食记录</h1>
 		</div>
 
-			<div>
-		<c:forEach var="diet" items="${dietList}" varStatus="s">
-		<h3 style="text-align:center;">${diet.type }&nbsp;&nbsp;&nbsp;总能量：${diet.energy}(kal)</h3>
-		<c:forEach var="mainfood" items="${diet.mainfood}" varStatus="s">
-		<span>${mainfood.name }</span>
-			 <div class="ui-grid-d" > 
-				<div class="ui-block-a"
-					style="border: 1px solid black;text-align:center;border-style:ridge ridge ridge ridge;">能量</div>
-				<div class="ui-block-b"
-					style="border: 1px solid black;text-align:center;border-style:ridge ridge ridge none;">蛋白质</div>
-					<div class="ui-block-c"
-					style="border: 1px solid black;text-align:center;width:18.5%;border-style:ridge ridge ridge none;">铁</div>
-				<div class="ui-block-d"
-					style="border: 1px solid black;text-align:center;width:23%;border-style:ridge ridge ridge none;">膳食纤维</div>
-						<div class="ui-block-e"
-					style="border: 1px solid black;text-align:center;width:18.5%;border-style:ridge ridge ridge none;">钙</div>
-					</div> 
-				<div class="ui-grid-d">
-					<div class="ui-block-a"style="border: 1px solid black;text-align:center;border-style:none ridge ridge ridge;">${mainfood.energy }</div>
-					<div class="ui-block-b" style="border: 1px solid black;text-align:center;border-style:none ridge ridge none;">${mainfood.protein }</div>
-					<div class="ui-block-c" style="border: 1px solid black;width:18.5%;text-align:center;border-style:none ridge ridge none;">${mainfood.ferrum }</div>
-					<div class="ui-block-d" style="border: 1px solid black;width:23%;text-align:center;border-style:none ridge ridge none;">${mainfood.cellulose }</div>
-					<div class="ui-block-e" style="border: 1px solid black;width:18.5%;text-align:center;border-style:none ridge ridge none;">${mainfood.calcium }</div>
-				</div>
-				<span>&nbsp;</span>
-					<div class="ui-grid-c"> 
-						<div class="ui-block-a"
-					style="border: 1px solid black;text-align:center;border-style:ridge ridge ridge ridge;">脂肪</div>
-						<div class="ui-block-b"
-					style="border: 1px solid black;text-align:center;width:24%;border-style:ridge ridge ridge none;">锌</div>
-						<div class="ui-block-c"
-					style="border: 1px solid black;text-align:center;border-style:ridge ridge ridge none;">胡萝卜素</div>
-					<div class="ui-block-d"
-					style="border: 1px solid black;text-align:center;width:26%;border-style:ridge ridge ridge none;">碳水化合物</div>
-			</div> 
+		<div>
+			<a href="diet_info_d?pId=${pId }&date=${date}"><h3 style="text-align: center;">饮食记录</h3></a>
 			<div class="ui-grid-c">
-					<div class="ui-block-a" style="border: 1px solid black;text-align:center;border-style:none ridge ridge ridge;">${mainfood.fat }</div>
-					<div class="ui-block-b" style="border: 1px solid black;width:24%;text-align:center;border-style:none ridge ridge none;">${mainfood.zinc }</div>
-					<div class="ui-block-c" style="border: 1px solid black;text-align:center;border-style:none ridge ridge none;">${mainfood.carotene }</div>
-					<div class="ui-block-d" style="border: 1px solid black;width:26%;text-align:center;border-style:none ridge ridge none;">${mainfood.carbohydrate }</div>
-				</c:forEach>
-				<c:forEach var="meat" items="${diet.meat}" varStatus="s">
-				<span>${meat.name  }</span>
-				 <div class="ui-grid-d" > 
 				<div class="ui-block-a"
-					style="border: 1px solid black;text-align:center;border-style:ridge ridge ridge ridge;">能量</div>
+					style="border: 1px solid black; border-style: ridge ridge ridge ridge; text-align: center; font-size: 10px;">
+					能量</div>
 				<div class="ui-block-b"
-					style="border: 1px solid black;text-align:center;border-style:ridge ridge ridge none;">蛋白质</div>
-					<div class="ui-block-c"
-					style="border: 1px solid black;text-align:center;width:18.5%;border-style:ridge ridge ridge none;">铁</div>
+					style="border: 1px solid black; border-style: ridge ridge ridge none; text-align: center; font-size: 10px;">
+					蛋白质</div>
+				<div class="ui-block-c"
+					style="border: 1px solid black; border-style: ridge ridge ridge none; text-align: center; font-size: 10px;">
+					脂肪</div>
 				<div class="ui-block-d"
-					style="border: 1px solid black;text-align:center;width:23%;border-style:ridge ridge ridge none;">膳食纤维</div>
-						<div class="ui-block-e"
-					style="border: 1px solid black;text-align:center;width:18.5%;border-style:ridge ridge ridge none;">钙</div>
-					</div> 
-					<div class="ui-grid-d">
-					<div class="ui-block-a"style="border: 1px solid black;text-align:center;border-style:none ridge ridge ridge;">${meat.energy }</div>
-					<div class="ui-block-b" style="border: 1px solid black;text-align:center;border-style:none ridge ridge none;">${meat.protein }</div>
-					<div class="ui-block-c" style="border: 1px solid black;width:18.5%;text-align:center;border-style:none ridge ridge none;">${meat.ferrum }</div>
-					<div class="ui-block-d" style="border: 1px solid black;width:23%;text-align:center;border-style:none ridge ridge none;">${meat.cellulose }</div>
-					<div class="ui-block-e" style="border: 1px solid black;width:18.5%;text-align:center;border-style:none ridge ridge none;">${meat.calcium }</div>
-				</div>
-				<span>&nbsp;</span>
-				<div class="ui-grid-c"> 
-						<div class="ui-block-a"
-					style="border: 1px solid black;text-align:center;border-style:ridge ridge ridge ridge;">脂肪</div>
-						<div class="ui-block-b"
-					style="border: 1px solid black;text-align:center;width:24%;border-style:ridge ridge ridge none;">锌</div>
-						<div class="ui-block-c"
-					style="border: 1px solid black;text-align:center;border-style:ridge ridge ridge none;">胡萝卜素</div>
-					<div class="ui-block-d"
-					style="border: 1px solid black;text-align:center;width:26%;border-style:ridge ridge ridge none;">碳水化合物</div>
-			</div> 
-					<div class="ui-grid-c">
-					<div class="ui-block-a" style="border: 1px solid black;text-align:center;border-style:none ridge ridge ridge;">${meat.fat }</div>
-					<div class="ui-block-b" style="border: 1px solid black;width:24%;text-align:center;border-style:none ridge ridge none;">${meat.zinc }</div>
-					<div class="ui-block-c" style="border: 1px solid black;text-align:center;border-style:none ridge ridge none;">${meat.carotene }</div>
-					<div class="ui-block-d" style="border: 1px solid black;width:26%;text-align:center;border-style:none ridge ridge none;">${meat.carbohydrate }</div>
-				</div>
-				</c:forEach>
-				
-				<c:forEach var="vegetables" items="${diet.vegetables}" varStatus="s">
-				<span>${vegetables.name  }</span>
-				 <div class="ui-grid-d" > 
-				<div class="ui-block-a"
-					style="border: 1px solid black;text-align:center;border-style:ridge ridge ridge ridge;">能量</div>
-				<div class="ui-block-b"
-					style="border: 1px solid black;text-align:center;border-style:ridge ridge ridge none;">蛋白质</div>
-					<div class="ui-block-c"
-					style="border: 1px solid black;text-align:center;width:18.5%;border-style:ridge ridge ridge none;">铁</div>
-				<div class="ui-block-d"
-					style="border: 1px solid black;text-align:center;width:23%;border-style:ridge ridge ridge none;">膳食纤维</div>
-						<div class="ui-block-e"
-					style="border: 1px solid black;text-align:center;width:18.5%;border-style:ridge ridge ridge none;">钙</div>
-					</div> 
-					<div class="ui-grid-d">
-					<div class="ui-block-a"style="border: 1px solid black;text-align:center;border-style:none ridge ridge ridge;">${vegetables.energy }</div>
-					<div class="ui-block-b" style="border: 1px solid black;text-align:center;border-style:none ridge ridge none;">${vegetables.protein }</div>
-					<div class="ui-block-c" style="border: 1px solid black;width:18.5%;text-align:center;border-style:none ridge ridge none;">${vegetables.ferrum }</div>
-					<div class="ui-block-d" style="border: 1px solid black;width:23%;text-align:center;border-style:none ridge ridge none;">${vegetables.cellulose }</div>
-					<div class="ui-block-e" style="border: 1px solid black;width:18.5%;text-align:center;border-style:none ridge ridge none;">${vegetables.calcium }</div>
-				</div>
-				<span>&nbsp;</span>
-					<div class="ui-grid-c"> 
-						<div class="ui-block-a"
-					style="border: 1px solid black;text-align:center;border-style:ridge ridge ridge ridge;">脂肪</div>
-						<div class="ui-block-b"
-					style="border: 1px solid black;text-align:center;width:24%;border-style:ridge ridge ridge none;">锌</div>
-						<div class="ui-block-c"
-					style="border: 1px solid black;text-align:center;border-style:ridge ridge ridge none;">胡萝卜素</div>
-					<div class="ui-block-d"
-					style="border: 1px solid black;text-align:center;width:26%;border-style:ridge ridge ridge none;">碳水化合物</div>
-			</div> 
-			<div class="ui-grid-c">
-					<div class="ui-block-a" style="border: 1px solid black;text-align:center;border-style:none ridge ridge ridge;">${vegetables.fat }</div>
-					<div class="ui-block-b" style="border: 1px solid black;width:24%;text-align:center;border-style:none ridge ridge none;">${vegetables.zinc }</div>
-					<div class="ui-block-c" style="border: 1px solid black;text-align:center;border-style:none ridge ridge none;">${vegetables.carotene }</div>
-					<div class="ui-block-d" style="border: 1px solid black;width:26%;text-align:center;border-style:none ridge ridge none;">${vegetables.carbohydrate }</div>
-				</div>
-				</c:forEach>
-			<c:forEach var="drink" items="${diet.drink}" varStatus="s">
-			<span>${drink.name  }</span>
-				 <div class="ui-grid-d" > 
-				<div class="ui-block-a"
-					style="border: 1px solid black;text-align:center;border-style:ridge ridge ridge ridge;">能量</div>
-				<div class="ui-block-b"
-					style="border: 1px solid black;text-align:center;border-style:ridge ridge ridge none;">蛋白质</div>
-					<div class="ui-block-c"
-					style="border: 1px solid black;text-align:center;width:18.5%;border-style:ridge ridge ridge none;">铁</div>
-				<div class="ui-block-d"
-					style="border: 1px solid black;text-align:center;width:23%;border-style:ridge ridge ridge none;">膳食纤维</div>
-						<div class="ui-block-e"
-					style="border: 1px solid black;text-align:center;width:18.5%;border-style:ridge ridge ridge none;">钙</div>
-					</div> 
-				<div class="ui-grid-d">
-					<div class="ui-block-a"style="border: 1px solid black;text-align:center;border-style:none ridge ridge ridge;">${drink.energy }</div>
-					<div class="ui-block-b" style="border: 1px solid black;text-align:center;border-style:none ridge ridge none;">${drink.protein }</div>
-					<div class="ui-block-c" style="border: 1px solid black;width:18.5%;text-align:center;border-style:none ridge ridge none;">${drink.ferrum }</div>
-					<div class="ui-block-d" style="border: 1px solid black;width:23%;text-align:center;border-style:none ridge ridge none;">${drink.cellulose }</div>
-					<div class="ui-block-e" style="border: 1px solid black;width:18.5%;text-align:center;border-style:none ridge ridge none;">${drink.calcium }</div>
-				</div>
-				<span>&nbsp;</span>
-					<div class="ui-grid-c"> 
-						<div class="ui-block-a"
-					style="border: 1px solid black;text-align:center;border-style:ridge ridge ridge ridge;">脂肪</div>
-						<div class="ui-block-b"
-					style="border: 1px solid black;text-align:center;width:24%;border-style:ridge ridge ridge none;">锌</div>
-						<div class="ui-block-c"
-					style="border: 1px solid black;text-align:center;border-style:ridge ridge ridge none;">胡萝卜素</div>
-					<div class="ui-block-d"
-					style="border: 1px solid black;text-align:center;width:26%;border-style:ridge ridge ridge none;">碳水化合物</div>
-			</div> 
-				<div class="ui-grid-c">
-					<div class="ui-block-a" style="border: 1px solid black;text-align:center;border-style:none ridge ridge ridge;">${drink.fat }</div>
-					<div class="ui-block-b" style="border: 1px solid black;width:24%;text-align:center;border-style:none ridge ridge none;">${drink.zinc }</div>
-					<div class="ui-block-c" style="border: 1px solid black;text-align:center;border-style:none ridge ridge none;">${drink.carotene }</div>
-					<div class="ui-block-d" style="border: 1px solid black;width:26%;text-align:center;border-style:none ridge ridge none;">${drink.carbohydrate }</div>
-				</div>
-				</c:forEach>
-				
-				<c:forEach var="nut" items="${diet.nut}" varStatus="s">
-				<span>${nut.name  }</span>
-				 <div class="ui-grid-d" > 
-				<div class="ui-block-a"
-					style="border: 1px solid black;text-align:center;border-style:ridge ridge ridge ridge;">能量</div>
-				<div class="ui-block-b"
-					style="border: 1px solid black;text-align:center;border-style:ridge ridge ridge none;">蛋白质</div>
-					<div class="ui-block-c"
-					style="border: 1px solid black;text-align:center;width:18.5%;border-style:ridge ridge ridge none;">铁</div>
-				<div class="ui-block-d"
-					style="border: 1px solid black;text-align:center;width:23%;border-style:ridge ridge ridge none;">膳食纤维</div>
-						<div class="ui-block-e"
-					style="border: 1px solid black;text-align:center;width:18.5%;border-style:ridge ridge ridge none;">钙</div>
-					</div> 
-					<div class="ui-grid-d">
-					<div class="ui-block-a"style="border: 1px solid black;text-align:center;border-style:none ridge ridge ridge;">${nut.energy }</div>
-					<div class="ui-block-b" style="border: 1px solid black;text-align:center;border-style:none ridge ridge none;">${nut.protein }</div>
-					<div class="ui-block-c" style="border: 1px solid black;width:18.5%;text-align:center;border-style:none ridge ridge none;">${nut.ferrum }</div>
-					<div class="ui-block-d" style="border: 1px solid black;width:23%;text-align:center;border-style:none ridge ridge none;">${nut.cellulose }</div>
-					<div class="ui-block-e" style="border: 1px solid black;width:18.5%;text-align:center;border-style:none ridge ridge none;">${nut.calcium }</div>
-				</div>
-				<span>&nbsp;</span>
-					<div class="ui-grid-c"> 
-						<div class="ui-block-a"
-					style="border: 1px solid black;text-align:center;border-style:ridge ridge ridge ridge;">脂肪</div>
-						<div class="ui-block-b"
-					style="border: 1px solid black;text-align:center;width:24%;border-style:ridge ridge ridge none;">锌</div>
-						<div class="ui-block-c"
-					style="border: 1px solid black;text-align:center;border-style:ridge ridge ridge none;">胡萝卜素</div>
-					<div class="ui-block-d"
-					style="border: 1px solid black;text-align:center;width:26%;border-style:ridge ridge ridge none;">碳水化合物</div>
-			</div> 
-				<div class="ui-grid-c">
-					<div class="ui-block-a" style="border: 1px solid black;text-align:center;border-style:none ridge ridge ridge;">${nut.fat }</div>
-					<div class="ui-block-b" style="border: 1px solid black;width:24%;text-align:center;border-style:none ridge ridge none;">${nut.zinc }</div>
-					<div class="ui-block-c" style="border: 1px solid black;text-align:center;border-style:none ridge ridge none;">${nut.carotene }</div>
-					<div class="ui-block-d" style="border: 1px solid black;width:26%;text-align:center;border-style:none ridge ridge none;">${nut.carbohydrate }</div>
-				</div>
-				</c:forEach>
-					<c:forEach var="fruits" items="${diet.fruits}" varStatus="s">
-					<span>${fruits.name  }</span>
-				 <div class="ui-grid-d" > 
-				<div class="ui-block-a"
-					style="border: 1px solid black;text-align:center;border-style:ridge ridge ridge ridge;">能量</div>
-				<div class="ui-block-b"
-					style="border: 1px solid black;text-align:center;border-style:ridge ridge ridge none;">蛋白质</div>
-					<div class="ui-block-c"
-					style="border: 1px solid black;text-align:center;width:18.5%;border-style:ridge ridge ridge none;">铁</div>
-				<div class="ui-block-d"
-					style="border: 1px solid black;text-align:center;width:23%;border-style:ridge ridge ridge none;">膳食纤维</div>
-						<div class="ui-block-e"
-					style="border: 1px solid black;text-align:center;width:18.5%;border-style:ridge ridge ridge none;">钙</div>
-					</div> 
-					<div class="ui-grid-d">
-					<div class="ui-block-a"style="border: 1px solid black;text-align:center;border-style:none ridge ridge ridge;">${fruits.energy }</div>
-					<div class="ui-block-b" style="border: 1px solid black;text-align:center;border-style:none ridge ridge none;">${fruits.protein }</div>
-					<div class="ui-block-c" style="border: 1px solid black;width:18.5%;text-align:center;border-style:none ridge ridge none;">${fruits.ferrum }</div>
-					<div class="ui-block-d" style="border: 1px solid black;width:23%;text-align:center;border-style:none ridge ridge none;">${fruits.cellulose }</div>
-					<div class="ui-block-e" style="border: 1px solid black;width:18.5%;text-align:center;border-style:none ridge ridge none;">${fruits.calcium }</div>
-				</div>
-				<span>&nbsp;</span>
-					<div class="ui-grid-c"> 
-						<div class="ui-block-a"
-					style="border: 1px solid black;text-align:center;border-style:ridge ridge ridge ridge;">脂肪</div>
-						<div class="ui-block-b"
-					style="border: 1px solid black;text-align:center;width:24%;border-style:ridge ridge ridge none;">锌</div>
-						<div class="ui-block-c"
-					style="border: 1px solid black;text-align:center;border-style:ridge ridge ridge none;">胡萝卜素</div>
-					<div class="ui-block-d"
-					style="border: 1px solid black;text-align:center;width:26%;border-style:ridge ridge ridge none;">碳水化合物</div>
-			</div> 
-			<div class="ui-grid-c">
-					<div class="ui-block-a" style="border: 1px solid black;text-align:center;border-style:none ridge ridge ridge;">${fruits.fat }</div>
-					<div class="ui-block-b" style="border: 1px solid black;width:24%;text-align:center;border-style:none ridge ridge none;">${fruits.zinc }</div>
-					<div class="ui-block-c" style="border: 1px solid black;text-align:center;border-style:none ridge ridge none;">${fruits.carotene }</div>
-					<div class="ui-block-d" style="border: 1px solid black;width:26%;text-align:center;border-style:none ridge ridge none;">${fruits.carbohydrate }</div>
-				</div>
-				</c:forEach>
-				<div data-role="fieldcontain">
-				<p>备注：${diet.remarks }</p>
+					style="border: 1px solid black; border-style: ridge ridge ridge none; text-align: center; font-size: 10px;">
+					碳水化合物</div>
 			</div>
-			</c:forEach>
-			
-					<h3 style="text-align:center;">血糖记录</h3>
-		<div class="ui-grid-d" id="bggrid">
+			<div class="ui-grid-c">
 				<div class="ui-block-a"
-					style="border: 1px solid black;border-style:ridge ridge ridge ridge;text-align:center;font-size:10px;">
-					日&nbsp;期
-					<div class="ui-grid-a">
-						<div class="ui-block-a">&nbsp;</div>
-						<div class="ui-block-b">&nbsp;</div>
-					</div>
-				</div>
+					style="border: 1px solid black; border-style: none ridge ridge ridge; text-align: center; font-size: 10px;">
+					${dietEnergy.energy}</div>
 				<div class="ui-block-b"
-					style="border: 1px solid black; border-style:ridge ridge ridge none;text-align:center;font-size:10px;">
+					style="border: 1px solid black; border-style: none ridge ridge none; text-align: center; font-size: 10px;">
+					${dietEnergy.protein}</div>
+				<div class="ui-block-c"
+					style="border: 1px solid black; border-style: none ridge ridge none; text-align: center; font-size: 10px;">
+					${dietEnergy.fat}</div>
+				<div class="ui-block-d"
+					style="border: 1px solid black; border-style: none ridge ridge none; text-align: center; font-size: 10px;">
+					${dietEnergy.carbohydrate}</div>
+			</div>
+			<h3 style="text-align: center;">血糖记录</h3>
+			<div class="ui-grid-d" id="bggrid">
+				<div class="ui-block-a"
+					style="height:35px;border: 1px solid black; border-style: ridge ridge ridge ridge; text-align: center; font-size: 10px;">
 					早餐
 					<div class="ui-grid-a">
 						<div class="ui-block-a"
-							style="border: 1px solid black;border-style:ridge ridge none none;text-align:center;font-size:10px;">前</div>
+							style="border: 1px solid black; border-style: ridge ridge none none; text-align: center; font-size: 10px;">前</div>
 						<div class="ui-block-b"
-							style="border: 1px solid black;border-style:ridge none none none; text-align:center;font-size:10px;">后</div>
+							style="border: 1px solid black; border-style: ridge none none none; text-align: center; font-size: 10px;">后</div>
 					</div>
 				</div>
-				<div class="ui-block-c"
-					style="border: 1px solid black;border-style:ridge ridge ridge none;text-align:center;font-size:10px;">
+				<div class="ui-block-b"
+					style="height:35px;border: 1px solid black; border-style: ridge ridge ridge none; text-align: center; font-size: 10px;">
 					午餐
 					<div class="ui-grid-a">
 						<div class="ui-block-a"
-							style="border: 1px solid black;border-style:ridge ridge none none;text-align:center;font-size:10px;">前</div>
+							style="border: 1px solid black; border-style: ridge ridge none none; text-align: center; font-size: 10px;">前</div>
 						<div class="ui-block-b"
-							style="border: 1px solid black;border-style:ridge none none none; text-align:center;font-size:10px;">后</div>
+							style="border: 1px solid black; border-style: ridge none none none; text-align: center; font-size: 10px;">后</div>
 					</div>
 				</div>
-				<div class="ui-block-d"
-					style="border: 1px solid black;border-style:ridge ridge ridge none;text-align:center;font-size:10px;">
+				<div class="ui-block-c"
+					style="height:35px;border: 1px solid black; border-style: ridge ridge ridge none; text-align: center; font-size: 10px;">
 					晚餐
 					<div class="ui-grid-a">
 						<div class="ui-block-a"
-							style="border: 1px solid black;border-style:ridge ridge none none;text-align:center;font-size:10px;">前</div>
+							style="border: 1px solid black; border-style: ridge ridge none none; text-align: center; font-size: 10px;">前</div>
 						<div class="ui-block-b"
-							style="border: 1px solid black;border-style:ridge none none none; text-align:center;font-size:10px;">后</div>
+							style="border: 1px solid black; border-style: ridge none none none; text-align: center; font-size: 10px;">后</div>
 					</div>
 				</div>
-				<div class="ui-block-e"
-					style="border: 1px solid black;border-style:ridge ridge ridge none;text-align:center;font-size:10px;">
+				<div class="ui-block-d"
+					style="height:35px;border: 1px solid black; border-style: ridge ridge ridge none; text-align: center; font-size: 10px;">
 					睡前
 					<div class="ui-grid-a">
 						<div class="ui-block-a"
-							style="border: 1px solid black;border-style:none none none none;text-align:center;font-size:10px;">&nbsp;</div>
+							style="border: 1px solid black; border-style: none none none none; text-align: center; font-size: 10px;">&nbsp;</div>
 						<div class="ui-block-b"
-							style="border: 1px solid black;border-style:none none none none; text-align:center;font-size:10px;">&nbsp;</div>
+							style="border: 1px solid black; border-style: none none none none; text-align: center; font-size: 10px;">&nbsp;</div>
 					</div>
 				</div>
-					<div class="ui-block-a"
-						style="border: 1px solid black;border-style:none ridge ridge ridge;text-align:center;font-size:10px;">
-						${bg.date }</div>
-					<div class="ui-block-b"
-						style="border: 1px solid black; border-style:none ridge ridge none;text-align:center;font-size:10px;">
-						<div class="ui-grid-a">
-							<div class="ui-block-a"
-								style="border: 1px solid black;border-style:none ridge none none;text-align:center;font-size:10px;"
-								name="before">${bg.bloodGlucoseBeforeBreakfast }</div>
-							<div class="ui-block-b"
-								style="border: 1px solid black;border-style:none none none none; text-align:center;font-size:10px;"
-								name="after">${bg.bloodGlucoseAfterBreakfast }</div>
-						</div>
+				<div class="ui-block-e"
+					style="height:35px;border: 1px solid black; border-style: ridge ridge ridge none; text-align: center; font-size: 10px;">
+					糖化血糖蛋白
+					
 					</div>
-					<div class="ui-block-c"
-						style="border: 1px solid black;border-style:none ridge ridge none;text-align:center;font-size:10px;">
-						<div class="ui-grid-a">
-							<div class="ui-block-a"
-								style="border: 1px solid black;border-style:none ridge none none;text-align:center;font-size:10px;"
-								name="before">${bg.bloodGlucoseBeforeLunch }</div>
-							<div class="ui-block-b"
-								style="border: 1px solid black;border-style:none none none none; text-align:center;font-size:10px;"
-								name="after">${bg.bloodGlucoseAfterLunch }</div>
-						</div>
+				<div class="ui-block-a"
+					style="border: 1px solid black; border-style: none ridge ridge ridge; text-align: center; font-size: 10px;">
+					<div class="ui-grid-a">
+						<div class="ui-block-a"
+							style="border: 1px solid black; border-style: none ridge none none; text-align: center; font-size: 10px;"
+							name="before">${bg.bloodGlucoseBeforeBreakfast }</div>
+						<div class="ui-block-b"
+							style="border: 1px solid black; border-style: none none none none; text-align: center; font-size: 10px;"
+							name="after">${bg.bloodGlucoseAfterBreakfast }</div>
 					</div>
-					<div class="ui-block-d"
-						style="border: 1px solid black;border-style:none ridge ridge none;text-align:center;font-size:10px;">
-						<div class="ui-grid-a">
-							<div class="ui-block-a"
-								style="border: 1px solid black;border-style:none ridge none none;text-align:center;font-size:10px;"
-								name="before">${bg.bloodGlucoseBeforeDinner }</div>
-							<div class="ui-block-b"
-								style="border: 1px solid black;border-style:none none none none; text-align:center;font-size:10px;"
-								name="after">${bg.bloodGlucoseAfterDinner }</div>
-						</div>
+				</div>
+				<div class="ui-block-b"
+					style="border: 1px solid black; border-style: none ridge ridge none; text-align: center; font-size: 10px;">
+					<div class="ui-grid-a">
+						<div class="ui-block-a"
+							style="border: 1px solid black; border-style: none ridge none none; text-align: center; font-size: 10px;"
+							name="before">${bg.bloodGlucoseBeforeLunch }</div>
+						<div class="ui-block-b"
+							style="border: 1px solid black; border-style: none none none none; text-align: center; font-size: 10px;"
+							name="after">${bg.bloodGlucoseAfterLunch }</div>
 					</div>
-					<div class="ui-block-e"
-						style="border: 1px solid black;border-style:none ridge ridge none;text-align:center;font-size:10px;"
-						name="before">${bg.bloodGlucoseBeforeSleep }</div>
+				</div>
+				<div class="ui-block-c"
+					style="border: 1px solid black; border-style: none ridge ridge none; text-align: center; font-size: 10px;">
+					<div class="ui-grid-a">
+						<div class="ui-block-a"
+							style="border: 1px solid black; border-style: none ridge none none; text-align: center; font-size: 10px;"
+							name="before">${bg.bloodGlucoseBeforeDinner }</div>
+						<div class="ui-block-b"
+							style="border: 1px solid black; border-style: none none none none; text-align: center; font-size: 10px;"
+							name="after">${bg.bloodGlucoseAfterDinner }</div>
+					</div>
+				</div>
+				<div class="ui-block-d"
+					style="border: 1px solid black; border-style: none ridge ridge none; text-align: center; font-size: 10px;"
+					name="before">${bg.bloodGlucoseBeforeSleep }</div>
+				<div class="ui-block-e"
+					style="border: 1px solid black; border-style: none ridge ridge none; text-align: center; font-size: 10px;">
+					${bg.HbAlc }</div>
 			</div>
-			<h3 style="text-align:center;">运动量记录</h3>
-			<div data-role="content">
-			<div data-role="fieldcontain">
-				<p>记录日期：${sportInfo.date }</p>
-			</div>
-			<c:if test="${sportInfo.beforebreakfasttime!=0 && sportInfo.beforebreakfasttype!=null}">
-				<fieldset data-role="controlgroup">
-					<legend>早餐前</legend>
-					<div data-role="fieldcontain">
-						<label>运动类型：${sportInfo.beforebreakfasttype }</label>
-						<p>运动时间：${sportInfo.beforebreakfasttime }分钟</p>
+			<h3 style="text-align: center;">运动量记录</h3>
+			<div class="ui-grid-c">
+				<div class="ui-block-a"
+					style="border: 1px solid black; border-style: ridge ridge ridge ridge; text-align: center; font-size: 10px;">
+					早餐
+					<div class="ui-grid-a">
+						<div class="ui-block-a"
+							style="border: 1px solid black; border-style: ridge ridge none none; text-align: center; font-size: 10px;">前</div>
+						<div class="ui-block-b"
+							style="border: 1px solid black; border-style: ridge none none none; text-align: center; font-size: 10px;">后</div>
 					</div>
-				</fieldset>
-			</c:if>
-			<c:if test="${sportInfo.afterbreakfasttime!=0 && sportInfo.afterbreakfasttype!=null}">
-			<fieldset data-role="controlgroup">
-				<legend>早餐后</legend>
-				<div data-role="fieldcontain">
-					<label>运动类型：${sportInfo.afterbreakfasttype }</label>
-					<p>运动时间：${sportInfo.afterbreakfasttime }分钟</p>
 				</div>
-			</fieldset>
-			</c:if>
-			<c:if test="${sportInfo.beforelaunchtime!=0 && sportInfo.beforelaunchtype!=null}">
-			<fieldset data-role="controlgroup">
-				<legend>午餐前</legend>
-				<div data-role="fieldcontain">
-					<label>运动类型：${sportInfo.beforelaunchtype }</label>
-					<p>运动时间：${sportInfo.beforelaunchtime }分钟</p>
+
+				<div class="ui-block-b"
+					style="border: 1px solid black; border-style: ridge ridge ridge none; text-align: center; font-size: 10px;">
+					午餐
+					<div class="ui-grid-a">
+						<div class="ui-block-a"
+							style="border: 1px solid black; border-style: ridge ridge none none; text-align: center; font-size: 10px;">前</div>
+						<div class="ui-block-b"
+							style="border: 1px solid black; border-style: ridge none none none; text-align: center; font-size: 10px;">后</div>
+					</div>
 				</div>
-			</fieldset>
-			</c:if>
-			<c:if test="${sportInfo.afterlaunchtime!=0 && sportInfo.afterlaunchtype!=null}">
-			<fieldset data-role="controlgroup">
-				<legend>午餐后</legend>
-				<div data-role="fieldcontain">
-					<label>运动类型：${sportInfo.afterlaunchtype }</label>
-					<p>运动时间：${sportInfo.afterlaunchtime }分钟</p>
+				<div class="ui-block-c"
+					style="border: 1px solid black; border-style: ridge ridge ridge none; text-align: center; font-size: 10px;">
+					晚餐
+					<div class="ui-grid-a">
+						<div class="ui-block-a"
+							style="border: 1px solid black; border-style: ridge ridge none none; text-align: center; font-size: 10px;">前</div>
+						<div class="ui-block-b"
+							style="border: 1px solid black; border-style: ridge none none none; text-align: center; font-size: 10px;">后</div>
+					</div>
 				</div>
-			</fieldset>
-			</c:if>
-			<c:if test="${sportInfo.beforedinnertime!=0 && sportInfo.beforedinnertype!=null}">
-			<fieldset data-role="controlgroup">
-				<legend>晚餐前</legend>
-				<div data-role="fieldcontain">
-					<label>运动类型：${sportInfo.beforedinnertype }</label>
-					<p>运动时间：${sportInfo.beforedinnertime }分钟</p>
+				<div class="ui-block-d"
+					style="border: 1px solid black; border-style: ridge ridge ridge none; text-align: center; font-size: 10px;">
+					睡前
+					<div class="ui-grid-a">
+						<div class="ui-block-a"
+							style="border: 1px solid black; border-style: none none none none; text-align: center; font-size: 10px;">&nbsp;</div>
+						<div class="ui-block-b"
+							style="border: 1px solid black; border-style: none none none none; text-align: center; font-size: 10px;">&nbsp;</div>
+					</div>
 				</div>
-			</fieldset>
-			</c:if>
-			<c:if test="${sportInfo.afterdinnertime!=0 && sportInfo.afterdinnertype!=null}">
-			<fieldset data-role="controlgroup">
-				<legend>晚餐后</legend>
-				<div data-role="fieldcontain">
-					<label>运动类型：${sportInfo.afterdinnertype }</label>
-					<p>运动时间：${sportInfo.afterdinnertime }分钟</p>
+				
+				<div class="ui-block-a"
+					style="border: 1px solid black; border-style: none ridge none ridge; text-align: center; font-size: 10px;">
+					<div class="ui-grid-a">
+						<div class="ui-block-a"
+							style="border: 1px solid black; border-style: none ridge none none; text-align: center; font-size: 10px;"
+							name="before">${sportInfo.beforebreakfasttype }</div>
+						<div class="ui-block-b"
+							style="border: 1px solid black; border-style: none none none none; text-align: center; font-size: 10px;"
+							name="after">${sportInfo.afterbreakfasttype }</div>
+					</div>
 				</div>
-			</fieldset>
-			</c:if>
-			<c:if test="${sportInfo.beforesleeptime!=0 && sportInfo.beforesleeptype!=null}">
-			<fieldset data-role="controlgroup">
-				<legend>睡前</legend>
-				<div data-role="fieldcontain">
-					<label>运动类型：${sportInfo.beforesleeptype }</label>
-					<p>运动时间：${sportInfo.beforesleeptime }分钟</p>
+				<div class="ui-block-b"
+					style="border: 1px solid black; border-style: none ridge none none; text-align: center; font-size: 10px;">
+					<div class="ui-grid-a">
+						<div class="ui-block-a"
+							style="border: 1px solid black; border-style: none ridge none none; text-align: center; font-size: 10px;"
+							name="before">${sportInfo.beforelaunchtype }</div>
+						<div class="ui-block-b"
+							style="border: 1px solid black; border-style: none none none none; text-align: center; font-size: 10px;"
+							name="after">${sportInfo.afterlaunchtype }</div>
+					</div>
 				</div>
-			</fieldset>
-			</c:if>
-		</div>
+				<div class="ui-block-c"
+					style="border: 1px solid black; border-style: none ridge none none; text-align: center; font-size: 10px;">
+					<div class="ui-grid-a">
+						<div class="ui-block-a"
+							style="border: 1px solid black; border-style: none ridge none none; text-align: center; font-size: 10px;"
+							name="before">${sportInfo.beforedinnertype }</div>
+						<div class="ui-block-b"
+							style="border: 1px solid black; border-style: none none none none; text-align: center; font-size: 10px;"
+							name="after">${sportInfo.afterdinnertype }</div>
+					</div>
+				</div>
+				<div class="ui-block-d"
+					style="border: 1px solid black; border-style: none ridge none none; text-align: center; font-size: 10px;"
+					name="before">${sportInfo.beforesleeptype }</div>
+					
+				<div class="ui-block-a"
+					style="border: 1px solid black; border-style: none ridge ridge ridge; text-align: center; font-size: 10px;">
+					<div class="ui-grid-a">
+						<div class="ui-block-a"
+							style="border: 1px solid black; border-style: none ridge none none; text-align: center; font-size: 10px;"
+							name="before">${sportInfo.beforebreakfasttime }分钟</div>
+						<div class="ui-block-b"
+							style="border: 1px solid black; border-style: none none none none; text-align: center; font-size: 10px;"
+							name="after">${sportInfo.afterbreakfasttime }分钟</div>
+					</div>
+				</div>
+				<div class="ui-block-b"
+					style="border: 1px solid black; border-style: none ridge ridge none; text-align: center; font-size: 10px;">
+					<div class="ui-grid-a">
+						<div class="ui-block-a"
+							style="border: 1px solid black; border-style: none ridge none none; text-align: center; font-size: 10px;"
+							name="before">${sportInfo.beforelaunchtime }分钟</div>
+						<div class="ui-block-b"
+							style="border: 1px solid black; border-style: none none none none; text-align: center; font-size: 10px;"
+							name="after">${sportInfo.afterlaunchtime }分钟</div>
+					</div>
+				</div>
+				<div class="ui-block-c"
+					style="border: 1px solid black; border-style: none ridge ridge none; text-align: center; font-size: 10px;">
+					<div class="ui-grid-a">
+						<div class="ui-block-a"
+							style="border: 1px solid black; border-style: none ridge none none; text-align: center; font-size: 10px;"
+							name="before">${sportInfo.beforedinnertime }分钟</div>
+						<div class="ui-block-b"
+							style="border: 1px solid black; border-style: none none none none; text-align: center; font-size: 10px;"
+							name="after">${sportInfo.afterdinnertime }分钟</div>
+					</div>
+				</div>
+				<div class="ui-block-d"
+					style="border: 1px solid black; border-style: none ridge ridge none; text-align: center; font-size: 10px;"
+					name="before">${sportInfo.beforesleeptime }分钟</div>
+			</div>
+
+			
 			<div data-role="fieldcontain">
-			<input type="hidden" value="${pId }" id="pId">
-			<input type="hidden" value="${date}" id="bgdate">
+				<input type="hidden" value="${pId }" id="pId"> <input
+					type="hidden" value="${date}" id="bgdate">
 			</div>
 			<div data-role="fieldcontain">
 				<p>医生建议：</p>
 				<textarea id="content">${advice.content }</textarea>
 			</div>
-				<div data-role="fieldcontain">
-     <input type="button" value="提交" onclick="onSubmit();">
-   </div>
+			<div data-role="fieldcontain">
+				<input type="button" value="提交" onclick="onSubmit();">
+			</div>
 		</div>
 
 	</div>
 </body>
-<script src="<%=path %>/js/jquery-2.2.2.min.js"></script>
-<script src="<%=path %>/jquerymobile/jquery.mobile-1.4.5.min.js"></script>
+<script src="<%=path%>/js/jquery-2.2.2.min.js"></script>
+<script src="<%=path%>/jquerymobile/jquery.mobile-1.4.5.min.js"></script>
 <script>
-function onSubmit(){
-	var content = $('#content').val();
-	var pId = $('#pId').val();
-	var date = $('#bgdate').val();
-	 $.post("saveAdvice",{content:content,pId:pId,date:date},function(text){
-			if(text=="1"){
+	function onSubmit() {
+		var content = $('#content').val();
+		var pId = $('#pId').val();
+		var date = $('#bgdate').val();
+		$.post("saveAdvice", {
+			content : content,
+			pId : pId,
+			date : date
+		}, function(text) {
+			if (text == "1") {
 				alert("保存成功！");
-			}else{
+			} else {
 				alert("保存失败！")
 			}
-		}); 
-}
-
+		});
+	}
 </script>
 </html>

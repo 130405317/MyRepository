@@ -37,8 +37,6 @@
 			<a href="" data-role="button"
 				onclick="window.location.href='../user/user_index'">主页</a>
 			<h1>饮食录入</h1>
-			<a href="" data-role="button"
-				onclick="window.location.href='../diet/add_newfood'">新食物</a>
 		</div>
 		<div data-role="content">
 			<div data-role="fieldcontain">
@@ -138,8 +136,9 @@
 
 				</div>
 				<div data-role="fieldcontain">
-					<button onclick="addfood('mainfood');">新增</button>
-					<button onclick="removefood('mainfood');">移除</button>
+					<button onclick="addfood('mainfood');">新增主食</button>
+					<button onclick="removefood('mainfood');">移除主食</button>
+					<button onclick="window.location.href='../diet/add_newfood'">添加新食物</button>
 				</div>
 			</div>
 
@@ -217,8 +216,9 @@
 
 				</div>
 				<div data-role="fieldcontain">
-					<button onclick="addfood('meat');">新增</button>
-					<button onclick="removefood('meat');">移除</button>
+					<button onclick="addfood('meat');">新增肉类</button>
+					<button onclick="removefood('meat');">移除肉类</button>
+					<button onclick="window.location.href='../diet/add_newfood'">添加新食物</button>
 				</div>
 			</div>
 
@@ -386,8 +386,9 @@
 
 				</div>
 				<div data-role="fieldcontain">
-					<button onclick="addvegetables()">新增</button>
-					<button onclick="removevegetables()">移除</button>
+					<button onclick="addvegetables()">新增蔬菜</button>
+					<button onclick="removevegetables()">移除蔬菜 </button>
+					<button onclick="window.location.href='../diet/add_newfood'">添加新食物</button>
 				</div>
 			</div>
 
@@ -465,8 +466,9 @@
 
 				</div>
 				<div data-role="fieldcontain">
-					<button onclick="addfood('drink');">新增</button>
-					<button onclick="removefood('drink');">移除</button>
+					<button onclick="addfood('drink');">新增饮品</button>
+					<button onclick="removefood('drink');">移除饮品</button>
+					<button onclick="window.location.href='../diet/add_newfood'">添加新食物</button>
 				</div>
 			</div>
 
@@ -539,8 +541,9 @@
 
 				</div>
 				<div data-role="fieldcontain">
-					<button onclick="addfood('nut');">新增</button>
-					<button onclick="removefood('nut');">移除</button>
+					<button onclick="addfood('nut');">新增干果</button>
+					<button onclick="removefood('nut');">移除干果</button>
+					<button onclick="window.location.href='../diet/add_newfood'">添加新食物</button>
 				</div>
 			</div>
 
@@ -623,14 +626,15 @@
 
 				</div>
 				<div data-role="fieldcontain">
-					<button onclick="addfood('fruits');">新增</button>
-					<button onclick="removefood('fruits');">移除</button>
+					<button onclick="addfood('fruits');">新增水果</button>
+					<button onclick="removefood('fruits');">移除水果</button>
+					<button onclick="window.location.href='../diet/add_newfood'">添加新食物</button>
 				</div>
 			</div>
 
 			<div data-role="fieldcontain">
-				<label for="remarks">备注：</label>
-				<textarea name="remarks" id="remarks"></textarea>
+				<label for="remarks">烹饪方式及说明：</label>
+				<textarea name="remarks" id="remarks" placeholder="如：水煮大虾、油炸大虾、西红柿炒蛋"></textarea>
 			</div>
 		</div>
 		<div id="detailcontent">
@@ -1209,16 +1213,39 @@ var pId = "";
 	function setTargetEnergy(){
 		var type = $('#diettype').val();
 		var num = $('#diettype').find("option").length-3;
+		alert(type+","+num);
+		var i=0;//
+		if(num>0){
+			if(type=="5"){
+				if(num==1){
+					i=0.2; //只有5
+				}else if(num==2){
+					i=0.1;  //4+5
+				}else if(num==3){
+					i=0; //4+5+6
+				}
+			}else if(num==1){
+				i=0.35;  //4
+			}else if(num==2){
+				i=0.25;  //4+6
+			}
+		}		
 		var tmpEnergy = 0;
 		if(type=="1"){
-			tmpEnergy = parseInt(targetsumenergy*0.1+targetsumenergy*(3-num)/15);
-		}else if(type=="2"||type=="3"){
-			tmpEnergy = parseInt(targetsumenergy*0.3+targetsumenergy*(3-num)/60);
-		}else if(type=="4"||type=="5"||type=="6"){
-			tmpEnergy = parseInt(targetsumenergy*0.1);
+			tmpEnergy = parseInt(targetsumenergy*0.15+targetsumenergy*i);
+		}else if(type=="2"){
+			tmpEnergy = parseInt(targetsumenergy*0.1+targetsumenergy*i);
+		}else if(type=="3"){
+			tmpEnergy = parseInt(targetsumenergy*0.3+targetsumenergy*i);
+		}else if(type=="4"){
+			tmpEnergy = parseInt(targetsumenergy*0.1+targetsumenergy*i);
+		}else if(type=="5"){
+			tmpEnergy = parseInt(targetsumenergy*0.25+targetsumenergy*i);
+		}else if(type=="6"){
+			tmpEnergy = parseInt(targetsumenergy*0.1+targetsumenergy*i);
 		}
 		$('#targetenergy').text(tmpEnergy);	
-	}
+	}//
 	setTargetEnergy();
 </script>
 </html>

@@ -232,6 +232,14 @@ public class DietController {
 		return "diet/diet_info";
 	}
 	
+	@RequestMapping("diet_info_d")
+	public String getDietInfo1(HttpServletRequest request, Model model){
+		Map<String, Object> param = FormDataCollectUtil.getInstance().getFormData(request);
+		model.addAttribute("dietList", dietService.showDietInfo(param));
+		model.addAttribute("advice", dietService.showAdviceInfo(param));
+		return "diet/diet_info_d";
+	}
+	
 	@RequestMapping("sport_info")
 	public String getSportInfo(HttpServletRequest request, Model model){
 		Map<String, Object> param = FormDataCollectUtil.getInstance().getFormData(request);
@@ -243,6 +251,7 @@ public class DietController {
 	public String getDietaryInfo(HttpServletRequest request, Model model){
 		Map<String, Object> param = FormDataCollectUtil.getInstance().getFormData(request);
 		model.addAttribute("dietList", dietService.showDietInfo(param));
+		model.addAttribute("dietEnergy", dietService.showDietEnergy(param));
 		model.addAttribute("bg", dietService.showBloodGlucoseInfo(param));
 		model.addAttribute("sportInfo", dietService.getSportInfo(param));
 		model.addAttribute("advice", dietService.showAdviceInfo(param));
@@ -255,6 +264,7 @@ public class DietController {
 	public String bloodGlucoseEdit(HttpServletRequest request, Model model){
 		HttpSession session = request.getSession();
 		String pId = (String)session.getAttribute("pId");
+		//String pId ="o-1WTwnmE5MzetfXjm_02IjLG8m4";
 		Map<String, Object> param = new HashMap<String, Object>();
 		param.put("pId", pId);
 		model.addAttribute("bg", dietService.getBloodGlucoseInfo(param));
@@ -268,6 +278,7 @@ public class DietController {
 		Map<String, Object> param = new HashMap<String, Object>();
 		HttpSession session = request.getSession();
 		String pId = (String)session.getAttribute("pId");
+		//String pId = "o-1WTwnmE5MzetfXjm_02IjLG8m4";
 		param.put("pId", pId);
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 		String today = sdf.format(new Date());
@@ -282,6 +293,7 @@ public class DietController {
 		try {
 			HttpSession session = request.getSession();
 			String pId = (String)session.getAttribute("pId");
+			//String pId = "o-1WTwnmE5MzetfXjm_02IjLG8m4";
 			param.put("pId", pId);
 			String str = dietService.saveSportInfo(param);
 			response.setContentType("text/html;charset=utf-8");
