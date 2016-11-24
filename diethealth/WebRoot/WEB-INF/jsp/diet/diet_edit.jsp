@@ -40,8 +40,9 @@
 		</div>
 		<div data-role="content">
 			<div data-role="fieldcontain">
-				<p style="text-align: center; color: red">1.如果您输入的食物没有选项，请重新输入并点击“新食物”反馈！</p>
+				<p style="text-align: center; color: red">1.如果您输入的食物没有选项，请重新输入并点击“添加新食物”反馈！</p>
 				<p style="text-align: center; color: red">2.如果您是果粉，输入食物没有选项，请换拼音全健输入！</p>
+				<p id="energy" style="display: none">${energy}</p>
 				<p style="text-align: center;">
 					目标能量(kal)：<span id="targetenergy"></span>
 				</p>
@@ -387,7 +388,7 @@
 				</div>
 				<div data-role="fieldcontain">
 					<button onclick="addvegetables()">新增蔬菜</button>
-					<button onclick="removevegetables()">移除蔬菜 </button>
+					<button onclick="removevegetables()">移除蔬菜</button>
 					<button onclick="window.location.href='../diet/add_newfood'">添加新食物</button>
 				</div>
 			</div>
@@ -634,7 +635,8 @@
 
 			<div data-role="fieldcontain">
 				<label for="remarks">烹饪方式及说明：</label>
-				<textarea name="remarks" id="remarks" placeholder="如：水煮大虾、油炸大虾、西红柿炒蛋"></textarea>
+				<textarea name="remarks" id="remarks"
+					placeholder="如：水煮大虾、油炸大虾、西红柿炒蛋"></textarea>
 			</div>
 		</div>
 		<div id="detailcontent">
@@ -670,7 +672,7 @@ var vegetablesCount = 1;
 var drinkCount = 1;
 var nutCount = 1;
 var fruitsCount = 1;
-var targetsumenergy = parseInt(${energy});
+var targetsumenergy = $('#energy').text();
 var pId = ""; 
 	function typechange(id,idnum,select){
 		var num = $('#'+id+'num'+idnum).val();
@@ -1211,39 +1213,46 @@ var pId = "";
 		}
 	}
 	function setTargetEnergy(){
-		var type = $('#diettype').val();
+		var type = $('#diettype');
+		var options = type[0].options;
+		var opt = [];
+		for(var i=0,len=options.length;i<len;i++){
+		    opt[i] = options[i].value;
+		}
 		var num = $('#diettype').find("option").length-3;
-		alert(type+","+num);
 		var i=0;//
 		if(num>0){
-			if(type=="5"){
-				if(num==1){
-					i=0.2; //只有5
+			for(j=0;j<opt.length;j++){
+				if(opt[j] == "5"){
+					if(num==1){
+						i=0.2; //只有5
+					}else if(num==2){
+						i=0.1;  //4+5或5+6
+					}else if(num==3){
+						i=0; //4+5+6
+					}
+				}else if(num==1){
+					i=0.35;  //4或6
 				}else if(num==2){
-					i=0.1;  //4+5
-				}else if(num==3){
-					i=0; //4+5+6
+					i=0.25;  //4+6
 				}
-			}else if(num==1){
-				i=0.35;  //4
-			}else if(num==2){
-				i=0.25;  //4+6
 			}
-		}		
-		var tmpEnergy = 0;
-		if(type=="1"){
-			tmpEnergy = parseInt(targetsumenergy*0.15+targetsumenergy*i);
-		}else if(type=="2"){
-			tmpEnergy = parseInt(targetsumenergy*0.1+targetsumenergy*i);
-		}else if(type=="3"){
-			tmpEnergy = parseInt(targetsumenergy*0.3+targetsumenergy*i);
-		}else if(type=="4"){
-			tmpEnergy = parseInt(targetsumenergy*0.1+targetsumenergy*i);
-		}else if(type=="5"){
-			tmpEnergy = parseInt(targetsumenergy*0.25+targetsumenergy*i);
-		}else if(type=="6"){
-			tmpEnergy = parseInt(targetsumenergy*0.1+targetsumenergy*i);
 		}
+		var select_option=$("#diettype option:selected").val();
+		var tmpEnergy = 0;
+			if(select_option=="1"){
+				tmpEnergy = parseInt(targetsumenergy*0.15+targetsumenergy*i);
+			}else if(select_option=="2"){
+				tmpEnergy = parseInt(targetsumenergy*0.1+targetsumenergy*i);
+			}else if(select_option=="3"){
+				tmpEnergy = parseInt(targetsumenergy*0.3+targetsumenergy*i);
+			}else if(select_option=="4"){
+				tmpEnergy = parseInt(targetsumenergy*0.1+targetsumenergy*i);
+			}else if(select_option=="5"){
+				tmpEnergy = parseInt(targetsumenergy*0.25+targetsumenergy*i);
+			}else if(select_option=="6"){
+				tmpEnergy = parseInt(targetsumenergy*0.1+targetsumenergy*i);
+			}
 		$('#targetenergy').text(tmpEnergy);	
 	}//
 	setTargetEnergy();

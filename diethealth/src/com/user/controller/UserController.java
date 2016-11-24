@@ -465,9 +465,9 @@ import com.user.service.UserService;
 			return "user/advice_info";
 		}
 		
-		@RequestMapping("/indroduce")
-		public String getIndroduce(HttpServletRequest request,Model model){
-			return  "user/indroduce";
+		@RequestMapping("/introduce")
+		public String getIntroduce(HttpServletRequest request, HttpServletResponse response){
+			return "user/introduce";
 		}
 		
 	}

@@ -46,12 +46,12 @@
 			<c:when test="${sportInfo.beforebreakfasttime!=null}">
 			 <input type="range"
 							id="beforebreakfast" name="beforebreakfasttime" required="true" value="${sportInfo.beforebreakfasttime }"
-							min="0" max="240">
+							min="0" max="150">
 			</c:when>
 			<c:otherwise>
 			 <input type="range"
 							id="beforebreakfast" name="beforebreakfasttime" required="true" value="0"
-							min="0" max="240">
+							min="0" max="150">
 			</c:otherwise>
 			</c:choose>
 			
@@ -79,12 +79,12 @@
 			<c:when test="${sportInfo.afterbreakfasttime!=null}">
 			 <input type="range"
 							id="afterbreakfast" name="afterbreakfasttime" required="true" value="${sportInfo.afterbreakfasttime }"
-							min="0" max="240">
+							min="0" max="150">
 			</c:when>
 			<c:otherwise>
 			<input type="range"
 							id="afterbreakfast" name="afterbreakfasttime" required="true" value="0"
-							min="0" max="240">
+							min="0" max="150">
 			</c:otherwise>
 			</c:choose>
 			
@@ -111,12 +111,12 @@
 			<c:when test="${sportInfo.beforelaunchtime!=null}">
 			<input type="range"
 							id="beforelaunch" name="beforelaunchtime" required="true" value="${sportInfo.beforelaunchtime }"
-							min="0" max="240">
+							min="0" max="150">
 			</c:when>
 			<c:otherwise>
 			<input type="range"
 							id="beforelaunch" name="beforelaunchtime" required="true" value="0"
-							min="0" max="240">
+							min="0" max="150">
 			</c:otherwise>
 			</c:choose>
 			
@@ -143,12 +143,12 @@
 			<c:when test="${sportInfo.afterlaunchtime!=null}">
 			<input type="range"
 							id="afterlaunch" name="afterlaunchtime" required="true" value="${sportInfo.afterlaunchtime }"
-							min="0" max="240">
+							min="0" max="150">
 			</c:when>
 			<c:otherwise>
 			<input type="range"
 							id="afterlaunch" name="afterlaunchtime" required="true" value="0"
-							min="0" max="240">
+							min="0" max="150">
 			</c:otherwise>
 			</c:choose>
 			 
@@ -175,12 +175,12 @@
 			<c:when test="${sportInfo.beforedinnertime!=null}">
 			 <input type="range"
 							id="beforedinner" name="beforedinnertime" required="true" value="${sportInfo.beforedinnertime }"
-							min="0" max="240">
+							min="0" max="150">
 			</c:when>
 			<c:otherwise>
 			 <input type="range"
 							id="beforedinner" name="beforedinnertime" required="true" value="0"
-							min="0" max="240">
+							min="0" max="150">
 			</c:otherwise>
 			</c:choose>
 			
@@ -207,12 +207,12 @@
 			<c:when test="${sportInfo.afterdinnertime!=null}">
 			  <input type="range"
 							id="afterdinner" name="afterdinnertime" required="true" value="${sportInfo.afterdinnertime }"
-							min="0" max="240">
+							min="0" max="150">
 			</c:when>
 			<c:otherwise>
 			 <input type="range"
 							id="afterdinner" name="afterdinnertime" required="true" value="0"
-							min="0" max="240">
+							min="0" max="150">
 			</c:otherwise>
 			</c:choose>
 			
@@ -239,12 +239,12 @@
 			<c:when test="${sportInfo.beforesleeptime!=null}">
 			   <input type="range"
 							id="beforesleep" name="beforesleeptime" required="true" value="${sportInfo.beforesleeptime }"
-							min="0" max="240">
+							min="0" max="150">
 			</c:when>
 			<c:otherwise>
 			  <input type="range"
 							id="beforesleep" name="beforesleeptime" required="true" value="0"
-							min="0" max="240">
+							min="0" max="150">
 			</c:otherwise>
 			</c:choose>
 			

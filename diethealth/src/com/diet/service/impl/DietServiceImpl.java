@@ -580,12 +580,14 @@ public class DietServiceImpl implements DietService {
 	
 	public String sporttype(String sport){
 		String result = "";
-		if("散步".equals(sport)){
+		if("散步".equals(sport) || "瑜伽".equals(sport)){
 			result = "中";
-		}else if("慢跑".equals(sport)){
+		}else if("慢跑".equals(sport) || "游泳".equals(sport)){
 			result = "强";
-		}else{
+		}else if("上肢运动".equals(sport)){
 			result = "弱";
+		}else{
+			result = "其他";
 		}
 		return result;
 	}

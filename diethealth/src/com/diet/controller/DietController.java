@@ -209,6 +209,7 @@ public class DietController {
 	public String toSnack(HttpServletRequest request, Model model){
 		HttpSession session = request.getSession();
 		String pId = (String)session.getAttribute("pId");
+	//	String pId = "o-1WTwnmE5MzetfXjm_02IjLG8m4";
 		Map<String, Object> param = new HashMap<String, Object>();
 		param.put("pId", pId);
 		Map<String, Object> map = dietService.getSnacks(param);
@@ -309,6 +310,7 @@ public class DietController {
 		try {
 			HttpSession session = request.getSession();
 			String pId = (String)session.getAttribute("pId");
+			//String pId = "o-1WTwnmE5MzetfXjm_02IjLG8m4";
 			param.put("pId", pId);
 			String str = dietService.saveSnacks(param);
 			response.setContentType("text/html;charset=utf-8");
