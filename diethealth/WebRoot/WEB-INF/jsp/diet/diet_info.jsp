@@ -20,19 +20,47 @@
 	href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
 </head>
 
-<body>
+<body onload="init()">
 	<div data-role="page" id="pageone">
 		<div data-role="header">
 			<a href="" data-role="button"
 				onclick="window.location.href='../user/user_index'">主页</a>
 			<h1>饮食记录</h1>
 		</div>
-
+		<p id="targetEnergy" style="display: none">${targetEnergy }</p>
+		<h3 style="text-align: center;">孕糖宝温馨提示</h3>
 		<div>
+			<div data-role="fieldcontain">
+				<div class="ui-grid-b">
+					<div class="ui-block-a"
+							style="border: 1px solid black; text-align: center; border-style: ridge ridge ridge ridge;">总蛋白质</div>
+						<div class="ui-block-b"
+							style="border: 1px solid black; text-align: center; border-style: ridge ridge ridge none;">总脂肪</div>
+						<div class="ui-block-c"
+							style="border: 1px solid black; text-align: center; border-style: ridge ridge ridge none;">总碳水化合物</div>
+				</div>
+				<div class="ui-grid-b">
+					<div id="protein" class="ui-block-a"
+							style="border: 1px solid black; text-align: center; border-style: none ridge ridge ridge;">${dietEnergy.protein}</div>
+						<div id="fat" class="ui-block-b"
+							style="border: 1px solid black; text-align: center; border-style: none ridge ridge none;">${dietEnergy.fat}</div>
+						<div id="carbohydrate" class="ui-block-c"
+							style="border: 1px solid black; text-align: center; border-style: none ridge ridge none;">${dietEnergy.carbohydrate}</div>
+				</div>
+				<div class="ui-grid-b">
+					<div id="protein_range" class="ui-block-a"
+							style="border: 1px solid black; text-align: center; border-style: none ridge ridge ridge;">-</div>
+						<div id="fat_range" class="ui-block-b"
+							style="border: 1px solid black; text-align: center; border-style: none ridge ridge none;">-</div>
+						<div id="carbohydrate_range" class="ui-block-c"
+							style="border: 1px solid black; text-align: center; border-style: none ridge ridge none;">-</div>
+				</div>
+			</div>
+			
 			<c:forEach var="diet" items="${dietList}" varStatus="s">
 				<h3 style="text-align: center;">${diet.type }&nbsp;&nbsp;&nbsp;总能量：${diet.energy}(kal)</h3>
 				<c:forEach var="mainfood" items="${diet.mainfood}" varStatus="s">
-					<span>${mainfood.name }</span>
+					<span>${mainfood.name }(kal)</span>
 					<div class="ui-grid-d">
 						<div class="ui-block-a"
 							style="border: 1px solid black; text-align: center; border-style: ridge ridge ridge ridge;">能量</div>
@@ -80,7 +108,7 @@
 					</div>
 				</c:forEach>
 				<c:forEach var="meat" items="${diet.meat}" varStatus="s">
-					<span>${meat.name  }</span>
+					<span>${meat.name  }(kal)</span>
 					<div class="ui-grid-d">
 						<div class="ui-block-a"
 							style="border: 1px solid black; text-align: center; border-style: ridge ridge ridge ridge;">能量</div>
@@ -129,7 +157,7 @@
 				</c:forEach>
 
 				<c:forEach var="vegetables" items="${diet.vegetables}" varStatus="s">
-					<span>${vegetables.name  }</span>
+					<span>${vegetables.name  }(kal)</span>
 					<div class="ui-grid-d">
 						<div class="ui-block-a"
 							style="border: 1px solid black; text-align: center; border-style: ridge ridge ridge ridge;">能量</div>
@@ -177,7 +205,7 @@
 					</div>
 				</c:forEach>
 				<c:forEach var="drink" items="${diet.drink}" varStatus="s">
-					<span>${drink.name  }</span>
+					<span>${drink.name  }(kal)</span>
 					<div class="ui-grid-d">
 						<div class="ui-block-a"
 							style="border: 1px solid black; text-align: center; border-style: ridge ridge ridge ridge;">能量</div>
@@ -226,7 +254,7 @@
 				</c:forEach>
 
 				<c:forEach var="nut" items="${diet.nut}" varStatus="s">
-					<span>${nut.name  }</span>
+					<span>${nut.name  }(kal)</span>
 					<div class="ui-grid-d">
 						<div class="ui-block-a"
 							style="border: 1px solid black; text-align: center; border-style: ridge ridge ridge ridge;">能量</div>
@@ -274,7 +302,7 @@
 					</div>
 				</c:forEach>
 				<c:forEach var="fruits" items="${diet.fruits}" varStatus="s">
-					<span>${fruits.name  }</span>
+					<span>${fruits.name  }(kal)</span>
 					<div class="ui-grid-d">
 						<div class="ui-block-a"
 							style="border: 1px solid black; text-align: center; border-style: ridge ridge ridge ridge;">能量</div>
@@ -322,11 +350,9 @@
 					</div>
 				</c:forEach>
 				<div data-role="fieldcontain">
-					<p>备注：${diet.remarks }</p>
+					<p>烹饪方式及说明：${diet.remarks }</p>
 				</div>
-				<div data-role="fieldcontain">
-					<p>医生建议：${diet.advice }</p>
-				</div>
+				
 			</c:forEach>
 		</div>
 	</div>
@@ -334,6 +360,39 @@
 <script src="<%=path%>/js/jquery-2.2.2.min.js"></script>
 <script src="<%=path%>/jquerymobile/jquery.mobile-1.4.5.min.js"></script>
 <script>
-	
+
+	function init(){
+		var targetEnergy=$("#targetEnergy").text();
+		var protein1=targetEnergy*0.15;
+		var protein2=targetEnergy*0.2;
+		var protein=$("#protein").text();
+		var fat1=targetEnergy*0.25;
+		var fat2=targetEnergy*0.3;
+		var fat=$("#fat").text();
+		var carbohydrate1=targetEnergy*0.5;
+		var carbohydrate2=targetEnergy*0.6;
+		var carbohydrate=$("#carbohydrate").text();
+		if(protein<protein1){
+			$("#protein_range").text("不足");
+		}else if(protein>protein2){
+			$("#protein_range").text("偏高");
+		}else{
+			$("#protein_range").text("正常");
+		}
+		if(fat<fat1){
+			$("#fat_range").text("不足");			
+		}else if(fat>fat2){
+			$("#fat_range").text("偏高");
+		}else{
+			$("#fat_range").text("正常");
+		}
+		if(carbohydrate<carbohydrate1){
+			$("#carbohydrate_range").text("不足");
+		}else if(carbohydrate>carbohydrate2){
+			$("#carbohydrate_range").text("偏高");
+		}else{
+			$("#carbohydrate_range").text("正常");
+		}
+	}
 </script>
 </html>

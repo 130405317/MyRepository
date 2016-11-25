@@ -228,6 +228,10 @@ public class DietController {
 	@RequestMapping("diet_info")
 	public String getDietInfo(HttpServletRequest request, Model model){
 		Map<String, Object> param = FormDataCollectUtil.getInstance().getFormData(request);
+		String pId = (String)request.getSession().getAttribute("pId");
+		//String pId = "o-1WTwtX8PIDMOWg66DjTmWw4o4I";
+		model.addAttribute("targetEnergy",dietService.getTargetEnergy(pId));
+		model.addAttribute("dietEnergy", dietService.showDietEnergy(param));
 		model.addAttribute("dietList", dietService.showDietInfo(param));
 		model.addAttribute("advice", dietService.showAdviceInfo(param));
 		return "diet/diet_info";

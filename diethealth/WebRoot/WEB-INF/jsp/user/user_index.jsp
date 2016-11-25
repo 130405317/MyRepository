@@ -31,6 +31,14 @@ String userImage = session.getAttribute("userImage").toString();
 	</div>
 	<div class="bd">
 		<div class="weui_grids">
+		<a class="weui_grid js_grid" data-id="cell"
+				onclick="window.location.href='../diet/snack'">
+				<div class="weui_grid_icon">
+					<img src="<%=path %>/weUI/example/images/icon_nav_tab.png"
+						alt="加餐偏好">
+				</div>
+				<p class="weui_grid_label">加餐偏好</p>
+			</a>
 		<a class="weui_grid js_grid" data-id="button"
 				onclick="window.location.href='../diet/diet_edit'">
 				<div class="weui_grid_icon">
@@ -46,14 +54,16 @@ String userImage = session.getAttribute("userImage").toString();
 						alt="饮食记录">
 				</div>
 				<p class="weui_grid_label">饮食记录</p>
-			</a> <a class="weui_grid js_grid" data-id="cell"
+				</a>
+				<a class="weui_grid js_grid" data-id="cell"
 				onclick="window.location.href='user_edit'">
 				<div class="weui_grid_icon">
 					<img src="<%=path %>/weUI/example/images/icon_nav_toast.png"
 						alt="信息修改">
 				</div>
 				<p class="weui_grid_label">信息修改</p>
-			</a> <a class="weui_grid js_grid" data-id="cell"
+			</a>
+			 <a class="weui_grid js_grid" data-id="cell"
 				onclick="window.location.href='../diet/bg_edit1'">
 				<div class="weui_grid_icon">
 					<img src="<%=path %>/weUI/example/images/icon_nav_tab.png"
@@ -92,14 +102,6 @@ String userImage = session.getAttribute("userImage").toString();
 						alt="运动量记录">
 				</div>
 				<p class="weui_grid_label">运动量记录</p>
-			</a>
-			<a class="weui_grid js_grid" data-id="cell"
-				onclick="window.location.href='../diet/snack'">
-				<div class="weui_grid_icon">
-					<img src="<%=path %>/weUI/example/images/icon_nav_tab.png"
-						alt="加餐偏好">
-				</div>
-				<p class="weui_grid_label">加餐偏好</p>
 			</a>
 		</div>
 	</div>

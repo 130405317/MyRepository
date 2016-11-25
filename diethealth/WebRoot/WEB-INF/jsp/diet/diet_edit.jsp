@@ -663,8 +663,45 @@
 		</div>
 	</div>
 </body>
+<script src="<%=path%>/js/toast.js"></script>
 <script src="<%=path%>/js/search-select.js"></script>
 <script type="text/javascript">
+
+//在关闭页面时弹出确认提示窗口
+pushHistory();  
+setTimeout(function () {  
+  window.addEventListener("popstate", function(e) {  
+    showBox("再按一次退出程序", 2000, function() {          
+      pushHistory();  
+    });  
+  }, false);  
+}, 300);  
+  
+function pushHistory() {  
+  var state = {  
+    title: "title",  
+    url: "#"  
+  };  
+  window.history.pushState(state, "title", "#");  
+}  
+  
+function showBox(msg, timeOut, onTimeOut) { 
+	new Toast({
+		context : $('body'),
+		message : '再按一次退出'
+	}).show();
+ /*  if (typeof alertBoxDiv === "undefined") {  
+    alertBoxDiv = $("<div/>").addClass("alert-box hide").append( $("<div/>").addClass("label label-primary")).appendTo($("body"));  
+  }  
+  alertBoxDiv.children(".label").html(msg);  
+  alertBoxDiv.removeClass("hide"); */
+  if (typeof timeOut === "undefined") timeOut = 2000;  
+  setTimeout(function() {  
+   // alertBoxDiv.addClass("hide");  
+    if (typeof onTimeOut !== "undefined") onTimeOut();  
+  }, timeOut);  
+}  
+
 
 var mainfoodCount = 1;
 var meatCount = 1;
