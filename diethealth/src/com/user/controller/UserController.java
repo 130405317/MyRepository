@@ -441,7 +441,7 @@ import com.user.service.UserService;
 			Map<String, Object> map = FormDataCollectUtil.getInstance().getFormDataWithPage(request);
 			HttpSession session = request.getSession();
 			String pId = (String)session.getAttribute("pId");
-			//String pId = "o-1WTwrETUJzX7hTvINWXPvJiSDU";
+			//String pId = "o-1WTwnmE5MzetfXjm_02IjLG8m4";
 			map.put("pId", pId);
 			List<Map<String, Object>> list = userService.getAdviceListWithPage(map);
 			model.addAttribute("adviceList",list);

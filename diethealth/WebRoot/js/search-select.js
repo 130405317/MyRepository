@@ -172,7 +172,12 @@ $("#pageone").bind("pageshow", function(e) {
 																// listview
 		},
 		minLength : 1,
-		matchFromStart : false
+		matchFromStart : false,
+		onNoResults : function() {
+			$('#mainfood1_div').show();
+			$('#searchField_mainfood1').val("");
+			return;
+		}
 		
 	});
 
@@ -208,7 +213,12 @@ $("#pageone").bind("pageshow", function(e) {
 																// listview
 		},
 		minLength : 1,
-		matchFromStart : false
+		matchFromStart : false,
+		onNoResults : function() {
+			$('#mainfood2_div').show();
+			$('#searchField_mainfood2').val("");
+			return;
+		}
 	});
 
 	$('#mainfoodnum2').change(function() {
@@ -243,7 +253,12 @@ $("#pageone").bind("pageshow", function(e) {
 																// listview
 		},
 		minLength : 1,
-		matchFromStart : false
+		matchFromStart : false,
+		onNoResults : function() {
+			$('#mainfood3_div').show();
+			$('#searchField_mainfood3').val("");
+			return;
+		}
 	});
 
 	$('#mainfoodnum3').change(function() {
@@ -278,7 +293,12 @@ $("#pageone").bind("pageshow", function(e) {
 																// listview
 		},
 		minLength : 1,
-		matchFromStart : false
+		matchFromStart : false,
+		onNoResults : function() {
+			$('#mainfood4_div').show();
+			$('#searchField_mainfood4').val("");
+			return;
+		}
 	});
 
 	$('#mainfoodnum4').change(function() {
@@ -313,7 +333,12 @@ $("#pageone").bind("pageshow", function(e) {
 																// listview
 		},
 		minLength : 1,
-		matchFromStart : false
+		matchFromStart : false,
+		onNoResults : function() {
+			$('#mainfood5_div').show();
+			$('#searchField_mainfood5').val("");
+			return;
+		}
 	});
 
 	$('#mainfoodnum5').change(function() {
@@ -348,7 +373,12 @@ $("#pageone").bind("pageshow", function(e) {
 															// listview
 		},
 		minLength : 1,
-		matchFromStart : false
+		matchFromStart : false,
+		onNoResults : function() {
+			$('#meat1_div').show();
+			$('#searchField_meat1').val("");
+			return;
+		}
 	});
 
 	$('#meatnum1').change(function() {
@@ -383,7 +413,12 @@ $("#pageone").bind("pageshow", function(e) {
 															// listview
 		},
 		minLength : 1,
-		matchFromStart : false
+		matchFromStart : false,
+		onNoResults : function() {
+			$('#meat2_div').show();
+			$('#searchField_meat2').val("");
+			return;
+		}
 	});
 
 	$('#meatnum2').change(function() {
@@ -418,7 +453,12 @@ $("#pageone").bind("pageshow", function(e) {
 															// listview
 		},
 		minLength : 1,
-		matchFromStart : false
+		matchFromStart : false,
+		onNoResults : function() {
+			$('#meat3_div').show();
+			$('#searchField_meat3').val("");
+			return;
+		}
 	});
 
 	$('#meatnum3').change(function() {
@@ -453,7 +493,12 @@ $("#pageone").bind("pageshow", function(e) {
 															// listview
 		},
 		minLength : 1,
-		matchFromStart : false
+		matchFromStart : false,
+		onNoResults : function() {
+			$('#meat4_div').show();
+			$('#searchField_meat4').val("");
+			return;
+		}
 	});
 
 	$('#meatnum4').change(function() {
@@ -488,7 +533,12 @@ $("#pageone").bind("pageshow", function(e) {
 															// listview
 		},
 		minLength : 1,
-		matchFromStart : false
+		matchFromStart : false,
+		onNoResults : function() {
+			$('#meat5_div').show();
+			$('#searchField_meat5').val("");
+			return;
+		}
 	});
 
 	$('#meatnum5').change(function() {
@@ -524,7 +574,12 @@ $("#pageone").bind("pageshow", function(e) {
 																	// listview
 		},
 		minLength : 1,
-		matchFromStart : false
+		matchFromStart : false,
+		onNoResults : function() {
+			$('#vegetables1_div').show();
+			$('#searchField_vegetables1').val("");
+			return;
+		}
 	});
 
 	$('#vegetablesnum1').change(function() {
@@ -560,7 +615,12 @@ $("#pageone").bind("pageshow", function(e) {
 																	// listview
 		},
 		minLength : 1,
-		matchFromStart : false
+		matchFromStart : false,
+		onNoResults : function() {
+			$('#vegetables2_div').show();
+			$('#searchField_vegetables2').val("");
+			return;
+		}
 	});
 
 	$('#vegetablesnum2').change(function() {
@@ -596,7 +656,12 @@ $("#pageone").bind("pageshow", function(e) {
 																	// listview
 		},
 		minLength : 1,
-		matchFromStart : false
+		matchFromStart : false,
+		onNoResults : function() {
+			$('#vegetables3_div').show();
+			$('#searchField_vegetables3').val("");
+			return;
+		}
 	});
 
 	$('#vegetablesnum3').change(function() {
@@ -632,7 +697,12 @@ $("#pageone").bind("pageshow", function(e) {
 																	// listview
 		},
 		minLength : 1,
-		matchFromStart : false
+		matchFromStart : false,
+		onNoResults : function() {
+			$('#vegetables4_div').show();
+			$('#searchField_vegetables4').val("");
+			return;
+		}
 	});
 
 	$('#vegetablesnum4').change(function() {
@@ -668,7 +738,12 @@ $("#pageone").bind("pageshow", function(e) {
 																	// listview
 		},
 		minLength : 1,
-		matchFromStart : false
+		matchFromStart : false,
+		onNoResults : function() {
+			$('#vegetables5_div').show();
+			$('#searchField_vegetables5').val("");
+			return;
+		}
 	});
 
 	$('#vegetablesnum5').change(function() {
@@ -704,7 +779,12 @@ $("#pageone").bind("pageshow", function(e) {
 																	// listview
 		},
 		minLength : 1,
-		matchFromStart : false
+		matchFromStart : false,
+		onNoResults : function() {
+			$('#vegetables6_div').show();
+			$('#searchField_vegetables6').val("");
+			return;
+		}
 	});
 
 	$('#vegetablesnum6').change(function() {
@@ -740,7 +820,12 @@ $("#pageone").bind("pageshow", function(e) {
 																	// listview
 		},
 		minLength : 1,
-		matchFromStart : false
+		matchFromStart : false,
+		onNoResults : function() {
+			$('#vegetables7_div').show();
+			$('#searchField_vegetables7').val("");
+			return;
+		}
 	});
 
 	$('#vegetablesnum7').change(function() {
@@ -776,7 +861,12 @@ $("#pageone").bind("pageshow", function(e) {
 																	// listview
 		},
 		minLength : 1,
-		matchFromStart : false
+		matchFromStart : false,
+		onNoResults : function() {
+			$('#vegetables8_div').show();
+			$('#searchField_vegetables8').val("");
+			return;
+		}
 	});
 
 	$('#vegetablesnum8').change(function() {
@@ -812,7 +902,12 @@ $("#pageone").bind("pageshow", function(e) {
 																	// listview
 		},
 		minLength : 1,
-		matchFromStart : false
+		matchFromStart : false,
+		onNoResults : function() {
+			$('#vegetables9_div').show();
+			$('#searchField_vegetables9').val("");
+			return;
+		}
 	});
 
 	$('#vegetablesnum9').change(function() {
@@ -848,7 +943,12 @@ $("#pageone").bind("pageshow", function(e) {
 																	// listview
 		},
 		minLength : 1,
-		matchFromStart : false
+		matchFromStart : false,
+		onNoResults : function() {
+			$('#vegetables10_div').show();
+			$('#searchField_vegetables10').val("");
+			return;
+		}
 	});
 
 	$('#vegetablesnum10').change(function() {
@@ -883,7 +983,12 @@ $("#pageone").bind("pageshow", function(e) {
 															// listview
 		},
 		minLength : 1,
-		matchFromStart : false
+		matchFromStart : false,
+		onNoResults : function() {
+			$('#drink1_div').show();
+			$('#searchField_drink1').val("");
+			return;
+		}
 	});
 
 	$('#drinknum1').change(function() {
@@ -918,7 +1023,12 @@ $("#pageone").bind("pageshow", function(e) {
 															// listview
 		},
 		minLength : 1,
-		matchFromStart : false
+		matchFromStart : false,
+		onNoResults : function() {
+			$('#drink2_div').show();
+			$('#searchField_drink2').val("");
+			return;
+		}
 	});
 
 	$('#drinknum2').change(function() {
@@ -953,7 +1063,12 @@ $("#pageone").bind("pageshow", function(e) {
 															// listview
 		},
 		minLength : 1,
-		matchFromStart : false
+		matchFromStart : false,
+		onNoResults : function() {
+			$('#drink3_div').show();
+			$('#searchField_drink3').val("");
+			return;
+		}
 	});
 
 	$('#drinknum3').change(function() {
@@ -988,7 +1103,12 @@ $("#pageone").bind("pageshow", function(e) {
 															// listview
 		},
 		minLength : 1,
-		matchFromStart : false
+		matchFromStart : false,
+		onNoResults : function() {
+			$('#drink4_div').show();
+			$('#searchField_drink4').val("");
+			return;
+		}
 	});
 
 	$('#drinknum4').change(function() {
@@ -1023,7 +1143,12 @@ $("#pageone").bind("pageshow", function(e) {
 															// listview
 		},
 		minLength : 1,
-		matchFromStart : false
+		matchFromStart : false,
+		onNoResults : function() {
+			$('#drink5_div').show();
+			$('#searchField_drink5').val("");
+			return;
+		}
 	});
 
 	$('#drinknum5').change(function() {
@@ -1058,7 +1183,12 @@ $("#pageone").bind("pageshow", function(e) {
 															// listview
 		},
 		minLength : 1,
-		matchFromStart : false
+		matchFromStart : false,
+		onNoResults : function() {
+			$('#nut1_div').show();
+			$('#searchField_nut1').val("");
+			return;
+		}
 	});
 
 	$('#nutnum1').change(function() {
@@ -1093,7 +1223,12 @@ $("#pageone").bind("pageshow", function(e) {
 															// listview
 		},
 		minLength : 1,
-		matchFromStart : false
+		matchFromStart : false,
+		onNoResults : function() {
+			$('#nut2_div').show();
+			$('#searchField_nut2').val("");
+			return;
+		}
 	});
 
 	$('#nutnum2').change(function() {
@@ -1128,7 +1263,12 @@ $("#pageone").bind("pageshow", function(e) {
 															// listview
 		},
 		minLength : 1,
-		matchFromStart : false
+		matchFromStart : false,
+		onNoResults : function() {
+			$('#nut3_div').show();
+			$('#searchField_nut3').val("");
+			return;
+		}
 	});
 
 	$('#nutnum3').change(function() {
@@ -1163,7 +1303,12 @@ $("#pageone").bind("pageshow", function(e) {
 															// listview
 		},
 		minLength : 1,
-		matchFromStart : false
+		matchFromStart : false,
+		onNoResults : function() {
+			$('#nut4_div').show();
+			$('#searchField_nut4').val("");
+			return;
+		}
 	});
 
 	$('#nutnum4').change(function() {
@@ -1198,7 +1343,12 @@ $("#pageone").bind("pageshow", function(e) {
 															// listview
 		},
 		minLength : 1,
-		matchFromStart : false
+		matchFromStart : false,
+		onNoResults : function() {
+			$('#nut5_div').show();
+			$('#searchField_nut5').val("");
+			return;
+		}
 	});
 
 	$('#nutnum5').change(function() {
@@ -1233,7 +1383,12 @@ $("#pageone").bind("pageshow", function(e) {
 																// listview
 		},
 		minLength : 1,
-		matchFromStart : false
+		matchFromStart : false,
+		onNoResults : function() {
+			$('#fruits1_div').show();
+			$('#searchField_fruits1').val("");
+			return;
+		}
 	});
 
 	$('#fruitsnum1').change(function() {
@@ -1268,7 +1423,12 @@ $("#pageone").bind("pageshow", function(e) {
 																// listview
 		},
 		minLength : 1,
-		matchFromStart : false
+		matchFromStart : false,
+		onNoResults : function() {
+			$('#fruits2_div').show();
+			$('#searchField_fruits2').val("");
+			return;
+		}
 	});
 
 	$('#fruitsnum2').change(function() {
@@ -1303,7 +1463,12 @@ $("#pageone").bind("pageshow", function(e) {
 																// listview
 		},
 		minLength : 1,
-		matchFromStart : false
+		matchFromStart : false,
+		onNoResults : function() {
+			$('#fruits3_div').show();
+			$('#searchField_fruits3').val("");
+			return;
+		}
 	});
 
 	$('#fruitsnum3').change(function() {
@@ -1338,7 +1503,12 @@ $("#pageone").bind("pageshow", function(e) {
 																// listview
 		},
 		minLength : 1,
-		matchFromStart : false
+		matchFromStart : false,
+		onNoResults : function() {
+			$('#fruits4_div').show();
+			$('#searchField_fruits4').val("");
+			return;
+		}
 	});
 
 	$('#fruitsnum4').change(function() {
@@ -1373,7 +1543,12 @@ $("#pageone").bind("pageshow", function(e) {
 																// listview
 		},
 		minLength : 1,
-		matchFromStart : false
+		matchFromStart : false,
+		onNoResults : function() {
+			$('#fruits5_div').show();
+			$('#searchField_fruits5').val("");
+			return;
+		}
 	});
 
 	$('#fruitsnum5').change(function() {

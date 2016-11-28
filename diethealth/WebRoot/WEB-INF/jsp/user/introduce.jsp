@@ -27,7 +27,7 @@
 			style="width: 100%" />
 		<p align="center">图1，孕糖宝首页</p>
 		<p>&nbsp;&nbsp;&nbsp;&nbsp;点击<span style="color: red">“我的业务”</span>进入个人主页，如图2。</p>
-		<img alt="" src="<%=path%>/introduce.files/image002.png"
+		<img alt="" src="<%=path%>/introduce.files/image003.png"
 			style="width: 100%;" />
 		<p align="center">图2，个人主页</p>
 		<p>&nbsp;&nbsp;&nbsp;&nbsp;进入<span style="color: red">“加餐偏好”</span>页面如图3，请先选择习惯进餐方式，默认三餐。如有加餐需要，请选择加餐种类。例如：习惯每日五餐，加餐种类为下午加餐及晚上加餐。点击<span style="color: red">“确认”</span>，系统为您计算参考目标能量值，为您进餐的食量有一个科学合理的建议。</p>

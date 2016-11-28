@@ -137,7 +137,7 @@
 	</select>
 	
 	<select id="getBloodGlucoseList" parameterType="object" resultType="map">
-		SELECT p_id,substring(date,6) as date,bloodGlucoseBeforeSleep,bloodGlucoseAfterDinner,bloodGlucoseBeforeDinner,
+		SELECT p_id,substring(date,6) as date,HbAlc,bloodGlucoseBeforeSleep,bloodGlucoseAfterDinner,bloodGlucoseBeforeDinner,
 	bloodGlucoseAfterLunch,bloodGlucoseBeforeLunch,bloodGlucoseAfterBreakfast,bloodGlucoseBeforeBreakfast
 	 FROM bloodglucose where p_id = #{pId}
 		ORDER BY date DESC

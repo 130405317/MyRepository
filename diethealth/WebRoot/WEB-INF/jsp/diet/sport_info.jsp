@@ -31,74 +31,91 @@
 			<div data-role="fieldcontain">
 				<p>记录日期：${sportInfo.date }</p>
 			</div>
-			<c:if test="${sportInfo.beforebreakfasttime!=0 && sportInfo.beforebreakfasttype!=null}">
-				<fieldset data-role="controlgroup">
-					<legend>早餐前</legend>
-					<div data-role="fieldcontain">
-						<label>运动类型：${sportInfo.beforebreakfasttype }</label>
-						<p>运动时间：${sportInfo.beforebreakfasttime }分钟</p>
+
+			<div class="ui-grid-c">
+				<div class="ui-block-a"
+					style="border: 1px solid black; width: 40%; border-style: ridge ridge ridge ridge; text-align: center; font-size: 10px;">时间段</div>
+				<div class="ui-block-b"
+					style="border: 1px solid black; width: 30%; border-style: ridge ridge ridge none; text-align: center; font-size: 10px;">运动强度</div>
+				<div class="ui-block-c"
+					style="border: 1px solid black; width: 30%; border-style: ridge ridge ridge none; text-align: center; font-size: 10px;">运动时间</div>
+			</div>
+			<div class="ui-grid-a">
+				<div class="ui-block-a"
+					style="border: 1px solid black; width: 20%; height: 40px; border-style: none ridge ridge ridge; text-align: center; font-size: 10px;">早餐</div>
+				<div class="ui-block-b"
+					style="border: 1px solid black; width: 80%; border-style: none ridge ridge none; text-align: center; font-size: 10px;">
+					<div class="ui-grid-b">
+						<div class="ui-block-a"
+							style="border: 1px solid black; width: 25%; height: 20px; border-style: none ridge ridge none; text-align: center; font-size: 10px;">前</div>
+						<div class="ui-block-b"
+							style="border: 1px solid black; width: 37.5%; height: 20px; border-style: none ridge ridge none; text-align: center; font-size: 10px;">${sportInfo.beforebreakfasttype }</div>
+						<div class="ui-block-c"
+							style="border: 1px solid black; width: 37.5%; height: 20px; border-style: none none ridge none; text-align: center; font-size: 10px;">${sportInfo.beforebreakfasttime }分钟</div>
+						<div class="ui-block-a"
+							style="border: 1px solid black; width: 25%; height: 20px; border-style: none ridge none none; text-align: center; font-size: 10px;">后</div>
+						<div class="ui-block-b"
+							style="border: 1px solid black; width: 37.5%; height: 20px; border-style: none ridge none none; text-align: center; font-size: 10px;">${sportInfo.afterbreakfasttype }</div>
+						<div class="ui-block-c"
+							style="border: 1px solid black; width: 37.5%; height: 20px; border-style: none none none none; text-align: center; font-size: 10px;">${sportInfo.afterbreakfasttime }分钟</div>
 					</div>
-				</fieldset>
-			</c:if>
-			<c:if test="${sportInfo.afterbreakfasttime!=0 && sportInfo.afterbreakfasttype!=null}">
-			<fieldset data-role="controlgroup">
-				<legend>早餐后</legend>
-				<div data-role="fieldcontain">
-					<label>运动类型：${sportInfo.afterbreakfasttype }</label>
-					<p>运动时间：${sportInfo.afterbreakfasttime }分钟</p>
 				</div>
-			</fieldset>
-			</c:if>
-			<c:if test="${sportInfo.beforelaunchtime!=0 && sportInfo.beforelaunchtype!=null}">
-			<fieldset data-role="controlgroup">
-				<legend>午餐前</legend>
-				<div data-role="fieldcontain">
-					<label>运动类型：${sportInfo.beforelaunchtype }</label>
-					<p>运动时间：${sportInfo.beforelaunchtime }分钟</p>
+
+				<div class="ui-block-a"
+					style="border: 1px solid black; width: 20%; height: 40px; border-style: none ridge ridge ridge; text-align: center; font-size: 10px;">午餐</div>
+				<div class="ui-block-b"
+					style="border: 1px solid black; width: 80%; border-style: none ridge ridge none; text-align: center; font-size: 10px;">
+					<div class="ui-grid-b">
+						<div class="ui-block-a"
+							style="border: 1px solid black; width: 25%; height: 20px; border-style: none ridge ridge none; text-align: center; font-size: 10px;">前</div>
+						<div class="ui-block-b"
+							style="border: 1px solid black; width: 37.5%; height: 20px; border-style: none ridge ridge none; text-align: center; font-size: 10px;">${sportInfo.beforelaunchtype }</div>
+						<div class="ui-block-c"
+							style="border: 1px solid black; width: 37.5%; height: 20px; border-style: none none ridge none; text-align: center; font-size: 10px;">${sportInfo.beforelaunchtime }分钟</div>
+						<div class="ui-block-a"
+							style="border: 1px solid black; width: 25%; height: 20px; border-style: none ridge none none; text-align: center; font-size: 10px;">后</div>
+						<div class="ui-block-b"
+							style="border: 1px solid black; width: 37.5%; height: 20px; border-style: none ridge none none; text-align: center; font-size: 10px;">${sportInfo.afterlaunchtype }</div>
+						<div class="ui-block-c"
+							style="border: 1px solid black; width: 37.5%; height: 20px; border-style: none none none none; text-align: center; font-size: 10px;">${sportInfo.afterlaunchtime }分钟</div>
+					</div>
 				</div>
-			</fieldset>
-			</c:if>
-			<c:if test="${sportInfo.afterlaunchtime!=0 && sportInfo.afterlaunchtype!=null}">
-			<fieldset data-role="controlgroup">
-				<legend>午餐后</legend>
-				<div data-role="fieldcontain">
-					<label>运动类型：${sportInfo.afterlaunchtype }</label>
-					<p>运动时间：${sportInfo.afterlaunchtime }分钟</p>
+
+				<div class="ui-block-a"
+					style="border: 1px solid black; width: 20%; height: 40px; border-style: none ridge ridge ridge; text-align: center; font-size: 10px;">晚餐</div>
+				<div class="ui-block-b"
+					style="border: 1px solid black; width: 80%; border-style: none ridge ridge none; text-align: center; font-size: 10px;">
+					<div class="ui-grid-b">
+						<div class="ui-block-a"
+							style="border: 1px solid black; width: 25%; height: 20px; border-style: none ridge ridge none; text-align: center; font-size: 10px;">前</div>
+						<div class="ui-block-b"
+							style="border: 1px solid black; width: 37.5%; height: 20px; border-style: none ridge ridge none; text-align: center; font-size: 10px;">${sportInfo.beforedinnertype }</div>
+						<div class="ui-block-c"
+							style="border: 1px solid black; width: 37.5%; height: 20px; border-style: none none ridge none; text-align: center; font-size: 10px;">${sportInfo.beforedinnertime }分钟</div>
+						<div class="ui-block-a"
+							style="border: 1px solid black; width: 25%; height: 20px; border-style: none ridge none none; text-align: center; font-size: 10px;">后</div>
+						<div class="ui-block-b"
+							style="border: 1px solid black; width: 37.5%; height: 20px; border-style: none ridge none none; text-align: center; font-size: 10px;">${sportInfo.afterdinnertype }</div>
+						<div class="ui-block-c"
+							style="border: 1px solid black; width: 37.5%; height: 20px; border-style: none none none none; text-align: center; font-size: 10px;">${sportInfo.afterdinnertime }分钟</div>
+					</div>
 				</div>
-			</fieldset>
-			</c:if>
-			<c:if test="${sportInfo.beforedinnertime!=0 && sportInfo.beforedinnertype!=null}">
-			<fieldset data-role="controlgroup">
-				<legend>晚餐前</legend>
-				<div data-role="fieldcontain">
-					<label>运动类型：${sportInfo.beforedinnertype }</label>
-					<p>运动时间：${sportInfo.beforedinnertime }分钟</p>
+
+			</div>
+			<div class="ui-grid-c">
+					<div class="ui-block-a"
+						style="border: 1px solid black; width: 40%; height:20px; border-style: none ridge ridge ridge; text-align: center; font-size: 10px;">睡前</div>
+					<div class="ui-block-b"
+						style="border: 1px solid black; width: 30%; height:20px; border-style: none ridge ridge none; text-align: center; font-size: 10px;">${sportInfo.beforesleeptype }</div>
+					<div class="ui-block-c"
+						style="border: 1px solid black; width: 30%; height:20px; border-style: none ridge ridge none; text-align: center; font-size: 10px;">${sportInfo.beforesleeptime }分钟</div>
 				</div>
-			</fieldset>
-			</c:if>
-			<c:if test="${sportInfo.afterdinnertime!=0 && sportInfo.afterdinnertype!=null}">
-			<fieldset data-role="controlgroup">
-				<legend>晚餐后</legend>
-				<div data-role="fieldcontain">
-					<label>运动类型：${sportInfo.afterdinnertype }</label>
-					<p>运动时间：${sportInfo.afterdinnertime }分钟</p>
-				</div>
-			</fieldset>
-			</c:if>
-			<c:if test="${sportInfo.beforesleeptime!=0 && sportInfo.beforesleeptype!=null}">
-			<fieldset data-role="controlgroup">
-				<legend>睡前</legend>
-				<div data-role="fieldcontain">
-					<label>运动类型：${sportInfo.beforesleeptype }</label>
-					<p>运动时间：${sportInfo.beforesleeptime }分钟</p>
-				</div>
-			</fieldset>
-			</c:if>
 		</div>
 	</div>
 </body>
 <script src="<%=path%>/js/jquery-2.2.2.min.js"></script>
 <script src="<%=path%>/jquerymobile/jquery.mobile-1.4.5.min.js"></script>
 <script>
+	
 </script>
 </html>

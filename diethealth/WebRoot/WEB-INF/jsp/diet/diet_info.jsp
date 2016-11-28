@@ -88,23 +88,23 @@
 					<span>&nbsp;</span>
 					<div class="ui-grid-d">
 						<div class="ui-block-a"
-							style="border: 1px solid black; text-align: center; border-style: ridge ridge ridge ridge;">脂肪</div>
+							style="border: 1px solid black; text-align: center; width: 25%; border-style: ridge ridge ridge ridge;">脂肪</div>
 						<div class="ui-block-b"
-							style="border: 1px solid black; text-align: center; width: 24%; border-style: ridge ridge ridge none;">锌</div>
+							style="border: 1px solid black; text-align: center; width: 20%; border-style: ridge ridge ridge none;">锌</div>
 						<div class="ui-block-c"
-							style="border: 1px solid black; text-align: center; border-style: ridge ridge ridge none;">胡萝卜素</div>
+							style="border: 1px solid black; text-align: center; width: 25%; border-style: ridge ridge ridge none;">胡萝卜素</div>
 						<div class="ui-block-d"
-							style="border: 1px solid black; text-align: center; width: 26%; border-style: ridge ridge ridge none;">碳水化合物</div>
+							style="border: 1px solid black; text-align: center; width: 30%; border-style: ridge ridge ridge none;">碳水化合物</div>
 					</div>
 					<div class="ui-grid-d">
 						<div class="ui-block-a"
-							style="border: 1px solid black; text-align: center; border-style: none ridge ridge ridge;">${mainfood.fat }</div>
+							style="border: 1px solid black; text-align: center; width: 25%; border-style: none ridge ridge ridge;">${mainfood.fat }</div>
 						<div class="ui-block-b"
-							style="border: 1px solid black; width: 24%; text-align: center; border-style: none ridge ridge none;">${mainfood.zinc }</div>
+							style="border: 1px solid black; text-align: center; width: 20%; border-style: none ridge ridge none;">${mainfood.zinc }</div>
 						<div class="ui-block-c"
-							style="border: 1px solid black; text-align: center; border-style: none ridge ridge none;">${mainfood.carotene }</div>
+							style="border: 1px solid black; text-align: center; width: 25%; border-style: none ridge ridge none;">${mainfood.carotene }</div>
 						<div class="ui-block-d"
-							style="border: 1px solid black; width: 26%; text-align: center; border-style: none ridge ridge none;">${mainfood.carbohydrate }</div>
+							style="border: 1px solid black; text-align: center; width: 30%; border-style: none ridge ridge none;">${mainfood.carbohydrate }</div>
 					</div>
 				</c:forEach>
 				<c:forEach var="meat" items="${diet.meat}" varStatus="s">
@@ -136,23 +136,23 @@
 					<span>&nbsp;</span>
 					<div class="ui-grid-d">
 						<div class="ui-block-a"
-							style="border: 1px solid black; text-align: center; border-style: ridge ridge ridge ridge;">脂肪</div>
+							style="border: 1px solid black; text-align: center; width: 25%; border-style: ridge ridge ridge ridge;">脂肪</div>
 						<div class="ui-block-b"
-							style="border: 1px solid black; text-align: center; width: 24%; border-style: ridge ridge ridge none;">锌</div>
+							style="border: 1px solid black; text-align: center; width: 20%; border-style: ridge ridge ridge none;">锌</div>
 						<div class="ui-block-c"
-							style="border: 1px solid black; text-align: center; border-style: ridge ridge ridge none;">胡萝卜素</div>
+							style="border: 1px solid black; text-align: center; width: 25%; border-style: ridge ridge ridge none;">胡萝卜素</div>
 						<div class="ui-block-d"
-							style="border: 1px solid black; text-align: center; width: 26%; border-style: ridge ridge ridge none;">碳水化合物</div>
+							style="border: 1px solid black; text-align: center; width: 30%; border-style: ridge ridge ridge none;">碳水化合物</div>
 					</div>
 					<div class="ui-grid-c">
 						<div class="ui-block-a"
-							style="border: 1px solid black; text-align: center; border-style: none ridge ridge ridge;">${meat.fat }</div>
+							style="border: 1px solid black; text-align: center; width: 25%; border-style: none ridge ridge ridge;">${meat.fat }</div>
 						<div class="ui-block-b"
-							style="border: 1px solid black; width: 24%; text-align: center; border-style: none ridge ridge none;">${meat.zinc }</div>
+							style="border: 1px solid black; text-align: center; width: 20%; border-style: none ridge ridge none;">${meat.zinc }</div>
 						<div class="ui-block-c"
-							style="border: 1px solid black; text-align: center; border-style: none ridge ridge none;">${meat.carotene }</div>
+							style="border: 1px solid black; text-align: center; width: 25%; border-style: none ridge ridge none;">${meat.carotene }</div>
 						<div class="ui-block-d"
-							style="border: 1px solid black; width: 26%; text-align: center; border-style: none ridge ridge none;">${meat.carbohydrate }</div>
+							style="border: 1px solid black; text-align: center; width: 30%; border-style: none ridge ridge none;">${meat.carbohydrate }</div>
 					</div>
 				</c:forEach>
 
@@ -185,23 +185,23 @@
 					<span>&nbsp;</span>
 					<div class="ui-grid-d">
 						<div class="ui-block-a"
-							style="border: 1px solid black; text-align: center; border-style: ridge ridge ridge ridge;">脂肪</div>
+							style="border: 1px solid black; text-align: center; width: 25%; border-style: ridge ridge ridge ridge;">脂肪</div>
 						<div class="ui-block-b"
-							style="border: 1px solid black; text-align: center; width: 24%; border-style: ridge ridge ridge none;">锌</div>
+							style="border: 1px solid black; text-align: center; width: 20%; border-style: ridge ridge ridge none;">锌</div>
 						<div class="ui-block-c"
-							style="border: 1px solid black; text-align: center; border-style: ridge ridge ridge none;">胡萝卜素</div>
+							style="border: 1px solid black; text-align: center; width: 25%; border-style: ridge ridge ridge none;">胡萝卜素</div>
 						<div class="ui-block-d"
-							style="border: 1px solid black; text-align: center; width: 26%; border-style: ridge ridge ridge none;">碳水化合物</div>
+							style="border: 1px solid black; text-align: center; width: 30%; border-style: ridge ridge ridge none;">碳水化合物</div>
 					</div>
 					<div class="ui-grid-d">
 						<div class="ui-block-a"
-							style="border: 1px solid black; text-align: center; border-style: none ridge ridge ridge;">${vegetables.fat }</div>
+							style="border: 1px solid black; text-align: center; width: 25%; border-style: none ridge ridge ridge;">${vegetables.fat }</div>
 						<div class="ui-block-b"
-							style="border: 1px solid black; width: 24%; text-align: center; border-style: none ridge ridge none;">${vegetables.zinc }</div>
+							style="border: 1px solid black; text-align: center; width: 20%; border-style: none ridge ridge none;">${vegetables.zinc }</div>
 						<div class="ui-block-c"
-							style="border: 1px solid black; text-align: center; border-style: none ridge ridge none;">${vegetables.carotene }</div>
+							style="border: 1px solid black; text-align: center; width: 25%; border-style: none ridge ridge none;">${vegetables.carotene }</div>
 						<div class="ui-block-d"
-							style="border: 1px solid black; width: 26%; text-align: center; border-style: none ridge ridge none;">${vegetables.carbohydrate }</div>
+							style="border: 1px solid black; text-align: center; width: 30%; border-style: none ridge ridge none;">${vegetables.carbohydrate }</div>
 					</div>
 				</c:forEach>
 				<c:forEach var="drink" items="${diet.drink}" varStatus="s">
@@ -233,23 +233,23 @@
 					<span>&nbsp;</span>
 					<div class="ui-grid-d">
 						<div class="ui-block-a"
-							style="border: 1px solid black; text-align: center; border-style: ridge ridge ridge ridge;">脂肪</div>
+							style="border: 1px solid black; text-align: center; width: 25%; border-style: ridge ridge ridge ridge;">脂肪</div>
 						<div class="ui-block-b"
-							style="border: 1px solid black; text-align: center; width: 24%; border-style: ridge ridge ridge none;">锌</div>
+							style="border: 1px solid black; text-align: center; width: 20%; border-style: ridge ridge ridge none;">锌</div>
 						<div class="ui-block-c"
-							style="border: 1px solid black; text-align: center; border-style: ridge ridge ridge none;">胡萝卜素</div>
+							style="border: 1px solid black; text-align: center; width: 25%; border-style: ridge ridge ridge none;">胡萝卜素</div>
 						<div class="ui-block-d"
-							style="border: 1px solid black; text-align: center; width: 26%; border-style: ridge ridge ridge none;">碳水化合物</div>
+							style="border: 1px solid black; text-align: center; width: 30%; border-style: ridge ridge ridge none;">碳水化合物</div>
 					</div>
 					<div class="ui-grid-d">
 						<div class="ui-block-a"
-							style="border: 1px solid black; text-align: center; border-style: none ridge ridge ridge;">${drink.fat }</div>
+							style="border: 1px solid black; text-align: center; width: 25%; border-style: none ridge ridge ridge;">${drink.fat }</div>
 						<div class="ui-block-b"
-							style="border: 1px solid black; width: 24%; text-align: center; border-style: none ridge ridge none;">${drink.zinc }</div>
+							style="border: 1px solid black; text-align: center; width: 20%; border-style: none ridge ridge none;">${drink.zinc }</div>
 						<div class="ui-block-c"
-							style="border: 1px solid black; text-align: center; border-style: none ridge ridge none;">${drink.carotene }</div>
+							style="border: 1px solid black; text-align: center; width: 25%; border-style: none ridge ridge none;">${drink.carotene }</div>
 						<div class="ui-block-d"
-							style="border: 1px solid black; width: 26%; text-align: center; border-style: none ridge ridge none;">${drink.carbohydrate }</div>
+							style="border: 1px solid black; text-align: center; width: 30%; border-style: none ridge ridge none;">${drink.carbohydrate }</div>
 					</div>
 				</c:forEach>
 
@@ -282,23 +282,23 @@
 					<span>&nbsp;</span>
 					<div class="ui-grid-d">
 						<div class="ui-block-a"
-							style="border: 1px solid black; text-align: center; border-style: ridge ridge ridge ridge;">脂肪</div>
+							style="border: 1px solid black; text-align: center; width: 25%; border-style: ridge ridge ridge ridge;">脂肪</div>
 						<div class="ui-block-b"
-							style="border: 1px solid black; text-align: center; width: 24%; border-style: ridge ridge ridge none;">锌</div>
+							style="border: 1px solid black; text-align: center; width: 20%; border-style: ridge ridge ridge none;">锌</div>
 						<div class="ui-block-c"
-							style="border: 1px solid black; text-align: center; border-style: ridge ridge ridge none;">胡萝卜素</div>
+							style="border: 1px solid black; text-align: center; width: 25%; border-style: ridge ridge ridge none;">胡萝卜素</div>
 						<div class="ui-block-d"
-							style="border: 1px solid black; text-align: center; width: 26%; border-style: ridge ridge ridge none;">碳水化合物</div>
+							style="border: 1px solid black; text-align: center; width: 30%; border-style: ridge ridge ridge none;">碳水化合物</div>
 					</div>
 					<div class="ui-grid-d">
 						<div class="ui-block-a"
-							style="border: 1px solid black; text-align: center; border-style: none ridge ridge ridge;">${nut.fat }</div>
+							style="border: 1px solid black; text-align: center; width: 25%; border-style: none ridge ridge ridge;">${nut.fat }</div>
 						<div class="ui-block-b"
-							style="border: 1px solid black; width: 24%; text-align: center; border-style: none ridge ridge none;">${nut.zinc }</div>
+							style="border: 1px solid black; text-align: center; width: 20%; border-style: none ridge ridge none;">${nut.zinc }</div>
 						<div class="ui-block-c"
-							style="border: 1px solid black; text-align: center; border-style: none ridge ridge none;">${nut.carotene }</div>
+							style="border: 1px solid black; text-align: center; width: 25%; border-style: none ridge ridge none;">${nut.carotene }</div>
 						<div class="ui-block-d"
-							style="border: 1px solid black; width: 26%; text-align: center; border-style: none ridge ridge none;">${nut.carbohydrate }</div>
+							style="border: 1px solid black; text-align: center; width: 30%; border-style: none ridge ridge none;">${nut.carbohydrate }</div>
 					</div>
 				</c:forEach>
 				<c:forEach var="fruits" items="${diet.fruits}" varStatus="s">
@@ -330,23 +330,23 @@
 					<span>&nbsp;</span>
 					<div class="ui-grid-d">
 						<div class="ui-block-a"
-							style="border: 1px solid black; text-align: center; border-style: ridge ridge ridge ridge;">脂肪</div>
+							style="border: 1px solid black; text-align: center; width: 25%; border-style: ridge ridge ridge ridge;">脂肪</div>
 						<div class="ui-block-b"
-							style="border: 1px solid black; text-align: center; width: 24%; border-style: ridge ridge ridge none;">锌</div>
+							style="border: 1px solid black; text-align: center; width: 20%; border-style: ridge ridge ridge none;">锌</div>
 						<div class="ui-block-c"
-							style="border: 1px solid black; text-align: center; border-style: ridge ridge ridge none;">胡萝卜素</div>
+							style="border: 1px solid black; text-align: center; width: 25%; border-style: ridge ridge ridge none;">胡萝卜素</div>
 						<div class="ui-block-d"
-							style="border: 1px solid black; text-align: center; width: 26%; border-style: ridge ridge ridge none;">碳水化合物</div>
+							style="border: 1px solid black; text-align: center; width: 30%; border-style: ridge ridge ridge none;">碳水化合物</div>
 					</div>
 					<div class="ui-grid-d">
 						<div class="ui-block-a"
-							style="border: 1px solid black; text-align: center; border-style: none ridge ridge ridge;">${fruits.fat }</div>
+							style="border: 1px solid black; text-align: center; width: 25%; border-style: none ridge ridge ridge;">${fruits.fat }</div>
 						<div class="ui-block-b"
-							style="border: 1px solid black; width: 24%; text-align: center; border-style: none ridge ridge none;">${fruits.zinc }</div>
+							style="border: 1px solid black; text-align: center; width: 20%; border-style: none ridge ridge none;">${fruits.zinc }</div>
 						<div class="ui-block-c"
-							style="border: 1px solid black; text-align: center; border-style: none ridge ridge none;">${fruits.carotene }</div>
+							style="border: 1px solid black; text-align: center; width: 25%; border-style: none ridge ridge none;">${fruits.carotene }</div>
 						<div class="ui-block-d"
-							style="border: 1px solid black; width: 26%; text-align: center; border-style: none ridge ridge none;">${fruits.carbohydrate }</div>
+							style="border: 1px solid black; text-align: center; width: 30%; border-style: none ridge ridge none;">${fruits.carbohydrate }</div>
 					</div>
 				</c:forEach>
 				<div data-role="fieldcontain">

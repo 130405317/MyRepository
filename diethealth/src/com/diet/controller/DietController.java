@@ -229,7 +229,7 @@ public class DietController {
 	public String getDietInfo(HttpServletRequest request, Model model){
 		Map<String, Object> param = FormDataCollectUtil.getInstance().getFormData(request);
 		String pId = (String)request.getSession().getAttribute("pId");
-		//String pId = "o-1WTwtX8PIDMOWg66DjTmWw4o4I";
+		//String pId = "o-1WTwnmE5MzetfXjm_02IjLG8m4";
 		model.addAttribute("targetEnergy",dietService.getTargetEnergy(pId));
 		model.addAttribute("dietEnergy", dietService.showDietEnergy(param));
 		model.addAttribute("dietList", dietService.showDietInfo(param));
@@ -329,6 +329,7 @@ public class DietController {
 		Map<String, Object> map = FormDataCollectUtil.getInstance().getFormDataWithPage(request);
 		HttpSession session = request.getSession();
 		String pId = (String)session.getAttribute("pId");
+		//String pId = "o-1WTwnmE5MzetfXjm_02IjLG8m4";
 		map.put("pId", pId);
 		List<Map<String, Object>> list = dietService.getBloodGlucoseList(map);
 		UserService uservice = (UserService)SpringContextUtil.getBeanById("UserService");
@@ -402,10 +403,6 @@ public class DietController {
 		}
 	}
 	
-	@RequestMapping("/add_newfood")
-	public String addNewFood(HttpServletRequest request){
-		return "diet/add_newfood";
-	}
 	
 }
 

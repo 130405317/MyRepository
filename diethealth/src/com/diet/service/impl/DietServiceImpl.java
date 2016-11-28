@@ -1,5 +1,6 @@
 package com.diet.service.impl;
 
+import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -180,10 +181,6 @@ public class DietServiceImpl implements DietService {
 	@Override
 	public List<Map<String, Object>> showDietInfo(Map<String, Object> param) {
 		List<Map<String, Object>> list = dietDao.showDietInfo(param);
-		int energy = 0;
-		Double protein = 0.0;
-		Double fat = 0.0;
-		Double carbohydrate = 0.0;
 		for(int i=0; i<list.size(); i++){
 			String mainfood = (String)list.get(i).get("mainfood");
 			String mainfoodNum = (String)list.get(i).get("mainfoodNum");
@@ -200,56 +197,26 @@ public class DietServiceImpl implements DietService {
 			if(!"".equals(mainfood)&&mainfood!=null){
 				List<Map<String, Object>> tmpList = getFoodListByIds(mainfood,"1",mainfoodNum);
 				list.get(i).put("mainfood", tmpList);
-				if(tmpList.size() != 0){
-					protein +=Double.parseDouble(String.valueOf(tmpList.get(0).get("protein")));
-					fat +=Double.parseDouble(String.valueOf(tmpList.get(0).get("fat")));
-					carbohydrate +=Double.parseDouble(String.valueOf(tmpList.get(0).get("carbohydrate")));
-				}
 			}
 			if(!"".equals(meat)&&meat!=null){
 				List<Map<String, Object>> tmpList = getFoodListByIds(meat,"2",meatNum);
 				list.get(i).put("meat", tmpList);
-				if(tmpList.size() != 0){
-					protein +=Double.parseDouble(String.valueOf(tmpList.get(0).get("protein")));
-					fat +=Double.parseDouble(String.valueOf(tmpList.get(0).get("fat")));
-					carbohydrate +=Double.parseDouble(String.valueOf(tmpList.get(0).get("carbohydrate")));
-				}
 			}
 			if(!"".equals(vegetables)&&vegetables!=null){
 				List<Map<String, Object>> tmpList = getFoodListByIds(vegetables,"3",vegetablesNum);
 				list.get(i).put("vegetables", tmpList);
-				if(tmpList.size() != 0){
-					protein +=Double.parseDouble(String.valueOf(tmpList.get(0).get("protein")));
-					fat +=Double.parseDouble(String.valueOf(tmpList.get(0).get("fat")));
-					carbohydrate +=Double.parseDouble(String.valueOf(tmpList.get(0).get("carbohydrate")));
-				}
 			}
 			if(!"".equals(drink)&&drink!=null){
 				List<Map<String, Object>> tmpList = getFoodListByIds(drink,"4",drinkNum);
 				list.get(i).put("drink", tmpList);
-				if(tmpList.size() != 0){
-					protein +=Double.parseDouble(String.valueOf(tmpList.get(0).get("protein")));
-					fat +=Double.parseDouble(String.valueOf(tmpList.get(0).get("fat")));
-					carbohydrate +=Double.parseDouble(String.valueOf(tmpList.get(0).get("carbohydrate")));
-				}
 			}
 			if(!"".equals(nut)&&nut!=null){
 				List<Map<String, Object>> tmpList = getFoodListByIds(nut,"5",nutNum);
 				list.get(i).put("nut", tmpList);
-				if(tmpList.size() != 0){
-					protein +=Double.parseDouble(String.valueOf(tmpList.get(0).get("protein")));
-					fat +=Double.parseDouble(String.valueOf(tmpList.get(0).get("fat")));
-					carbohydrate +=Double.parseDouble(String.valueOf(tmpList.get(0).get("carbohydrate")));
-				}  
 			}
 			if(!"".equals(fruits)&&fruits!=null){
 				List<Map<String, Object>> tmpList = getFoodListByIds(fruits,"6",fruitsNum);
 				list.get(i).put("fruits", tmpList);
-				if(tmpList.size() != 0){
-					protein +=Double.parseDouble(String.valueOf(tmpList.get(0).get("protein")));
-					fat +=Double.parseDouble(String.valueOf(tmpList.get(0).get("fat")));
-					carbohydrate +=Double.parseDouble(String.valueOf(tmpList.get(0).get("carbohydrate")));
-				}
 			}
 			int type = (Integer)list.get(i).get("type");
 			switch(type){
@@ -281,9 +248,6 @@ public class DietServiceImpl implements DietService {
 					list.get(i).put("type","夜宵");
 				}
 			}
-		}
-		for(int j=0; j<list.size(); j++){
-			energy +=Integer.parseInt(String.valueOf(list.get(j).get("energy")));
 		}
 		return list;
 	}
@@ -350,11 +314,9 @@ public class DietServiceImpl implements DietService {
 	
 	@Override
 	public String saveAdvice(Map<String, Object> param) {
-		if(dietDao.countAdvice(param)>0){
-			dietDao.updateAdvice(param);
-		}else{
-			dietDao.saveAdvice(param);
-		}
+		
+		dietDao.saveAdvice(param);
+		
 		return "1";
 	}
 	
@@ -570,11 +532,11 @@ public class DietServiceImpl implements DietService {
 		for(int j=0; j<list.size(); j++){
 			energy +=Integer.parseInt(String.valueOf(list.get(j).get("energy")));
 		} 
-		Map<String, Object> map =  new HashMap<String, Object>();;
+		Map<String, Object> map =  new HashMap<String, Object>();
 		map.put("energy", energy);
-		map.put("protein", protein);
-		map.put("fat", fat);
-		map.put("carbohydrate", carbohydrate);
+		map.put("protein", String.format("%.2f", protein));
+		map.put("fat", String.format("%.2f", fat));
+		map.put("carbohydrate",String.format("%.2f", carbohydrate));
 		return map;
 	}
 	

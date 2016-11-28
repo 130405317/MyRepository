@@ -8,7 +8,7 @@ String userImage = session.getAttribute("userImage").toString();
 <html>
 <head>
 
-<title>用户主页</title>
+<title>我的主页</title>
 <meta content="width=device-width" name="viewport" />
 <link rel="shortcut icon" href="<%=path %>/favicon.ico" />
 <link rel="stylesheet" href="<%=path %>/weUI/style/weui.min.css" />
