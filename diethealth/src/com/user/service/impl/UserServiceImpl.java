@@ -161,7 +161,7 @@ public class UserServiceImpl implements UserService {
 	}
 	
 	@Override
-	public Map<String, Object> getAdviceInfo(Map<String, Object> map) {
+	public List<Map<String, Object>> getAdviceInfo(Map<String, Object> map) {
 		return userDao.getAdviceInfo(map);
 	}
 

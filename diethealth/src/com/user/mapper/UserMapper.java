@@ -80,7 +80,7 @@ public interface UserMapper {
 
 	List<Map<String, Object>> getAdviceListWithPage(Map<String, Object> map);
 	
-	Map<String, Object> getAdviceInfo(Map<String, Object> map);
+	List<Map<String, Object>> getAdviceInfo(Map<String, Object> map);
 
 	int countAdviceTotal(Map<String, Object> map);
 

@@ -117,7 +117,7 @@
 		SELECT count(*) FROM advice where p_id = #{pId}
 	</select>
 	
-	<select id="getAdviceInfo" parameterType="object" resultType="hashmap">
+	<select id="getAdviceInfo" parameterType="object" resultType="map">
 		SELECT * FROM advice where p_id = #{pId} and date = #{date}
 	</select>
 	

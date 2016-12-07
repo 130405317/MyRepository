@@ -441,7 +441,7 @@ import com.user.service.UserService;
 			Map<String, Object> map = FormDataCollectUtil.getInstance().getFormDataWithPage(request);
 			HttpSession session = request.getSession();
 			String pId = (String)session.getAttribute("pId");
-			//String pId = "o-1WTwnmE5MzetfXjm_02IjLG8m4";
+			//String pId = "o-1WTwgc5wIiSvUy0-8V92XA0sic";
 			map.put("pId", pId);
 			List<Map<String, Object>> list = userService.getAdviceListWithPage(map);
 			model.addAttribute("adviceList",list);
@@ -460,7 +460,7 @@ import com.user.service.UserService;
 		@RequestMapping("advice_info")
 		public String getAdviceList(HttpServletRequest request,Model model){
 			Map<String, Object> map = FormDataCollectUtil.getInstance().getFormDataWithPage(request);
-			Map<String, Object> info = userService.getAdviceInfo(map);
+			List<Map<String, Object>> info = userService.getAdviceInfo(map);
 			model.addAttribute("advice",info);
 			return "user/advice_info";
 		}

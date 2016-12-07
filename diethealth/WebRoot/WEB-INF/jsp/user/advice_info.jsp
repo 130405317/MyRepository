@@ -27,7 +27,11 @@ String path = request.getContextPath();
 		<h1>医生建议</h1>
 	</div>
 	<div data-role="content">
-			<p>${advice.content}</p>
+		<ol>
+			<c:forEach var="advice" items="${advice}" varStatus="s">
+				<li>${advice.content}</li>
+			</c:forEach>
+		</ol>
 		</div>
 	</div>
 	<div data-role="footer">
