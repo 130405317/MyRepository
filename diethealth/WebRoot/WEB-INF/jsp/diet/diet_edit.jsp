@@ -927,6 +927,7 @@
 			</div>
 		</div>
 		<div id="detailcontent">
+			<p>单位：能量(千卡)、蛋白质(克)、脂肪(克)</p>
 			<div class="ui-grid-c" id="detailtable">
 				<div class="ui-block-a"
 					style="border: 1px solid black; text-align: center; width: 31%; border-style: ridge ridge ridge ridge;">
