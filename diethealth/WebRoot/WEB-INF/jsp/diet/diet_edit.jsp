@@ -64,12 +64,14 @@
 								placeholder="请输入并选择食物">
 						<ul id="suggestions_mainfood1" data-role="listview"
 							data-inset="true"></ul>
-						<div id="mainfood1_div" style="margin-left: 20px; margin-right: 20px; display: none">
+						<div id="mainfood1_div"
+							style="margin-left: 20px; margin-right: 20px; display: none">
 							<ul data-role="listview" sdata-inset="true">
 								<li><a href="#" onclick="addnewfood('mainfood1')">未找到合适的食物</a></li>
 							</ul>
 						</div>
-						<input id="mainfood1" placeholder="请输入您需要的食物，我们会尽快录入" type="text" style="display:none "/>
+						<input id="mainfood1" placeholder="请输入您需要的食物，我们会尽快录入" type="text"
+							style="display: none" />
 						</p>
 					</div>
 					<div data-role="fieldcontain" id="mainfoodnums1" name="mainfoodnum">
@@ -84,12 +86,14 @@
 								placeholder="请输入并选择食物">
 						<ul id="suggestions_mainfood2" data-role="listview"
 							data-inset="true"></ul>
-						<div id="mainfood2_div" style="margin-left: 20px; margin-right: 20px;display: none">
+						<div id="mainfood2_div"
+							style="margin-left: 20px; margin-right: 20px; display: none">
 							<ul data-role="listview" sdata-inset="true">
 								<li><a href="#" onclick="addnewfood('mainfood2')">未找到合适的食物</a></li>
 							</ul>
 						</div>
-						<input id="mainfood2" placeholder="请输入您需要的食物，我们会尽快录入" type="text" style="display:none "/>
+						<input id="mainfood2" placeholder="请输入您需要的食物，我们会尽快录入" type="text"
+							style="display: none" />
 						</p>
 					</div>
 					<div data-role="fieldcontain" name="mainfoodnum" id="mainfoodnums2"
@@ -105,12 +109,14 @@
 								placeholder="请输入并选择食物">
 						<ul id="suggestions_mainfood3" data-role="listview"
 							data-inset="true"></ul>
-						<div id="mainfood3_div" style="margin-left: 20px; margin-right: 20px;display: none">
+						<div id="mainfood3_div"
+							style="margin-left: 20px; margin-right: 20px; display: none">
 							<ul data-role="listview" sdata-inset="true">
 								<li><a href="#" onclick="addnewfood('mainfood3')">未找到合适的食物</a></li>
 							</ul>
 						</div>
-						<input id="mainfood3" placeholder="请输入您需要的食物，我们会尽快录入" type="text" style="display:none "/>
+						<input id="mainfood3" placeholder="请输入您需要的食物，我们会尽快录入" type="text"
+							style="display: none" />
 						</p>
 					</div>
 					<div data-role="fieldcontain" id="mainfoodnums3" name="mainfoodnum"
@@ -126,12 +132,14 @@
 								placeholder="请输入并选择食物">
 						<ul id="suggestions_mainfood4" data-role="listview"
 							data-inset="true"></ul>
-						<div id="mainfood4_div" style="margin-left: 20px; margin-right: 20px;display: none">
+						<div id="mainfood4_div"
+							style="margin-left: 20px; margin-right: 20px; display: none">
 							<ul data-role="listview" sdata-inset="true">
 								<li><a href="#" onclick="addnewfood('mainfood4')">未找到合适的食物</a></li>
 							</ul>
 						</div>
-						<input id="mainfood4" placeholder="请输入您需要的食物，我们会尽快录入" type="text" style="display:none "/>
+						<input id="mainfood4" placeholder="请输入您需要的食物，我们会尽快录入" type="text"
+							style="display: none" />
 						</p>
 					</div>
 					<div data-role="fieldcontain" id="mainfoodnums4" name="mainfoodnum"
@@ -147,12 +155,14 @@
 								placeholder="请输入并选择食物">
 						<ul id="suggestions_mainfood5" data-role="listview"
 							data-inset="true"></ul>
-						<div id="mainfood5_div" style="margin-left: 20px; margin-right: 20px;display: none">
+						<div id="mainfood5_div"
+							style="margin-left: 20px; margin-right: 20px; display: none">
 							<ul data-role="listview" sdata-inset="true">
 								<li><a href="#" onclick="addnewfood('mainfood5')">未找到合适的食物</a></li>
 							</ul>
 						</div>
-						<input id="mainfood5" placeholder="请输入您需要的食物，我们会尽快录入" type="text" style="display:none "/>
+						<input id="mainfood5" placeholder="请输入您需要的食物，我们会尽快录入" type="text"
+							style="display: none" />
 						</p>
 					</div>
 					<div data-role="fieldcontain" id="mainfoodnums5" name="mainfoodnum"
@@ -177,12 +187,14 @@
 							<input type="search" id="searchField_meat1"
 								placeholder="请输入并选择食物">
 						<ul id="suggestions_meat1" data-role="listview" data-inset="true"></ul>
-						<div id="meat1_div" style="margin-left: 20px; margin-right: 20px;display: none">
+						<div id="meat1_div"
+							style="margin-left: 20px; margin-right: 20px; display: none">
 							<ul data-role="listview" sdata-inset="true">
 								<li><a href="#" onclick="addnewfood('meat1')">未找到合适的食物</a></li>
 							</ul>
 						</div>
-						<input id="meat1" placeholder="请输入您需要的食物，我们会尽快录入" type="text" style="display:none "/>
+						<input id="meat1" placeholder="请输入您需要的食物，我们会尽快录入" type="text"
+							style="display: none" />
 						</p>
 					</div>
 					<div data-role="fieldcontain" name="meatnum" id="meatnums1">
@@ -196,12 +208,14 @@
 							<input type="search" id="searchField_meat2"
 								placeholder="请输入并选择食物">
 						<ul id="suggestions_meat2" data-role="listview" data-inset="true"></ul>
-						<div id="meat2_div" style="margin-left: 20px; margin-right: 20px;display: none">
+						<div id="meat2_div"
+							style="margin-left: 20px; margin-right: 20px; display: none">
 							<ul data-role="listview" sdata-inset="true">
 								<li><a href="#" onclick="addnewfood('meat2')">未找到合适的食物</a></li>
 							</ul>
 						</div>
-						<input id="meat2" placeholder="请输入您需要的食物，我们会尽快录入" type="text" style="display:none "/>
+						<input id="meat2" placeholder="请输入您需要的食物，我们会尽快录入" type="text"
+							style="display: none" />
 						</p>
 					</div>
 					<div data-role="fieldcontain" name="meatnum" id="meatnums2"
@@ -216,12 +230,14 @@
 							<input type="search" id="searchField_meat3"
 								placeholder="请输入并选择食物">
 						<ul id="suggestions_meat3" data-role="listview" data-inset="true"></ul>
-						<div id="meat3_div" style="margin-left: 20px; margin-right: 20px;display: none">
+						<div id="meat3_div"
+							style="margin-left: 20px; margin-right: 20px; display: none">
 							<ul data-role="listview" sdata-inset="true">
 								<li><a href="#" onclick="addnewfood('meat3')">未找到合适的食物</a></li>
 							</ul>
 						</div>
-						<input id="meat3" placeholder="请输入您需要的食物，我们会尽快录入" type="text" style="display:none "/>
+						<input id="meat3" placeholder="请输入您需要的食物，我们会尽快录入" type="text"
+							style="display: none" />
 						</p>
 					</div>
 					<div data-role="fieldcontain" name="meatnum" id="meatnums3"
@@ -236,12 +252,14 @@
 							<input type="search" id="searchField_meat4"
 								placeholder="请输入并选择食物">
 						<ul id="suggestions_meat4" data-role="listview" data-inset="true"></ul>
-						<div id="meat4_div" style="margin-left: 20px; margin-right: 20px;display: none">
+						<div id="meat4_div"
+							style="margin-left: 20px; margin-right: 20px; display: none">
 							<ul data-role="listview" sdata-inset="true">
 								<li><a href="#" onclick="addnewfood('meat4')">未找到合适的食物</a></li>
 							</ul>
 						</div>
-						<input id="meat4" placeholder="请输入您需要的食物，我们会尽快录入" type="text" style="display:none "/>
+						<input id="meat4" placeholder="请输入您需要的食物，我们会尽快录入" type="text"
+							style="display: none" />
 						</p>
 					</div>
 					<div data-role="fieldcontain" name="meatnum" id="meatnums4"
@@ -256,12 +274,14 @@
 							<input type="search" id="searchField_meat5"
 								placeholder="请输入并选择食物">
 						<ul id="suggestions_meat5" data-role="listview" data-inset="true"></ul>
-						<div id="meat5_div" style="margin-left: 20px; margin-right: 20px;display: none">
+						<div id="meat5_div"
+							style="margin-left: 20px; margin-right: 20px; display: none">
 							<ul data-role="listview" sdata-inset="true">
 								<li><a href="#" onclick="addnewfood('meat5')">未找到合适的食物</a></li>
 							</ul>
 						</div>
-						<input id="meat5" placeholder="请输入您需要的食物，我们会尽快录入" type="text" style="display:none "/>
+						<input id="meat5" placeholder="请输入您需要的食物，我们会尽快录入" type="text"
+							style="display: none" />
 						</p>
 					</div>
 					<div data-role="fieldcontain" name="meatnum" id="meatnums5"
@@ -287,12 +307,14 @@
 								placeholder="请输入并选择食物">
 						<ul id="suggestions_vegetables1" data-role="listview"
 							data-inset="true"></ul>
-						<div id="vegetables1_div" style="margin-left: 20px; margin-right: 20px;display: none">
+						<div id="vegetables1_div"
+							style="margin-left: 20px; margin-right: 20px; display: none">
 							<ul data-role="listview" sdata-inset="true">
 								<li><a href="#" onclick="addnewfood('vegetables1')">未找到合适的食物</a></li>
 							</ul>
 						</div>
-						<input id="vegetables1" placeholder="请输入您需要的食物，我们会尽快录入" type="text" style="display:none "/>
+						<input id="vegetables1" placeholder="请输入您需要的食物，我们会尽快录入"
+							type="text" style="display: none" />
 						</p>
 					</div>
 					<div data-role="fieldcontain" name="vegetablesnum"
@@ -310,12 +332,14 @@
 								placeholder="请输入并选择食物">
 						<ul id="suggestions_vegetables2" data-role="listview"
 							data-inset="true"></ul>
-							<div id="vegetables2_div" style="margin-left: 20px; margin-right: 20px;display: none">
+						<div id="vegetables2_div"
+							style="margin-left: 20px; margin-right: 20px; display: none">
 							<ul data-role="listview" sdata-inset="true">
 								<li><a href="#" onclick="addnewfood('vegetables2')">未找到合适的食物</a></li>
 							</ul>
 						</div>
-						<input id="vegetables2" placeholder="请输入您需要的食物，我们会尽快录入" type="text" style="display:none "/>
+						<input id="vegetables2" placeholder="请输入您需要的食物，我们会尽快录入"
+							type="text" style="display: none" />
 						</p>
 					</div>
 					<div data-role="fieldcontain" name="vegetablesnum"
@@ -333,12 +357,14 @@
 								placeholder="请输入并选择食物">
 						<ul id="suggestions_vegetables3" data-role="listview"
 							data-inset="true"></ul>
-							<div id="vegetables3_div" style="margin-left: 20px; margin-right: 20px;display: none">
+						<div id="vegetables3_div"
+							style="margin-left: 20px; margin-right: 20px; display: none">
 							<ul data-role="listview" sdata-inset="true">
 								<li><a href="#" onclick="addnewfood('vegetables3')">未找到合适的食物</a></li>
 							</ul>
 						</div>
-						<input id="vegetables3" placeholder="请输入您需要的食物，我们会尽快录入" type="text" style="display:none "/>
+						<input id="vegetables3" placeholder="请输入您需要的食物，我们会尽快录入"
+							type="text" style="display: none" />
 						</p>
 					</div>
 					<div data-role="fieldcontain" name="vegetablesnum"
@@ -356,12 +382,14 @@
 								placeholder="请输入并选择食物">
 						<ul id="suggestions_vegetables4" data-role="listview"
 							data-inset="true"></ul>
-							<div id="vegetables4_div" style="margin-left: 20px; margin-right: 20px;display: none">
+						<div id="vegetables4_div"
+							style="margin-left: 20px; margin-right: 20px; display: none">
 							<ul data-role="listview" sdata-inset="true">
 								<li><a href="#" onclick="addnewfood('vegetables4')">未找到合适的食物</a></li>
 							</ul>
 						</div>
-						<input id="vegetables4" placeholder="请输入您需要的食物，我们会尽快录入" type="text" style="display:none "/>
+						<input id="vegetables4" placeholder="请输入您需要的食物，我们会尽快录入"
+							type="text" style="display: none" />
 						</p>
 					</div>
 					<div data-role="fieldcontain" name="vegetablesnum"
@@ -379,12 +407,14 @@
 								placeholder="请输入并选择食物">
 						<ul id="suggestions_vegetables5" data-role="listview"
 							data-inset="true"></ul>
-							<div id="vegetables5_div" style="margin-left: 20px; margin-right: 20px;display: none">
+						<div id="vegetables5_div"
+							style="margin-left: 20px; margin-right: 20px; display: none">
 							<ul data-role="listview" sdata-inset="true">
 								<li><a href="#" onclick="addnewfood('vegetables5')">未找到合适的食物</a></li>
 							</ul>
 						</div>
-						<input id="vegetables5" placeholder="请输入您需要的食物，我们会尽快录入" type="text" style="display:none "/>
+						<input id="vegetables5" placeholder="请输入您需要的食物，我们会尽快录入"
+							type="text" style="display: none" />
 						</p>
 					</div>
 					<div data-role="fieldcontain" name="vegetablesnum"
@@ -402,12 +432,14 @@
 								placeholder="请输入并选择食物">
 						<ul id="suggestions_vegetables6" data-role="listview"
 							data-inset="true"></ul>
-							<div id="vegetables6_div" style="margin-left: 20px; margin-right: 20px;display: none">
+						<div id="vegetables6_div"
+							style="margin-left: 20px; margin-right: 20px; display: none">
 							<ul data-role="listview" sdata-inset="true">
 								<li><a href="#" onclick="addnewfood('vegetables6')">未找到合适的食物</a></li>
 							</ul>
 						</div>
-						<input id="vegetables6" placeholder="请输入您需要的食物，我们会尽快录入" type="text" style="display:none "/>
+						<input id="vegetables6" placeholder="请输入您需要的食物，我们会尽快录入"
+							type="text" style="display: none" />
 						</p>
 					</div>
 					<div data-role="fieldcontain" name="vegetablesnum"
@@ -425,12 +457,14 @@
 								placeholder="请输入并选择食物">
 						<ul id="suggestions_vegetables7" data-role="listview"
 							data-inset="true"></ul>
-							<div id="vegetables7_div" style="margin-left: 20px; margin-right: 20px;display: none">
+						<div id="vegetables7_div"
+							style="margin-left: 20px; margin-right: 20px; display: none">
 							<ul data-role="listview" sdata-inset="true">
 								<li><a href="#" onclick="addnewfood('vegetables7')">未找到合适的食物</a></li>
 							</ul>
 						</div>
-						<input id="vegetables7" placeholder="请输入您需要的食物，我们会尽快录入" type="text" style="display:none "/>
+						<input id="vegetables7" placeholder="请输入您需要的食物，我们会尽快录入"
+							type="text" style="display: none" />
 						</p>
 					</div>
 					<div data-role="fieldcontain" name="vegetablesnum"
@@ -448,12 +482,14 @@
 								placeholder="请输入并选择食物">
 						<ul id="suggestions_vegetables8" data-role="listview"
 							data-inset="true"></ul>
-							<div id="vegetables8_div" style="margin-left: 20px; margin-right: 20px;display: none">
+						<div id="vegetables8_div"
+							style="margin-left: 20px; margin-right: 20px; display: none">
 							<ul data-role="listview" sdata-inset="true">
 								<li><a href="#" onclick="addnewfood('vegetables8')">未找到合适的食物</a></li>
 							</ul>
 						</div>
-						<input id="vegetables8" placeholder="请输入您需要的食物，我们会尽快录入" type="text" style="display:none "/>
+						<input id="vegetables8" placeholder="请输入您需要的食物，我们会尽快录入"
+							type="text" style="display: none" />
 						</p>
 					</div>
 					<div data-role="fieldcontain" name="vegetablesnum"
@@ -471,12 +507,14 @@
 								placeholder="请输入并选择食物">
 						<ul id="suggestions_vegetables9" data-role="listview"
 							data-inset="true"></ul>
-							<div id="vegetables9_div" style="margin-left: 20px; margin-right: 20px;display: none">
+						<div id="vegetables9_div"
+							style="margin-left: 20px; margin-right: 20px; display: none">
 							<ul data-role="listview" sdata-inset="true">
 								<li><a href="#" onclick="addnewfood('vegetables9')">未找到合适的食物</a></li>
 							</ul>
 						</div>
-						<input id="vegetables9" placeholder="请输入您需要的食物，我们会尽快录入" type="text" style="display:none "/>
+						<input id="vegetables9" placeholder="请输入您需要的食物，我们会尽快录入"
+							type="text" style="display: none" />
 						</p>
 					</div>
 					<div data-role="fieldcontain" name="vegetablesnum"
@@ -494,12 +532,14 @@
 								placeholder="请输入并选择食物">
 						<ul id="suggestions_vegetables10" data-role="listview"
 							data-inset="true"></ul>
-							<div id="vegetables10_div" style="margin-left: 20px; margin-right: 20px;display: none">
+						<div id="vegetables10_div"
+							style="margin-left: 20px; margin-right: 20px; display: none">
 							<ul data-role="listview" sdata-inset="true">
 								<li><a href="#" onclick="addnewfood('vegetables10')">未找到合适的食物</a></li>
 							</ul>
 						</div>
-						<input id="vegetables10" placeholder="请输入您需要的食物，我们会尽快录入" type="text" style="display:none "/>
+						<input id="vegetables10" placeholder="请输入您需要的食物，我们会尽快录入"
+							type="text" style="display: none" />
 						</p>
 					</div>
 					<div data-role="fieldcontain" name="vegetablesnum"
@@ -525,12 +565,14 @@
 							<input type="search" id="searchField_drink1"
 								placeholder="请输入并选择食物">
 						<ul id="suggestions_drink1" data-role="listview" data-inset="true"></ul>
-						<div id="drink1_div" style="margin-left: 20px; margin-right: 20px;display: none">
+						<div id="drink1_div"
+							style="margin-left: 20px; margin-right: 20px; display: none">
 							<ul data-role="listview" sdata-inset="true">
 								<li><a href="#" onclick="addnewfood('drink1')">未找到合适的食物</a></li>
 							</ul>
 						</div>
-						<input id="drink1" placeholder="请输入您需要的食物，我们会尽快录入" type="text" style="display:none "/>
+						<input id="drink1" placeholder="请输入您需要的食物，我们会尽快录入" type="text"
+							style="display: none" />
 						</p>
 					</div>
 					<div data-role="fieldcontain" name="drinknum" id="drinknums1">
@@ -544,12 +586,14 @@
 							<input type="search" id="searchField_drink2"
 								placeholder="请输入并选择食物">
 						<ul id="suggestions_drink2" data-role="listview" data-inset="true"></ul>
-						<div id="drink2_div" style="margin-left: 20px; margin-right: 20px;display: none">
+						<div id="drink2_div"
+							style="margin-left: 20px; margin-right: 20px; display: none">
 							<ul data-role="listview" sdata-inset="true">
 								<li><a href="#" onclick="addnewfood('drink2')">未找到合适的食物</a></li>
 							</ul>
 						</div>
-						<input id="drink2" placeholder="请输入您需要的食物，我们会尽快录入" type="text" style="display:none "/>
+						<input id="drink2" placeholder="请输入您需要的食物，我们会尽快录入" type="text"
+							style="display: none" />
 						</p>
 					</div>
 					<div data-role="fieldcontain" name="drinknum" id="drinknums2"
@@ -564,12 +608,14 @@
 							<input type="search" id="searchField_drink3"
 								placeholder="请输入并选择食物">
 						<ul id="suggestions_drink3" data-role="listview" data-inset="true"></ul>
-						<div id="drink3_div" style="margin-left: 20px; margin-right: 20px;display: none">
+						<div id="drink3_div"
+							style="margin-left: 20px; margin-right: 20px; display: none">
 							<ul data-role="listview" sdata-inset="true">
 								<li><a href="#" onclick="addnewfood('drink3')">未找到合适的食物</a></li>
 							</ul>
 						</div>
-						<input id="drink3" placeholder="请输入您需要的食物，我们会尽快录入" type="text" style="display:none "/>
+						<input id="drink3" placeholder="请输入您需要的食物，我们会尽快录入" type="text"
+							style="display: none" />
 						</p>
 					</div>
 					<div data-role="fieldcontain" name="drinknum" id="drinknums3"
@@ -584,12 +630,14 @@
 							<input type="search" id="searchField_drink4"
 								placeholder="请输入并选择食物">
 						<ul id="suggestions_drink4" data-role="listview" data-inset="true"></ul>
-						<div id="drink4_div" style="margin-left: 20px; margin-right: 20px;display: none">
+						<div id="drink4_div"
+							style="margin-left: 20px; margin-right: 20px; display: none">
 							<ul data-role="listview" sdata-inset="true">
 								<li><a href="#" onclick="addnewfood('drink4')">未找到合适的食物</a></li>
 							</ul>
 						</div>
-						<input id="drink4" placeholder="请输入您需要的食物，我们会尽快录入" type="text" style="display:none "/>
+						<input id="drink4" placeholder="请输入您需要的食物，我们会尽快录入" type="text"
+							style="display: none" />
 						</p>
 					</div>
 					<div data-role="fieldcontain" name="drinknum" id="drinknums4"
@@ -604,12 +652,14 @@
 							<input type="search" id="searchField_drink5"
 								placeholder="请输入并选择食物">
 						<ul id="suggestions_drink5" data-role="listview" data-inset="true"></ul>
-						<div id="drink5_div" style="margin-left: 20px; margin-right: 20px;display: none">
+						<div id="drink5_div"
+							style="margin-left: 20px; margin-right: 20px; display: none">
 							<ul data-role="listview" sdata-inset="true">
 								<li><a href="#" onclick="addnewfood('drink5')">未找到合适的食物</a></li>
 							</ul>
 						</div>
-						<input id="drink5" placeholder="请输入您需要的食物，我们会尽快录入" type="text" style="display:none "/>
+						<input id="drink5" placeholder="请输入您需要的食物，我们会尽快录入" type="text"
+							style="display: none" />
 						</p>
 					</div>
 					<div data-role="fieldcontain" name="drinknum" id="drinknums5"
@@ -623,7 +673,7 @@
 				<div data-role="fieldcontain">
 					<button onclick="addfood('drink');">新增饮品</button>
 					<button onclick="removefood('drink');">移除饮品</button>
-					
+
 				</div>
 			</div>
 
@@ -634,12 +684,14 @@
 						<p>
 							<input type="search" id="searchField_nut1" placeholder="请输入并选择食物">
 						<ul id="suggestions_nut1" data-role="listview" data-inset="true"></ul>
-						<div id="nut1_div" style="margin-left: 20px; margin-right: 20px;display: none">
+						<div id="nut1_div"
+							style="margin-left: 20px; margin-right: 20px; display: none">
 							<ul data-role="listview" sdata-inset="true">
 								<li><a href="#" onclick="addnewfood('nut1')">未找到合适的食物</a></li>
 							</ul>
 						</div>
-						<input id="nut1" placeholder="请输入您需要的食物，我们会尽快录入" type="text" style="display:none "/>
+						<input id="nut1" placeholder="请输入您需要的食物，我们会尽快录入" type="text"
+							style="display: none" />
 						</p>
 					</div>
 					<div data-role="fieldcontain" name="nutnum" id="nutnums1">
@@ -652,12 +704,14 @@
 						<p>
 							<input type="search" id="searchField_nut2" placeholder="请输入并选择食物">
 						<ul id="suggestions_nut2" data-role="listview" data-inset="true"></ul>
-						<div id="nut2_div" style="margin-left: 20px; margin-right: 20px;display: none">
+						<div id="nut2_div"
+							style="margin-left: 20px; margin-right: 20px; display: none">
 							<ul data-role="listview" sdata-inset="true">
 								<li><a href="#" onclick="addnewfood('nut2')">未找到合适的食物</a></li>
 							</ul>
 						</div>
-						<input id="nut2" placeholder="请输入您需要的食物，我们会尽快录入" type="text" style="display:none "/>
+						<input id="nut2" placeholder="请输入您需要的食物，我们会尽快录入" type="text"
+							style="display: none" />
 						</p>
 					</div>
 					<div data-role="fieldcontain" name="nutnum" id="nutnums2"
@@ -671,12 +725,14 @@
 						<p>
 							<input type="search" id="searchField_nut3" placeholder="请输入并选择食物">
 						<ul id="suggestions_nut3" data-role="listview" data-inset="true"></ul>
-						<div id="nut3_div" style="margin-left: 20px; margin-right: 20px;display: none">
+						<div id="nut3_div"
+							style="margin-left: 20px; margin-right: 20px; display: none">
 							<ul data-role="listview" sdata-inset="true">
 								<li><a href="#" onclick="addnewfood('nut3')">未找到合适的食物</a></li>
 							</ul>
 						</div>
-						<input id="nut3" placeholder="请输入您需要的食物，我们会尽快录入" type="text" style="display:none "/>
+						<input id="nut3" placeholder="请输入您需要的食物，我们会尽快录入" type="text"
+							style="display: none" />
 						</p>
 					</div>
 					<div data-role="fieldcontain" name="nutnum" id="nutnums3"
@@ -690,12 +746,14 @@
 						<p>
 							<input type="search" id="searchField_nut4" placeholder="请输入并选择食物">
 						<ul id="suggestions_nut4" data-role="listview" data-inset="true"></ul>
-						<div id="nut4_div" style="margin-left: 20px; margin-right: 20px;display: none">
+						<div id="nut4_div"
+							style="margin-left: 20px; margin-right: 20px; display: none">
 							<ul data-role="listview" sdata-inset="true">
 								<li><a href="#" onclick="addnewfood('nut4')">未找到合适的食物</a></li>
 							</ul>
 						</div>
-						<input id="nut4" placeholder="请输入您需要的食物，我们会尽快录入" type="text" style="display:none "/>
+						<input id="nut4" placeholder="请输入您需要的食物，我们会尽快录入" type="text"
+							style="display: none" />
 						</p>
 					</div>
 					<div data-role="fieldcontain" name="nutnum" id="nutnums4"
@@ -709,12 +767,14 @@
 						<p>
 							<input type="search" id="searchField_nut5" placeholder="请输入并选择食物">
 						<ul id="suggestions_nut5" data-role="listview" data-inset="true"></ul>
-						<div id="nut5_div" style="margin-left: 20px; margin-right: 20px;display: none">
+						<div id="nut5_div"
+							style="margin-left: 20px; margin-right: 20px; display: none">
 							<ul data-role="listview" sdata-inset="true">
 								<li><a href="#" onclick="addnewfood('nut5')">未找到合适的食物</a></li>
 							</ul>
 						</div>
-						<input id="nut5" placeholder="请输入您需要的食物，我们会尽快录入" type="text" style="display:none "/>
+						<input id="nut5" placeholder="请输入您需要的食物，我们会尽快录入" type="text"
+							style="display: none" />
 						</p>
 					</div>
 					<div data-role="fieldcontain" name="nutnum" id="nutnums5"
@@ -728,7 +788,7 @@
 				<div data-role="fieldcontain">
 					<button onclick="addfood('nut');">新增干果</button>
 					<button onclick="removefood('nut');">移除干果</button>
-					
+
 				</div>
 			</div>
 
@@ -741,12 +801,14 @@
 								placeholder="请输入并选择食物">
 						<ul id="suggestions_fruits1" data-role="listview"
 							data-inset="true"></ul>
-						<div id="fruits1_div" style="margin-left: 20px; margin-right: 20px;display: none">
+						<div id="fruits1_div"
+							style="margin-left: 20px; margin-right: 20px; display: none">
 							<ul data-role="listview" sdata-inset="true">
 								<li><a href="#" onclick="addnewfood('fruits1')">未找到合适的食物</a></li>
 							</ul>
 						</div>
-						<input id="fruits1" placeholder="请输入您需要的食物，我们会尽快录入" type="text" style="display:none "/>
+						<input id="fruits1" placeholder="请输入您需要的食物，我们会尽快录入" type="text"
+							style="display: none" />
 						</p>
 					</div>
 					<div data-role="fieldcontain" name="fruitsnum" id="fruitsnums1">
@@ -761,12 +823,14 @@
 								placeholder="请输入并选择食物">
 						<ul id="suggestions_fruits2" data-role="listview"
 							data-inset="true"></ul>
-						<div id="fruits2_div" style="margin-left: 20px; margin-right: 20px;display: none">
+						<div id="fruits2_div"
+							style="margin-left: 20px; margin-right: 20px; display: none">
 							<ul data-role="listview" sdata-inset="true">
 								<li><a href="#" onclick="addnewfood('fruits2')">未找到合适的食物</a></li>
 							</ul>
 						</div>
-						<input id="fruits2" placeholder="请输入您需要的食物，我们会尽快录入" type="text" style="display:none "/>
+						<input id="fruits2" placeholder="请输入您需要的食物，我们会尽快录入" type="text"
+							style="display: none" />
 						</p>
 					</div>
 					<div data-role="fieldcontain" name="fruitsnum" id="fruitsnums2"
@@ -782,12 +846,14 @@
 								placeholder="请输入并选择食物">
 						<ul id="suggestions_fruits3" data-role="listview"
 							data-inset="true"></ul>
-						<div id="fruits3_div" style="margin-left: 20px; margin-right: 20px;display: none">
+						<div id="fruits3_div"
+							style="margin-left: 20px; margin-right: 20px; display: none">
 							<ul data-role="listview" sdata-inset="true">
 								<li><a href="#" onclick="addnewfood('fruits3')">未找到合适的食物</a></li>
 							</ul>
 						</div>
-						<input id="fruits3" placeholder="请输入您需要的食物，我们会尽快录入" type="text" style="display:none "/>
+						<input id="fruits3" placeholder="请输入您需要的食物，我们会尽快录入" type="text"
+							style="display: none" />
 						</p>
 					</div>
 					<div data-role="fieldcontain" name="fruitsnum" id="fruitsnums3"
@@ -803,12 +869,14 @@
 								placeholder="请输入并选择食物">
 						<ul id="suggestions_fruits4" data-role="listview"
 							data-inset="true"></ul>
-						<div id="fruits4_div" style="margin-left: 20px; margin-right: 20px;display: none">
+						<div id="fruits4_div"
+							style="margin-left: 20px; margin-right: 20px; display: none">
 							<ul data-role="listview" sdata-inset="true">
 								<li><a href="#" onclick="addnewfood('fruits4')">未找到合适的食物</a></li>
 							</ul>
 						</div>
-						<input id="fruits4" placeholder="请输入您需要的食物，我们会尽快录入" type="text" style="display:none "/>
+						<input id="fruits4" placeholder="请输入您需要的食物，我们会尽快录入" type="text"
+							style="display: none" />
 						</p>
 					</div>
 					<div data-role="fieldcontain" name="fruitsnum" id="fruitsnums4"
@@ -824,12 +892,14 @@
 								placeholder="请输入并选择食物">
 						<ul id="suggestions_fruits5" data-role="listview"
 							data-inset="true"></ul>
-						<div id="fruits5_div" style="margin-left: 20px; margin-right: 20px;display: none">
+						<div id="fruits5_div"
+							style="margin-left: 20px; margin-right: 20px; display: none">
 							<ul data-role="listview" sdata-inset="true">
 								<li><a href="#" onclick="addnewfood('fruits5')">未找到合适的食物</a></li>
 							</ul>
 						</div>
-						<input id="fruits5" placeholder="请输入您需要的食物，我们会尽快录入" type="text" style="display:none "/>
+						<input id="fruits5" placeholder="请输入您需要的食物，我们会尽快录入" type="text"
+							style="display: none" />
 						</p>
 					</div>
 					<div data-role="fieldcontain" name="fruitsnum" id="fruitsnums5"
@@ -850,6 +920,10 @@
 				<label for="remarks">烹饪方式及说明：</label>
 				<textarea name="remarks" id="remarks"
 					placeholder="如：水煮大虾、油炸大虾、西红柿炒蛋"></textarea>
+			</div>
+			<div data-role="fieldcontain">
+				<label for="prompt">提示：</label>
+				<p name="prompt">详细记录每餐饮食情况，可以进入个人主页【饮食记录】中查看每天为您量身定制的智能分析报告。</p>
 			</div>
 		</div>
 		<div id="detailcontent">
@@ -924,10 +998,10 @@
 			$('#' + id).val("200");
 		}
 	}
-	
-	function addnewfood(id){
-		$('#'+id+'_div').hide();
-		$('#'+id).show();
+
+	function addnewfood(id) {
+		$('#' + id + '_div').hide();
+		$('#' + id).show();
 	}
 
 	var mainfoodCount = 1;
@@ -1216,39 +1290,40 @@
 		var nutJson = parseFoodList("nut");
 		var fruitsJson = parseFoodList("fruits");
 		var remarks = $('#remarks').val();
-		
-		for(m=1;m<6;m++){
-			addnewfood_data[m-1] = $('#mainfood'+m).val();
+
+		for (m = 1; m < 6; m++) {
+			addnewfood_data[m - 1] = $('#mainfood' + m).val();
 		}
-		for(me=1;me<6;me++){
-			addnewfood_data[me-1+5] = $('#meat'+me).val();
+		for (me = 1; me < 6; me++) {
+			addnewfood_data[me - 1 + 5] = $('#meat' + me).val();
 		}
-		for(v=1;v<11;v++){
-			addnewfood_data[v-1+10] = $('#vegetables'+v).val();
+		for (v = 1; v < 11; v++) {
+			addnewfood_data[v - 1 + 10] = $('#vegetables' + v).val();
 		}
-		for(d=1;d<6;d++){
-			addnewfood_data[d-1+20] = $('#drink'+d).val();
+		for (d = 1; d < 6; d++) {
+			addnewfood_data[d - 1 + 20] = $('#drink' + d).val();
 		}
-		for(n=1;n<6;n++){
-			addnewfood_data[n-1+25] = $('#nut'+n).val();
+		for (n = 1; n < 6; n++) {
+			addnewfood_data[n - 1 + 25] = $('#nut' + n).val();
 		}
-		for(f=1;f<6;f++){
-			addnewfood_data[f-1+30] = $('#fruits'+f).val();
+		for (f = 1; f < 6; f++) {
+			addnewfood_data[f - 1 + 30] = $('#fruits' + f).val();
 		}
-		
-		
-		for(i=0;i<35;i++){
-			if(addnewfood_data[i] != ""){
-				 $.post("../diet/insert_newfood",{foodname:addnewfood_data[i]},function(text){
-					 if(text=="1"){
-						 console.log("保存成功！");
-						}else{
-							alert("新食物保存失败！");
-						} 
-				 });
+
+		for (i = 0; i < 35; i++) {
+			if (addnewfood_data[i] != "") {
+				$.post("../diet/insert_newfood", {
+					foodname : addnewfood_data[i]
+				}, function(text) {
+					if (text == "1") {
+						console.log("保存成功！");
+					} else {
+						alert("新食物保存失败！");
+					}
+				});
 			}
 		}
-		
+
 		$.post("../diet/saveDiet", {
 			energy : sumenergy,
 			type : diettype,

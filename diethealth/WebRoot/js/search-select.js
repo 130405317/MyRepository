@@ -164,9 +164,8 @@ $("#pageone").bind("pageshow", function(e) {
 					mainfood_select1[10] = mainfood_data[j].carotene;
 					typechange('mainfood', '1', mainfood_select1);
 				}
-			}
+			} 
 			$('#searchField_mainfood1').val($a.text()); // place the value of
-														// the selection into
 														// the search box
 			$("#searchField_mainfood1").autocomplete('clear'); // clear the
 																// listview
@@ -176,7 +175,6 @@ $("#pageone").bind("pageshow", function(e) {
 		onNoResults : function() {
 			$('#mainfood1_div').show();
 			$('#searchField_mainfood1').val("");
-			return;
 		}
 		
 	});

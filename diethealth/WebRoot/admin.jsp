@@ -6,8 +6,8 @@ String path = request.getContextPath();
 <head>
 
 <title>管理员登录</title>
-<meta http-equiv="pragma" content="no-cache">
-<meta http-equiv="cache-control" content="no-cache">
+<!-- <meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache"> -->
 <meta content="width=device-width" name="viewport" />
 <link rel="shortcut icon" href="<%=path %>/favicon.ico" />
 <link rel="stylesheet" type="text/css"
