@@ -3,8 +3,8 @@
 <%@ taglib uri="http://www.springframework.org/tags" prefix="s"%>
 <%
 	String path = request.getContextPath();
-	String pId = session.getAttribute("pId").toString();
-	//String pId = "o-1WTwnmE5MzetfXjm_02IjLG8m4";
+	//String pId = session.getAttribute("pId").toString();
+	 String pId = "o-1WTwnmE5MzetfXjm_02IjLG8m4";
 %>
 <html>
 <head>

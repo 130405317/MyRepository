@@ -346,6 +346,14 @@ public class DietServiceImpl implements DietService {
 		}else if("2".equals(strength)){
 			energy = (height-105)*38;
 		}
+		int pregnancy = (Integer)patient.get("pregnancy");
+		if(pregnancy>12){
+			energy = energy + 200;
+		}
+		String fetus_num = (String)patient.get("fetus_num");
+		if("2".equals(fetus_num)){
+			energy = energy + 200;
+		}
 		return energy;
 	}
 	

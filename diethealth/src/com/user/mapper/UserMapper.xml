@@ -8,8 +8,8 @@
 		SELECT * FROM doctor t where t.d_id = #{id} 
 	</select>
 	<insert id="saveUser" parameterType="object">
-	INSERT INTO patient(p_id,name,birthday,height,strength,pregnancy,weight,prepregnancyWeight,diabetesType,isUsedDrug,effectType,drugNum,registerDate,doctorId)
-	            values(#{pId},#{name},#{birthday},#{height},#{strength},#{pregnancy},#{weight},#{prepregnancyWeight},#{diabetesType},#{isUsedDrug},#{effectType},#{drugNum},#{registerDate},#{doctorId})
+	INSERT INTO patient(p_id,name,birthday,height,strength,pregnancy,weight,prepregnancyWeight,diabetesType,isUsedDrug,fetus_num,effectType,drugNum,registerDate,doctorId)
+	            values(#{pId},#{name},#{birthday},#{height},#{strength},#{pregnancy},#{weight},#{prepregnancyWeight},#{diabetesType},#{isUsedDrug},#{fetus_num},#{effectType},#{drugNum},#{registerDate},#{doctorId})
 	</insert>
 	<select id="showUserInfo" parameterType="object" resultType="map">
 	select * FROM patient WHERE p_id = #{pId}
@@ -40,7 +40,7 @@
 	</update> 
 	
 	<update id="updateUser" parameterType="object">
-	UPDATE patient SET name = #{name},birthday=#{birthday},height=#{height},strength=#{strength},pregnancy=#{pregnancy},isUsedDrug=#{isUsedDrug},
+	UPDATE patient SET name = #{name},birthday=#{birthday},height=#{height},strength=#{strength},pregnancy=#{pregnancy},fetus_num=#{fetus_num},isUsedDrug=#{isUsedDrug},
 	effectType=#{effectType},drugNum=#{drugNum},weight=#{weight},prepregnancyWeight=#{prepregnancyWeight},doctorId=#{doctorId},diabetesType=#{diabetesType}
 	WHERE p_id = #{pId}
 	</update> 

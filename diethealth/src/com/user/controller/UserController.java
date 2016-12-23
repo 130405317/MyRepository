@@ -41,6 +41,7 @@ import com.user.service.UserService;
 		public  String register(HttpServletRequest request, Model model){
 			HttpSession session = request.getSession();
 			String id = (String)session.getAttribute("id");
+			//String id = "o-1WTwnmE5MzetfXjm_02IjLG8m4";
 			model.addAttribute("id",id);
 			model.addAttribute("doctorlist",userService.getDoctorList());
 			return "user/register";

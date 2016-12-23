@@ -41,12 +41,12 @@ public class DietController {
 		//String pId = "o-1WTwnmE5MzetfXjm_02IjLG8m4";
 		model.addAttribute("energy",dietService.getTargetEnergy(pId));
 		model.addAttribute("typeList",dietService.getTypeList(pId));
-		model.addAttribute("mainfoodList",CacheUtil.getInstance().getMainFoodList());
-		model.addAttribute("meatList",CacheUtil.getInstance().getMeatList());
-		model.addAttribute("vegetablesList",CacheUtil.getInstance().getVegetablesList());
-		model.addAttribute("drinkList",CacheUtil.getInstance().getDrinkList());
-		model.addAttribute("nutList",CacheUtil.getInstance().getNutList());
-		model.addAttribute("fruitsList",CacheUtil.getInstance().getFruitsList());
+		//model.addAttribute("mainfoodList",CacheUtil.getInstance().getMainFoodList());
+		//model.addAttribute("meatList",CacheUtil.getInstance().getMeatList());
+		//model.addAttribute("vegetablesList",CacheUtil.getInstance().getVegetablesList());
+		//model.addAttribute("drinkList",CacheUtil.getInstance().getDrinkList());
+		//model.addAttribute("nutList",CacheUtil.getInstance().getNutList());
+		//model.addAttribute("fruitsList",CacheUtil.getInstance().getFruitsList());
 		return "diet/diet_edit";
 	}
 	

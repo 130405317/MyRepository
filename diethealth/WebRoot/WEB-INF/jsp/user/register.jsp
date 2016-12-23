@@ -46,10 +46,17 @@ String path = request.getContextPath();
 				id="weight" required="true" min="40" max="100" value="60">
 		</div>
 		<div data-role="fieldcontain">
-			<label for="height">患病时间：</label> <select name="diabetesType"
+			<label for=diabetesType>患病时间：</label> <select name="diabetesType"
 				id="diabetesType" required="true">
 				<option value="0">怀孕前</option>
 				<option value="1">怀孕时</option>
+			</select>
+		</div>
+		<div data-role="fieldcontain">
+			<label for=fetus_num>胎儿数量：</label> <select name="fetus_num"
+				id="fetus_num" required="true">
+				<option value="1">单胞胎</option>
+				<option value="2">双胞胎</option>
 			</select>
 		</div>
 		<div data-role="fieldcontain">
@@ -120,6 +127,7 @@ function onSubmit(){
 	var strength = $('#strength').val();
 	var pregnancy = $('#pregnancy').val();
 	var isUsedDrug = $('#isUsedDrug').val();
+	var fetus_num = $('#fetus_num').val();
 	var effectType = $('#effectType').val();
 	var drugNum = $('#drugNum').val();
 	var doctorId = $('#doctorId').val();
@@ -135,7 +143,7 @@ function onSubmit(){
 	   }else{
 		   $.post("add_user",{name:name,birthday:birthday,pId:pId,isUsedDrug:isUsedDrug,doctorId:doctorId,
 			   effectType:effectType,drugNum:drugNum,height:height,prepregnancyWeight:prepregnancyWeight,
-			   weight:weight,diabetesType:diabetesType,strength:strength,pregnancy:pregnancy},function(text){
+			   weight:weight,diabetesType:diabetesType,strength:strength,pregnancy:pregnancy,fetus_num:fetus_num},function(text){
 					if(text=="1"){
 						alert("保存成功！");
 						window.location.href="user_index";
