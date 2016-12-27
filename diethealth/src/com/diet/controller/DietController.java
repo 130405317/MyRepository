@@ -1,7 +1,9 @@
 package com.diet.controller;
 
+import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -11,12 +13,15 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.apache.commons.io.filefilter.FalseFileFilter;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.common.util.CacheUtil;
 import com.common.util.FormDataCollectUtil;
@@ -96,6 +101,52 @@ public class DietController {
 		 List<Map<String, Object>> list = null; 
 		 list = CacheUtil.getInstance().getFruitsList();
 		 return list;
+	}
+	
+	@RequestMapping("diet_img_upload")
+	public String dietImgUpload(HttpServletRequest request){
+		return "diet/img_upload";
+	}
+	
+	@RequestMapping("/img_moreUpload")
+	public String imgMoreUpload(HttpServletRequest request){
+		
+		MultipartHttpServletRequest multipartHttpServletRequest = (MultipartHttpServletRequest)request;
+		Map<String, MultipartFile> files = multipartHttpServletRequest.getFileMap();
+		String uploadUrl = "/home/wxdiethealth_upload/";
+		//String uploadUrl = "E:/file/upload/";
+		File dir = new File(uploadUrl);
+		if (!dir.exists()) {
+			dir.mkdirs();
+		}
+		
+		List<String> fileList = new ArrayList<String>();
+		for (MultipartFile file :  files.values()) {
+			File targetFile = new File(uploadUrl + file.getOriginalFilename());
+			if (!targetFile.exists()) {
+				try {
+					targetFile.createNewFile();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
+				try {
+					file.transferTo(targetFile);
+					fileList.add(uploadUrl+ file.getOriginalFilename());
+				} catch (IllegalStateException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
+			}
+		}
+		
+		request.setAttribute("files", fileList);
+		return "/diet/upload_success";
 	}
 	
 	@RequestMapping("food_add")

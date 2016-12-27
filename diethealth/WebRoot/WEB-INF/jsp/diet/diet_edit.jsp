@@ -37,6 +37,8 @@
 			<a href="" data-role="button"
 				onclick="window.location.href='../user/user_index'">主页</a>
 			<h1>饮食录入</h1>
+			<a href="" data-role="button"
+				onclick="window.location.href='../diet/diet_img_upload'">图片上传</a> 
 		</div>
 		<div data-role="content">
 			<div data-role="fieldcontain">
