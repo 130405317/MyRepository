@@ -52,6 +52,13 @@ public class DietServiceImpl implements DietService {
 		return "1";
 	}
 	
+	/**
+	 * 
+	 * <p>Title:查找饮食记录数量</p>
+	 * @author: 徐德荣
+	 * @date: 2016年12月29日
+	 *
+	 */
 	private boolean isUpdate(Map<String, Object> param){
 		if(dietDao.countDietBypIdAndType(param)>0){
 			return true;
@@ -59,29 +66,41 @@ public class DietServiceImpl implements DietService {
 		return false;
 	}
 	
+	/**
+	 * 查找食物信息(分页)
+	 */
 	@Override
 	public List<Map<String, Object>> getFoodListWithPage(Map<String, Object> map) {
 		return dietDao.getFoodListWithPage(map);
 	}
 	
+	/**
+	 * 查找食物信息
+	 */
 	@Override
 	public Map<String, Object> showFoodInfo(Map<String, Object> param) {
 		return dietDao.getFoodInfo(param);
 	}
 	
+	/**
+	 * 添加或更新食物信息
+	 */
 	@Override
 	public String saveFoodInfo(Map<String, Object> param) {
 		if(param.get("id")==null){
 			param.put("id", CommonUtil.getUUID());
-			dietDao.saveFoodInfo(param);
+			dietDao.saveFoodInfo(param);  //添加食物信息
 			CacheUtil.getInstance().updateFoodList(param, false);
 		}else{
-			dietDao.updateFoodInfo(param);
+			dietDao.updateFoodInfo(param);  //更新食物信息
 			CacheUtil.getInstance().updateFoodList(param, true);
 		}
 		return "1";
 	}
 	
+	/**
+	 * 删除食物信息
+	 */
 	@Override
 	public String deleteFoodInfo(Map<String, Object> param) {
 		dietDao.deleteFoodInfo(param);
@@ -89,11 +108,17 @@ public class DietServiceImpl implements DietService {
 		return "1";
 	}
 	
+	/**
+	 * 查询食物总数
+	 */
 	@Override
 	public int countFoodTotal() {
 		return dietDao.countFoodTotal();
 	}
 	
+	/**
+	 *查询当天血糖信息 并处理
+	 */
 	@Override
 	public Map<String, Object> showBloodGlucoseInfo(Map<String, Object> param) {
 		if(param.get("date")==null){
@@ -118,6 +143,9 @@ public class DietServiceImpl implements DietService {
 		return map;
 	}
 	
+	/**
+	 * 查询当天血糖信息
+	 */
 	@Override
 	public Map<String, Object> getBloodGlucoseInfo(Map<String, Object> param) {
 		if(param.get("date")==null){
@@ -127,20 +155,32 @@ public class DietServiceImpl implements DietService {
 		}
 		return dietDao.showBloodGlucoseInfo(param);
 	}
-
+	
+	/**
+	 * 添加或更新血糖信息
+	 */
 	@Override
 	public String saveBloodGlucoseInfo(Map<String, Object> param) {
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 		String today = sdf.format(new Date());
 		param.put("date", today);
 		if(dietDao.checkBloodGlucoseUpdate(param)>0){
+			//更新血糖信息
 			dietDao.updateBloodGlucoseInfo(setDefaultValue(param));
 		}else{
+			//添加血糖信息
 			dietDao.saveBloodGlucoseInfo(setDefaultValue(param));
 		}
 		return "1";
 	}
 	
+	/**
+	 * 
+	 * <p>Title:设置默认参数</p>
+	 * @author: 徐德荣
+	 * @date: 2016年12月29日
+	 *
+	 */
 	private Map<String,Object> setDefaultValue(Map<String, Object> param){
 		Set<Entry<String, Object>> sets = param.entrySet();
 		Iterator<Entry<String, Object>> it = sets.iterator();
@@ -155,29 +195,41 @@ public class DietServiceImpl implements DietService {
 		return param;
 	}
 	
+	/**
+	 * 查询饮食记录
+	 */
 	@Override
 	public List<Map<String, Object>> getDietList(Map<String, Object> map) {
 		return dietDao.getDietList(map);
 	}
 	
-	
+	/**
+	 * 查询饮食记录总数
+	 */
 	@Override
 	public int countDietTotal(Map<String, Object> map) {
 		return dietDao.countDietTotal(map).size();
 	}
 	
+	/**
+	 * 查询运动量记录(分页)
+	 */
 	@Override
 	public List<Map<String, Object>> getSportList(Map<String, Object> map) {
 		return dietDao.getSportList(map);
 	}
 	
-	
+	/**
+	 * 查询运动量总数
+	 */
 	@Override
 	public int countSportTotal(Map<String, Object> map) {
 		return dietDao.countSportTotal(map).size();
 	}
 	
-	
+	/**
+	 * 查询饮食记录并处理
+	 */
 	@Override
 	public List<Map<String, Object>> showDietInfo(Map<String, Object> param) {
 		List<Map<String, Object>> list = dietDao.showDietInfo(param);
@@ -251,7 +303,14 @@ public class DietServiceImpl implements DietService {
 		}
 		return list;
 	}
-
+	
+	/**
+	 * 
+	 * <p>Title:根据食物id查询食物信息</p>
+	 * @author: 徐德荣
+	 * @date: 2016年12月29日
+	 *
+	 */
 	private List<Map<String, Object>> getFoodListByIds(String foodIds, String type, String nums) {
 		String[] ids = foodIds.split(",");
 		String[] numbers = nums.split(",");
@@ -269,6 +328,13 @@ public class DietServiceImpl implements DietService {
 		return tmpList;
 	}
 	
+	/**
+	 * 
+	 * <p>Title:获取饮食记录中各营养素的总量</p>
+	 * @author: 徐德荣
+	 * @date: 2016年12月29日
+	 *
+	 */
 	private Map<String, Object> getCalculateFoodInfo(Map<String, Object> param, int num){
 		if(param==null){
 			return param;
@@ -286,6 +352,9 @@ public class DietServiceImpl implements DietService {
 		
 	}
 	
+	/**
+	 * 查询血糖记录(分页)
+	 */
 	@Override
 	public List<Map<String, Object>> getBloodGlucoseList(Map<String, Object> map) {
 		List<Map<String, Object>> list = dietDao.getBloodGlucoseList(map);
@@ -307,11 +376,17 @@ public class DietServiceImpl implements DietService {
 		return list;
 	}
 	
+	/**
+	 * 查询血糖记录总数
+	 */
 	@Override
 	public int countBloodGlucoseTotal(Map<String, Object> map) {
 		return dietDao.countBloodGlucoseTotal(map);
 	}
 	
+	/**
+	 * 添加医生建议
+	 */
 	@Override
 	public String saveAdvice(Map<String, Object> param) {
 		
@@ -320,16 +395,25 @@ public class DietServiceImpl implements DietService {
 		return "1";
 	}
 	
+	/**
+	 * 查询医生建议
+	 */
 	@Override
 	public Map<String, Object> showAdviceInfo(Map<String, Object> param) {
 		return dietDao.getAdviceInfo(param);
 	}
 	
+	/**
+	 * 查询运动量记录
+	 */
 	@Override
 	public Map<String, Object> showSportInfo(Map<String, Object> param) {
 		return dietDao.showSportInfo(param);
 	}
 	
+	/**
+	 * 查询用户信息并计算出目标能量
+	 */
 	@Override
 	public int getTargetEnergy(String pId) {
 		int energy = 0;
@@ -357,6 +441,9 @@ public class DietServiceImpl implements DietService {
 		return energy;
 	}
 	
+	/**
+	 * 获取加餐偏好
+	 */
 	@Override
 	public List<Map<String, Object>> getTypeList(String pId) {
 		List<Map<String,Object>> list = new LinkedList<Map<String,Object>>();
@@ -394,34 +481,48 @@ public class DietServiceImpl implements DietService {
 		return list;
 	}
 	
+	/**
+	 * 添加或更新运动量
+	 */
 	@Override
 	public String saveSportInfo(Map<String, Object> param) {
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 		String today = sdf.format(new Date());
 		param.put("date", today);
 		if(dietDao.checkSportUpdate(param)>0){
+			//更新运动量
 			dietDao.updateSportInfo(param);
 		}else{
+			//添加运动量
 			dietDao.saveSportInfo(param);
 		}
 		return "1";
 	}
 	
+	//添加或更新加餐偏好
 	@Override
 	public String saveSnacks(Map<String, Object> param) {
 		if(dietDao.countSnacks(param)>0){
+			//更新加餐偏好
 			dietDao.updateSnacks(param);
 		}else{
+			//添加加餐偏好
 			dietDao.saveSnacks(param);
 		}
 		return "1";
 	}
 	
+	/**
+	 * 获取加餐偏好
+	 */
 	@Override
 	public Map<String, Object> getSnacks(Map<String, Object> param) {
 		return dietDao.getSnacks(param);
 	}
 
+	/**
+	 * 获取运动量记录
+	 */
 	@Override
 	public Map<String, Object> getSportInfo(Map<String, Object> param) {
 		Map<String, Object> map = showSportInfo(param);
@@ -461,12 +562,18 @@ public class DietServiceImpl implements DietService {
 		return map;
 	}
 
+	/**
+	 * 添加新食物
+	 */
 	@Override
 	public String insertNewfood(Map<String, Object> param) {
 		dietDao.insertNewfood(param);
 		return "1";
 	}
 
+	/**
+	 * 获取饮食记录
+	 */
 	@Override
 	public Map<String, Object> showDietEnergy(Map<String, Object> param) {
 		List<Map<String, Object>> list = dietDao.showDietInfo(param);
@@ -548,6 +655,13 @@ public class DietServiceImpl implements DietService {
 		return map;
 	}
 	
+	/**
+	 * 
+	 * <p>Title:设置运动强度</p>
+	 * @author: 徐德荣
+	 * @date: 2016年12月29日
+	 *
+	 */
 	public String sporttype(String sport){
 		String result = "";
 		if("散步".equals(sport) || "瑜伽".equals(sport)){

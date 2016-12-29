@@ -7,7 +7,7 @@
 <html>
 <head>
 
-<title>饮食记录</title>
+<title>患者记录</title>
 <meta http-equiv="pragma" content="no-cache">
 <meta http-equiv="cache-control" content="no-cache">
 <meta content="width=device-width" name="viewport" />
@@ -26,7 +26,7 @@
 		<div data-role="header">
 			<a href="" data-role="button"
 				onclick="window.location.href='../user/doctor_index'">主页</a>
-			<h1>饮食记录</h1>
+			<h1>患者记录</h1>
 		</div>
 
 		<div data-role="fieldcontain">

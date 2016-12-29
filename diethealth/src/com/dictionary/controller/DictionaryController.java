@@ -21,10 +21,17 @@ import com.dictionary.service.DictionaryService;
 public class DictionaryController {
 	
 	@Autowired(required=true)
-	private DictionaryService dictionaryService;
-	
+	private DictionaryService dictionaryService;  //定义dictionaryService对象
+	//定义log对象
 	private Logger log = Logger.getLogger(DictionaryController.class);
 	
+	/**
+	 * 
+	 * <p>Title:跳转到字典列表界面</p>
+	 * @author: 徐德荣
+	 * @date: 2016年12月29日
+	 *
+	 */
 	@RequestMapping("/dictionary_list")
 	public String getDictList(HttpServletRequest requset, Model model){
 		List<Map<String, Object>> list = dictionaryService.getDictionaryList();
@@ -32,6 +39,13 @@ public class DictionaryController {
 		return "dictionary/dictionary_list";
 	}
 	
+	/**
+	 * 
+	 * <p>Title:跳转到修改字典界面</p>
+	 * @author: 徐德荣
+	 * @date: 2016年12月29日
+	 *
+	 */
 	@RequestMapping("dictionary_edit")
 	public String dictionaryEdit(HttpServletRequest request, Model model){
 		Map<String, Object> param = FormDataCollectUtil.getInstance().getFormData(request);
@@ -39,11 +53,25 @@ public class DictionaryController {
 		return "dictionary/dictionary_edit";
 	}
 	
+	/**
+	 * 
+	 * <p>Title:跳转到新增字典界面</p>
+	 * @author: 徐德荣
+	 * @date: 2016年12月29日
+	 *
+	 */
 	@RequestMapping("dictionary_add")
 	public String dictionaryAdd(){
 		return "dictionary/dictionary_add";
 	}
 	
+	/**
+	 * 
+	 * <p>Title:添加字典</p>
+	 * @author: 徐德荣
+	 * @date: 2016年12月29日
+	 *
+	 */
 	@RequestMapping("saveDict")
 	public void saveDict(HttpServletRequest request, HttpServletResponse response){
 		Map<String, Object> param = FormDataCollectUtil.getInstance().getFormData(request);
@@ -56,6 +84,13 @@ public class DictionaryController {
 		}
 	}
 	
+	/**
+	 * 
+	 * <p>Title:删除字典</p>
+	 * @author: 徐德荣
+	 * @date: 2016年12月29日
+	 *
+	 */
 	@RequestMapping("deleteDict")
 	public void deleteDict(HttpServletRequest request, HttpServletResponse response){
 		String id = request.getParameter("id");

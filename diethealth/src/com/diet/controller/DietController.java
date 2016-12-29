@@ -36,15 +36,23 @@ import com.user.service.UserService;
 public class DietController {
 	
 	@Autowired(required=true)
-	private DietService dietService;
+	private DietService dietService;   //定义dietService对象
 	
-	private Logger log = Logger.getLogger(DietController.class);
+	private Logger log = Logger.getLogger(DietController.class); //定义log对象
 	
+	
+	/**
+	 * 
+	 * <p>Title:跳转到饮食录入界面</p>
+	 * @author: 徐德荣
+	 * @date: 2016年12月29日
+	 *
+	 */
 	@RequestMapping("/diet_edit")
 	public  String toDietForm(HttpServletRequest request, Model model) throws IOException{
 		String pId = (String)request.getSession().getAttribute("pId");
 		//String pId = "o-1WTwnmE5MzetfXjm_02IjLG8m4";
-		model.addAttribute("energy",dietService.getTargetEnergy(pId));
+		model.addAttribute("energy",dietService.getTargetEnergy(pId));   
 		model.addAttribute("typeList",dietService.getTypeList(pId));
 		//model.addAttribute("mainfoodList",CacheUtil.getInstance().getMainFoodList());
 		//model.addAttribute("meatList",CacheUtil.getInstance().getMeatList());
@@ -55,6 +63,13 @@ public class DietController {
 		return "diet/diet_edit";
 	}
 	
+	/**
+	 * 
+	 * <p>Title:获取主食信息</p>
+	 * @author: 徐德荣
+	 * @date: 2016年12月29日
+	 *
+	 */
 	@RequestMapping("/mainfood")
 	@ResponseBody 
 	public List<Map<String, Object>> getMainfood(HttpServletRequest request, HttpServletResponse response){
@@ -63,6 +78,13 @@ public class DietController {
 		 return list;
 	}
 	
+	/**
+	 * 
+	 * <p>Title:获取肉类信息</p>
+	 * @author: 徐德荣
+	 * @date: 2016年12月29日
+	 *
+	 */
 	@RequestMapping("/meat")
 	@ResponseBody 
 	public List<Map<String, Object>> getMeat(HttpServletRequest request, HttpServletResponse response){
@@ -71,6 +93,13 @@ public class DietController {
 		 return list;
 	}
 	
+	/**
+	 * 
+	 * <p>Title:获取蔬菜信息</p>
+	 * @author: 徐德荣
+	 * @date: 2016年12月29日
+	 *
+	 */
 	@RequestMapping("/vegetables")
 	@ResponseBody 
 	public List<Map<String, Object>> getVegetables(HttpServletRequest request, HttpServletResponse response){
@@ -79,6 +108,13 @@ public class DietController {
 		 return list;
 	}
 	
+	/**
+	 * 
+	 * <p>Title:获取饮品信息</p>
+	 * @author: 徐德荣
+	 * @date: 2016年12月29日
+	 *
+	 */
 	@RequestMapping("/drink")
 	@ResponseBody 
 	public List<Map<String, Object>> getDrink(HttpServletRequest request, HttpServletResponse response){
@@ -87,6 +123,13 @@ public class DietController {
 		 return list;
 	}
 	
+	/**
+	 * 
+	 * <p>Title:获取零食干果信息</p>
+	 * @author: 徐德荣
+	 * @date: 2016年12月29日
+	 *
+	 */
 	@RequestMapping("/nut")
 	@ResponseBody 
 	public List<Map<String, Object>> getNut(HttpServletRequest request, HttpServletResponse response){
@@ -95,6 +138,13 @@ public class DietController {
 		 return list;
 	}
 	
+	/**
+	 * 
+	 * <p>Title:获取水果信息</p>
+	 * @author: 徐德荣
+	 * @date: 2016年12月29日
+	 *
+	 */
 	@RequestMapping("/fruits")
 	@ResponseBody 
 	public List<Map<String, Object>> getFruits(HttpServletRequest request, HttpServletResponse response){
@@ -103,11 +153,25 @@ public class DietController {
 		 return list;
 	}
 	
+	/**
+	 * 
+	 * <p>Title:跳转到图片上传页面</p>
+	 * @author: 徐德荣
+	 * @date: 2016年12月29日
+	 *
+	 */
 	@RequestMapping("diet_img_upload")
 	public String dietImgUpload(HttpServletRequest request){
 		return "diet/img_upload";
 	}
 	
+	/**
+	 * 
+	 * <p>Title:多图片上传</p>
+	 * @author: 徐德荣
+	 * @date: 2016年12月29日
+	 *
+	 */
 	@RequestMapping("/img_moreUpload")
 	public String imgMoreUpload(HttpServletRequest request){
 		
@@ -149,11 +213,25 @@ public class DietController {
 		return "/diet/upload_success";
 	}
 	
+	/**
+	 * 
+	 * <p>Title:跳转到添加食物信息页面</p>
+	 * @author: 徐德荣
+	 * @date: 2016年12月29日
+	 *
+	 */
 	@RequestMapping("food_add")
-	public String doctorAdd(HttpServletRequest request){
+	public String foodAdd(HttpServletRequest request){
 		return "diet/food_add";
 	}
 	
+	/**
+	 * 
+	 * <p>Title:添加新食物(饮食录入)</p>
+	 * @author: 徐德荣
+	 * @date: 2016年12月29日
+	 *
+	 */
 	@RequestMapping("insert_newfood")
 	public void insertNewfood(HttpServletRequest request,HttpServletResponse response){
 		Map<String, Object> map = FormDataCollectUtil.getInstance().getFormData(request);
@@ -166,6 +244,13 @@ public class DietController {
 			}
 	}
 	
+	/**
+	 * 
+	 * <p>Title:录入饮食</p>
+	 * @author: 徐德荣
+	 * @date: 2016年12月29日
+	 *
+	 */
 	@RequestMapping("/saveDiet")
 	public  void addUser(HttpServletRequest request,HttpServletResponse response){
 		Map<String, Object> map = FormDataCollectUtil.getInstance().getFormData(request);
@@ -181,6 +266,13 @@ public class DietController {
 			}
 	}
 	
+	/**
+	 * 
+	 * <p>Title:跳转到食物列表页面(管理员)</p>
+	 * @author: 徐德荣
+	 * @date: 2016年12月29日
+	 *
+	 */
 	@RequestMapping("/food_list")
 	public String getFoodListWithPage(HttpServletRequest request,Model model){
 		Map<String, Object> map = FormDataCollectUtil.getInstance().getFormDataWithPage(request);
@@ -198,6 +290,13 @@ public class DietController {
 		return "diet/food_list";
 	}
 	
+	/**
+	 * 
+	 * <p>Title:跳转到饮食记录列表(病人)</p>
+	 * @author: 徐德荣
+	 * @date: 2016年12月29日
+	 *
+	 */
 	@RequestMapping("/diet_list")
 	public String getDietListWithPage(HttpServletRequest request,Model model){
 		Map<String, Object> map = FormDataCollectUtil.getInstance().getFormDataWithPage(request);
@@ -219,6 +318,13 @@ public class DietController {
 		return "diet/diet_list";
 	}
 	
+	/**
+	 * 
+	 * <p>Title:跳转到运动记录列表界面</p>
+	 * @author: 徐德荣
+	 * @date: 2016年12月29日
+	 *
+	 */
 	@RequestMapping("/sport_list")
 	public String getSportListWithPage(HttpServletRequest request,Model model){
 		Map<String, Object> map = FormDataCollectUtil.getInstance().getFormDataWithPage(request);
@@ -239,6 +345,13 @@ public class DietController {
 		return "diet/sport_list";
 	}
 	
+	/**
+	 * 
+	 * <p>Title:跳转到饮食记录列表界面(医生)</p>
+	 * @author: 徐德荣
+	 * @date: 2016年12月29日
+	 *
+	 */
 	@RequestMapping("/dietary_list")
 	public String getDietList(HttpServletRequest request,Model model){
 		Map<String, Object> map = FormDataCollectUtil.getInstance().getFormDataWithPage(request);
@@ -256,6 +369,13 @@ public class DietController {
 		return "diet/dietary_list";
 	}
 	
+	/**
+	 * 
+	 * <p>Title:跳转到设置加餐偏好界面</p>
+	 * @author: 徐德荣
+	 * @date: 2016年12月29日
+	 *
+	 */
 	@RequestMapping("snack")
 	public String toSnack(HttpServletRequest request, Model model){
 		HttpSession session = request.getSession();
@@ -268,6 +388,13 @@ public class DietController {
 		return "diet/snack";
 	}
 	
+	/**
+	 * 
+	 * <p>Title:跳转到编辑食物信息界面</p>
+	 * @author: 徐德荣
+	 * @date: 2016年12月29日
+	 *
+	 */
 	@RequestMapping("food_edit")
 	public String patientEdit(HttpServletRequest request, Model model){
 		Map<String, Object> param = FormDataCollectUtil.getInstance().getFormData(request);
@@ -276,6 +403,13 @@ public class DietController {
 		return "diet/food_edit";
 	}
 	
+	/**
+	 * 
+	 * <p>Title:跳转到饮食记录界面(病人)</p>
+	 * @author: 徐德荣
+	 * @date: 2016年12月29日
+	 *
+	 */
 	@RequestMapping("diet_info")
 	public String getDietInfo(HttpServletRequest request, Model model){
 		Map<String, Object> param = FormDataCollectUtil.getInstance().getFormData(request);
@@ -288,6 +422,13 @@ public class DietController {
 		return "diet/diet_info";
 	}
 	
+	/**
+	 * 
+	 * <p>Title:跳转到饮食记录界面(医生)</p>
+	 * @author: 徐德荣
+	 * @date: 2016年12月29日
+	 *
+	 */
 	@RequestMapping("diet_info_d")
 	public String getDietInfo1(HttpServletRequest request, Model model){
 		Map<String, Object> param = FormDataCollectUtil.getInstance().getFormData(request);
@@ -296,6 +437,13 @@ public class DietController {
 		return "diet/diet_info_d";
 	}
 	
+	/**
+	 * 
+	 * <p>Title:跳转到运动记录界面</p>
+	 * @author: 徐德荣
+	 * @date: 2016年12月29日
+	 *
+	 */
 	@RequestMapping("sport_info")
 	public String getSportInfo(HttpServletRequest request, Model model){
 		Map<String, Object> param = FormDataCollectUtil.getInstance().getFormData(request);
@@ -303,6 +451,13 @@ public class DietController {
 		return "diet/sport_info";
 	}
 	
+	/**
+	 * 
+	 * <p>Title:跳转到患者记录界面</p>
+	 * @author: 徐德荣
+	 * @date: 2016年12月29日
+	 *
+	 */
 	@RequestMapping("dietary_info")
 	public String getDietaryInfo(HttpServletRequest request, Model model){
 		Map<String, Object> param = FormDataCollectUtil.getInstance().getFormData(request);
@@ -319,6 +474,13 @@ public class DietController {
 		return "diet/dietary_info";
 	}
 	
+	/**
+	 * 
+	 * <p>Title:跳转到血糖录入界面</p>
+	 * @author: 徐德荣
+	 * @date: 2016年12月29日
+	 *
+	 */
 	@RequestMapping("bg_edit1")
 	public String bloodGlucoseEdit(HttpServletRequest request, Model model){
 		HttpSession session = request.getSession();
@@ -330,6 +492,13 @@ public class DietController {
 		return "diet/bg_edit";
 	}
 	
+	/**
+	 * 
+	 * <p>Title:跳转到运动量录入界面</p>
+	 * @author: 徐德荣
+	 * @date: 2016年12月29日
+	 *
+	 */
 	@RequestMapping("sport_edit")
 	public String sportEdit(HttpServletRequest request, Model model){
 		DictionaryService dictionaryService = (DictionaryService)SpringContextUtil.getBeanById("DictionaryService");
@@ -346,6 +515,13 @@ public class DietController {
 		return "diet/sport_edit";
 	}
 	
+	/**
+	 * 
+	 * <p>Title:运动量录入</p>
+	 * @author: 徐德荣
+	 * @date: 2016年12月29日
+	 *
+	 */
 	@RequestMapping("saveSport")
 	public void saveSportInfo(HttpServletRequest request, HttpServletResponse response){
 		Map<String, Object> param = FormDataCollectUtil.getInstance().getFormData(request);
@@ -362,6 +538,13 @@ public class DietController {
 		}
 	}
 	
+	/**
+	 * 
+	 * <p>Title:设置加餐偏好</p>
+	 * @author: 徐德荣
+	 * @date: 2016年12月29日
+	 *
+	 */
 	@RequestMapping("saveSnacks")
 	public void saveSnack(HttpServletRequest request, HttpServletResponse response){
 		Map<String, Object> param = FormDataCollectUtil.getInstance().getFormData(request);
@@ -378,6 +561,13 @@ public class DietController {
 		}
 	}
 	
+	/**
+	 * 
+	 * <p>Title:跳转到血糖记录界面</p>
+	 * @author: 徐德荣
+	 * @date: 2016年12月29日
+	 *
+	 */
 	@RequestMapping("bg_list")
 	public String bloodGlucoseList(HttpServletRequest request, Model model){
 		Map<String, Object> map = FormDataCollectUtil.getInstance().getFormDataWithPage(request);
@@ -409,6 +599,13 @@ public class DietController {
 		return "diet/bg_list";
 	}
 	
+	/**
+	 * 
+	 * <p>Title:添加食物信息</p>
+	 * @author: 徐德荣
+	 * @date: 2016年12月29日
+	 *
+	 */
 	@RequestMapping("saveFoodInfo")
 	public void saveFoodInfo(HttpServletRequest request, HttpServletResponse response){
 		Map<String, Object> param = FormDataCollectUtil.getInstance().getFormData(request);
@@ -421,6 +618,13 @@ public class DietController {
 		}
 	}
 	
+	/**
+	 * 
+	 * <p>Title:添加血糖信息</p>
+	 * @author: 徐德荣
+	 * @date: 2016年12月29日
+	 *
+	 */
 	@RequestMapping("saveBloodGlucose")
 	public void saveBloodGlucoseInfo(HttpServletRequest request, HttpServletResponse response){
 		Map<String, Object> param = FormDataCollectUtil.getInstance().getFormData(request);
@@ -433,6 +637,13 @@ public class DietController {
 		}
 	}
 	
+	/**
+	 * 
+	 * <p>Title:删除食物信息</p>
+	 * @author: 徐德荣
+	 * @date: 2016年12月29日
+	 *
+	 */
 	@RequestMapping("deleteFoodInfo")
 	public void deleteDoctorInfo(HttpServletRequest request, HttpServletResponse response){
 		Map<String, Object> param = FormDataCollectUtil.getInstance().getFormData(request);
@@ -445,6 +656,13 @@ public class DietController {
 		}
 	}
 	
+	/**
+	 * 
+	 * <p>Title:添加医生建议</p>
+	 * @author: 徐德荣
+	 * @date: 2016年12月29日
+	 *
+	 */
 	@RequestMapping("saveAdvice")
 	public void saveAdvice(HttpServletRequest request, HttpServletResponse response){
 		Map<String, Object> param = FormDataCollectUtil.getInstance().getFormData(request);
