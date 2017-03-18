@@ -370,6 +370,7 @@ public class UserController {
 	public String toConfirmedList(HttpServletRequest request, Model model) {
 		Map<String, Object> map = FormDataCollectUtil.getInstance().getFormDataWithPage(request);
 		String doctorId = (String) request.getSession().getAttribute("dId");
+		//String doctorId = "o-1WTwq3CBIC4fEbSGcRk8oI7120";
 		map.put("doctorId", doctorId);
 		List<Map<String, Object>> list = userService.getPatientListWithState(map);
 		model.addAttribute("patientList", list);

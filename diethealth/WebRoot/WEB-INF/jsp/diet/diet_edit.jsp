@@ -3,8 +3,8 @@
 <%@ taglib uri="http://www.springframework.org/tags" prefix="s"%>
 <%
 	String path = request.getContextPath();
-	//String pId = session.getAttribute("pId").toString();
-	 String pId = "o-1WTwnmE5MzetfXjm_02IjLG8m4";
+	String pId = session.getAttribute("pId").toString();
+	//String pId = "o-1WTwnmE5MzetfXjm_02IjLG8m4";
 %>
 <html>
 <head>
@@ -24,10 +24,32 @@
 
 <script src="<%=path%>/js/jquery-2.2.2.min.js"></script>
 <script src="<%=path%>/jquerymobile/jquery.mobile-1.4.5.min.js"></script>
-<script src="<%=path%>/js/jqm.autoComplete-1.5.2.js"></script>
-<script src="<%=path%>/js/code.js"></script>
 <!-- <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" /> -->
 <style>
+.suggest {
+	background-color: #fff;
+	border: 1px solid #999;
+}
+
+.suggest ul {
+	list-style: none;
+	height: 200px;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+
+.suggest ul li {
+	padding: 3px;
+	font-size: 14px;
+	line-height: 25px;
+	border-bottom: 1px solid #CCCCCC;
+}
+
+.suggest ul li:hover {
+	text-decoration: underline;
+	background-color: #e5e5e5;
+}
 </style>
 </head>
 
@@ -38,7 +60,7 @@
 				onclick="window.location.href='../user/user_index'">主页</a>
 			<h1>饮食录入</h1>
 			<a href="" data-role="button"
-				onclick="window.location.href='../diet/diet_img_upload'">图片上传</a> 
+				onclick="window.location.href='../diet/diet_img_upload'">图片上传</a>
 		</div>
 		<div data-role="content">
 			<div data-role="fieldcontain">
@@ -62,16 +84,20 @@
 				<div id="mainfood">
 					<div name="mainfoodtype" id="mainfoodtype1">
 						<p>
-							<input type="search" id="searchField_mainfood1"
-								placeholder="请输入并选择食物">
-						<ul id="suggestions_mainfood1" data-role="listview"
-							data-inset="true"></ul>
-						<div id="mainfood1_div"
-							style="margin-left: 20px; margin-right: 20px; display: none">
-							<ul data-role="listview" sdata-inset="true">
-								<li><a href="#" onclick="addnewfood('mainfood1')">未找到合适的食物</a></li>
+						<div id="mainfood1_div">
+							<!-- 输入框 -->
+							<input id="mainfood1_keyword" type="text" size="50"
+								onkeyup="getMoreContents_mainfood('mainfood1')"
+								placeholder="请输入并选择食物" />
+						</div>
+						<div class="suggest" id="mainfood1_search_suggest"
+							style="display: none">
+							<ul>
+								<li>搜索结果1</li>
+								<li>搜索结果2</li>
 							</ul>
 						</div>
+
 						<input id="mainfood1" placeholder="请输入您需要的食物，我们会尽快录入" type="text"
 							style="display: none" />
 						</p>
@@ -84,19 +110,27 @@
 
 					<div name="mainfoodtype" id="mainfoodtype2" style="display: none">
 						<p>
-							<input type="search" id="searchField_mainfood2"
-								placeholder="请输入并选择食物">
-						<ul id="suggestions_mainfood2" data-role="listview"
-							data-inset="true"></ul>
-						<div id="mainfood2_div"
-							style="margin-left: 20px; margin-right: 20px; display: none">
-							<ul data-role="listview" sdata-inset="true">
-								<li><a href="#" onclick="addnewfood('mainfood2')">未找到合适的食物</a></li>
+						<div id="mainfood2_div">
+							<!-- 输入框 -->
+							<input id="mainfood2_keyword" type="text" size="50"
+								onkeyup="getMoreContents_mainfood('mainfood2')"
+								placeholder="请输入并选择食物" />
+						</div>
+						<div class="suggest" id="mainfood2_search_suggest"
+							style="display: none">
+							<ul>
+								<li>搜索结果1</li>
+								<li>搜索结果2</li>
 							</ul>
 						</div>
 						<input id="mainfood2" placeholder="请输入您需要的食物，我们会尽快录入" type="text"
 							style="display: none" />
 						</p>
+
+
+
+
+
 					</div>
 					<div data-role="fieldcontain" name="mainfoodnum" id="mainfoodnums2"
 						style="display: none">
@@ -107,19 +141,25 @@
 
 					<div name="mainfoodtype" id="mainfoodtype3" style="display: none">
 						<p>
-							<input type="search" id="searchField_mainfood3"
-								placeholder="请输入并选择食物">
-						<ul id="suggestions_mainfood3" data-role="listview"
-							data-inset="true"></ul>
-						<div id="mainfood3_div"
-							style="margin-left: 20px; margin-right: 20px; display: none">
-							<ul data-role="listview" sdata-inset="true">
-								<li><a href="#" onclick="addnewfood('mainfood3')">未找到合适的食物</a></li>
+						<div id="mainfood3_div">
+							<!-- 输入框 -->
+							<input id="mainfood3_keyword" type="text" size="50"
+								onkeyup="getMoreContents_mainfood('mainfood3')"
+								placeholder="请输入并选择食物" />
+						</div>
+						<div class="suggest" id="mainfood3_search_suggest"
+							style="display: none">
+							<ul>
+								<li>搜索结果1</li>
+								<li>搜索结果2</li>
 							</ul>
 						</div>
 						<input id="mainfood3" placeholder="请输入您需要的食物，我们会尽快录入" type="text"
 							style="display: none" />
 						</p>
+
+
+
 					</div>
 					<div data-role="fieldcontain" id="mainfoodnums3" name="mainfoodnum"
 						style="display: none">
@@ -130,19 +170,24 @@
 
 					<div name="mainfoodtype" id="mainfoodtype4" style="display: none">
 						<p>
-							<input type="search" id="searchField_mainfood4"
-								placeholder="请输入并选择食物">
-						<ul id="suggestions_mainfood4" data-role="listview"
-							data-inset="true"></ul>
-						<div id="mainfood4_div"
-							style="margin-left: 20px; margin-right: 20px; display: none">
-							<ul data-role="listview" sdata-inset="true">
-								<li><a href="#" onclick="addnewfood('mainfood4')">未找到合适的食物</a></li>
+						<div id="mainfood4_div">
+							<!-- 输入框 -->
+							<input id="mainfood4_keyword" type="text" size="50"
+								onkeyup="getMoreContents_mainfood('mainfood4')"
+								placeholder="请输入并选择食物" />
+						</div>
+						<div class="suggest" id="mainfood4_search_suggest"
+							style="display: none">
+							<ul>
+								<li>搜索结果1</li>
+								<li>搜索结果2</li>
 							</ul>
 						</div>
 						<input id="mainfood4" placeholder="请输入您需要的食物，我们会尽快录入" type="text"
 							style="display: none" />
 						</p>
+
+
 					</div>
 					<div data-role="fieldcontain" id="mainfoodnums4" name="mainfoodnum"
 						style="display: none">
@@ -153,19 +198,24 @@
 
 					<div name="mainfoodtype" id="mainfoodtype5" style="display: none">
 						<p>
-							<input type="search" id="searchField_mainfood5"
-								placeholder="请输入并选择食物">
-						<ul id="suggestions_mainfood5" data-role="listview"
-							data-inset="true"></ul>
-						<div id="mainfood5_div"
-							style="margin-left: 20px; margin-right: 20px; display: none">
-							<ul data-role="listview" sdata-inset="true">
-								<li><a href="#" onclick="addnewfood('mainfood5')">未找到合适的食物</a></li>
+						<div id="mainfood5_div">
+							<!-- 输入框 -->
+							<input id="mainfood5_keyword" type="text" size="50"
+								onkeyup="getMoreContents_mainfood('mainfood5')"
+								placeholder="请输入并选择食物" />
+						</div>
+						<div class="suggest" id="mainfood5_search_suggest"
+							style="display: none">
+							<ul>
+								<li>搜索结果1</li>
+								<li>搜索结果2</li>
 							</ul>
 						</div>
 						<input id="mainfood5" placeholder="请输入您需要的食物，我们会尽快录入" type="text"
 							style="display: none" />
 						</p>
+
+
 					</div>
 					<div data-role="fieldcontain" id="mainfoodnums5" name="mainfoodnum"
 						style="display: none">
@@ -186,18 +236,23 @@
 				<div id="meat">
 					<div name="meattype" id="meattype1">
 						<p>
-							<input type="search" id="searchField_meat1"
-								placeholder="请输入并选择食物">
-						<ul id="suggestions_meat1" data-role="listview" data-inset="true"></ul>
-						<div id="meat1_div"
-							style="margin-left: 20px; margin-right: 20px; display: none">
-							<ul data-role="listview" sdata-inset="true">
-								<li><a href="#" onclick="addnewfood('meat1')">未找到合适的食物</a></li>
+						<div id="meat1_div">
+							<!-- 输入框 -->
+							<input id="meat1_keyword" type="text" size="50"
+								onkeyup="getMoreContents_meat('meat1')" placeholder="请输入并选择食物" />
+						</div>
+						<div class="suggest" id="meat1_search_suggest"
+							style="display: none">
+							<ul>
+								<li>搜索结果1</li>
+								<li>搜索结果2</li>
 							</ul>
 						</div>
 						<input id="meat1" placeholder="请输入您需要的食物，我们会尽快录入" type="text"
 							style="display: none" />
 						</p>
+
+
 					</div>
 					<div data-role="fieldcontain" name="meatnum" id="meatnums1">
 						<label for="number">食量（克）：</label> <input type="range"
@@ -207,18 +262,22 @@
 
 					<div name="meattype" id="meattype2" style="display: none">
 						<p>
-							<input type="search" id="searchField_meat2"
-								placeholder="请输入并选择食物">
-						<ul id="suggestions_meat2" data-role="listview" data-inset="true"></ul>
-						<div id="meat2_div"
-							style="margin-left: 20px; margin-right: 20px; display: none">
-							<ul data-role="listview" sdata-inset="true">
-								<li><a href="#" onclick="addnewfood('meat2')">未找到合适的食物</a></li>
+						<div id="meat2_div">
+							<!-- 输入框 -->
+							<input id="meat2_keyword" type="text" size="50"
+								onkeyup="getMoreContents_meat('meat2')" placeholder="请输入并选择食物" />
+						</div>
+						<div class="suggest" id="meat2_search_suggest"
+							style="display: none">
+							<ul>
+								<li>搜索结果1</li>
+								<li>搜索结果2</li>
 							</ul>
 						</div>
 						<input id="meat2" placeholder="请输入您需要的食物，我们会尽快录入" type="text"
 							style="display: none" />
 						</p>
+
 					</div>
 					<div data-role="fieldcontain" name="meatnum" id="meatnums2"
 						style="display: none">
@@ -229,18 +288,22 @@
 
 					<div name="meattype" id="meattype3" style="display: none">
 						<p>
-							<input type="search" id="searchField_meat3"
-								placeholder="请输入并选择食物">
-						<ul id="suggestions_meat3" data-role="listview" data-inset="true"></ul>
-						<div id="meat3_div"
-							style="margin-left: 20px; margin-right: 20px; display: none">
-							<ul data-role="listview" sdata-inset="true">
-								<li><a href="#" onclick="addnewfood('meat3')">未找到合适的食物</a></li>
+						<div id="meat3_div">
+							<!-- 输入框 -->
+							<input id="meat3_keyword" type="text" size="50"
+								onkeyup="getMoreContents_meat('meat3')" placeholder="请输入并选择食物" />
+						</div>
+						<div class="suggest" id="meat3_search_suggest"
+							style="display: none">
+							<ul>
+								<li>搜索结果1</li>
+								<li>搜索结果2</li>
 							</ul>
 						</div>
 						<input id="meat3" placeholder="请输入您需要的食物，我们会尽快录入" type="text"
 							style="display: none" />
 						</p>
+
 					</div>
 					<div data-role="fieldcontain" name="meatnum" id="meatnums3"
 						style="display: none">
@@ -251,18 +314,22 @@
 
 					<div name="meattype" id="meattype4" style="display: none">
 						<p>
-							<input type="search" id="searchField_meat4"
-								placeholder="请输入并选择食物">
-						<ul id="suggestions_meat4" data-role="listview" data-inset="true"></ul>
-						<div id="meat4_div"
-							style="margin-left: 20px; margin-right: 20px; display: none">
-							<ul data-role="listview" sdata-inset="true">
-								<li><a href="#" onclick="addnewfood('meat4')">未找到合适的食物</a></li>
+						<div id="meat4_div">
+							<!-- 输入框 -->
+							<input id="meat4_keyword" type="text" size="50"
+								onkeyup="getMoreContents_meat('meat4')" placeholder="请输入并选择食物" />
+						</div>
+						<div class="suggest" id="meat4_search_suggest"
+							style="display: none">
+							<ul>
+								<li>搜索结果1</li>
+								<li>搜索结果2</li>
 							</ul>
 						</div>
 						<input id="meat4" placeholder="请输入您需要的食物，我们会尽快录入" type="text"
 							style="display: none" />
 						</p>
+
 					</div>
 					<div data-role="fieldcontain" name="meatnum" id="meatnums4"
 						style="display: none">
@@ -273,18 +340,22 @@
 
 					<div name="meattype" id="meattype5" style="display: none">
 						<p>
-							<input type="search" id="searchField_meat5"
-								placeholder="请输入并选择食物">
-						<ul id="suggestions_meat5" data-role="listview" data-inset="true"></ul>
-						<div id="meat5_div"
-							style="margin-left: 20px; margin-right: 20px; display: none">
-							<ul data-role="listview" sdata-inset="true">
-								<li><a href="#" onclick="addnewfood('meat5')">未找到合适的食物</a></li>
+						<div id="meat5_div">
+							<!-- 输入框 -->
+							<input id="meat5_keyword" type="text" size="50"
+								onkeyup="getMoreContents_meat('meat5')" placeholder="请输入并选择食物" />
+						</div>
+						<div class="suggest" id="meat5_search_suggest"
+							style="display: none">
+							<ul>
+								<li>搜索结果1</li>
+								<li>搜索结果2</li>
 							</ul>
 						</div>
 						<input id="meat5" placeholder="请输入您需要的食物，我们会尽快录入" type="text"
 							style="display: none" />
 						</p>
+
 					</div>
 					<div data-role="fieldcontain" name="meatnum" id="meatnums5"
 						style="display: none">
@@ -305,19 +376,23 @@
 				<div id="vegetables">
 					<div name="vegetablestype" id="vegetablestype1">
 						<p>
-							<input type="search" id="searchField_vegetables1"
-								placeholder="请输入并选择食物">
-						<ul id="suggestions_vegetables1" data-role="listview"
-							data-inset="true"></ul>
-						<div id="vegetables1_div"
-							style="margin-left: 20px; margin-right: 20px; display: none">
-							<ul data-role="listview" sdata-inset="true">
-								<li><a href="#" onclick="addnewfood('vegetables1')">未找到合适的食物</a></li>
+						<div id="vegetables1_div">
+							<!-- 输入框 -->
+							<input id="vegetables1_keyword" type="text" size="50"
+								onkeyup="getMoreContents_vegetables('vegetables1')"
+								placeholder="请输入并选择食物" />
+						</div>
+						<div class="suggest" id="vegetables1_search_suggest"
+							style="display: none">
+							<ul>
+								<li>搜索结果1</li>
+								<li>搜索结果2</li>
 							</ul>
 						</div>
 						<input id="vegetables1" placeholder="请输入您需要的食物，我们会尽快录入"
 							type="text" style="display: none" />
 						</p>
+
 					</div>
 					<div data-role="fieldcontain" name="vegetablesnum"
 						id="vegetablesnums1">
@@ -330,19 +405,23 @@
 					<div name="vegetablestype" id="vegetablestype2"
 						style="display: none">
 						<p>
-							<input type="search" id="searchField_vegetables2"
-								placeholder="请输入并选择食物">
-						<ul id="suggestions_vegetables2" data-role="listview"
-							data-inset="true"></ul>
-						<div id="vegetables2_div"
-							style="margin-left: 20px; margin-right: 20px; display: none">
-							<ul data-role="listview" sdata-inset="true">
-								<li><a href="#" onclick="addnewfood('vegetables2')">未找到合适的食物</a></li>
+						<div id="vegetables2_div">
+							<!-- 输入框 -->
+							<input id="vegetables2_keyword" type="text" size="50"
+								onkeyup="getMoreContents_vegetables('vegetables2')"
+								placeholder="请输入并选择食物" />
+						</div>
+						<div class="suggest" id="vegetables2_search_suggest"
+							style="display: none">
+							<ul>
+								<li>搜索结果1</li>
+								<li>搜索结果2</li>
 							</ul>
 						</div>
 						<input id="vegetables2" placeholder="请输入您需要的食物，我们会尽快录入"
 							type="text" style="display: none" />
 						</p>
+
 					</div>
 					<div data-role="fieldcontain" name="vegetablesnum"
 						id="vegetablesnums2" style="display: none">
@@ -355,19 +434,23 @@
 					<div name="vegetablestype" id="vegetablestype3"
 						style="display: none">
 						<p>
-							<input type="search" id="searchField_vegetables3"
-								placeholder="请输入并选择食物">
-						<ul id="suggestions_vegetables3" data-role="listview"
-							data-inset="true"></ul>
-						<div id="vegetables3_div"
-							style="margin-left: 20px; margin-right: 20px; display: none">
-							<ul data-role="listview" sdata-inset="true">
-								<li><a href="#" onclick="addnewfood('vegetables3')">未找到合适的食物</a></li>
+						<div id="vegetables3_div">
+							<!-- 输入框 -->
+							<input id="vegetables3_keyword" type="text" size="50"
+								onkeyup="getMoreContents_vegetables('vegetables3')"
+								placeholder="请输入并选择食物" />
+						</div>
+						<div class="suggest" id="vegetables3_search_suggest"
+							style="display: none">
+							<ul>
+								<li>搜索结果1</li>
+								<li>搜索结果2</li>
 							</ul>
 						</div>
 						<input id="vegetables3" placeholder="请输入您需要的食物，我们会尽快录入"
 							type="text" style="display: none" />
 						</p>
+
 					</div>
 					<div data-role="fieldcontain" name="vegetablesnum"
 						id="vegetablesnums3" style="display: none">
@@ -380,19 +463,23 @@
 					<div name="vegetablestype" id="vegetablestype4"
 						style="display: none">
 						<p>
-							<input type="search" id="searchField_vegetables4"
-								placeholder="请输入并选择食物">
-						<ul id="suggestions_vegetables4" data-role="listview"
-							data-inset="true"></ul>
-						<div id="vegetables4_div"
-							style="margin-left: 20px; margin-right: 20px; display: none">
-							<ul data-role="listview" sdata-inset="true">
-								<li><a href="#" onclick="addnewfood('vegetables4')">未找到合适的食物</a></li>
+						<div id="vegetables4_div">
+							<!-- 输入框 -->
+							<input id="vegetables4_keyword" type="text" size="50"
+								onkeyup="getMoreContents_vegetables('vegetables4')"
+								placeholder="请输入并选择食物" />
+						</div>
+						<div class="suggest" id="vegetables4_search_suggest"
+							style="display: none">
+							<ul>
+								<li>搜索结果1</li>
+								<li>搜索结果2</li>
 							</ul>
 						</div>
 						<input id="vegetables4" placeholder="请输入您需要的食物，我们会尽快录入"
 							type="text" style="display: none" />
 						</p>
+
 					</div>
 					<div data-role="fieldcontain" name="vegetablesnum"
 						id="vegetablesnums4" style="display: none">
@@ -405,19 +492,23 @@
 					<div name="vegetablestype" id="vegetablestype5"
 						style="display: none">
 						<p>
-							<input type="search" id="searchField_vegetables5"
-								placeholder="请输入并选择食物">
-						<ul id="suggestions_vegetables5" data-role="listview"
-							data-inset="true"></ul>
-						<div id="vegetables5_div"
-							style="margin-left: 20px; margin-right: 20px; display: none">
-							<ul data-role="listview" sdata-inset="true">
-								<li><a href="#" onclick="addnewfood('vegetables5')">未找到合适的食物</a></li>
+						<div id="vegetables5_div">
+							<!-- 输入框 -->
+							<input id="vegetables5_keyword" type="text" size="50"
+								onkeyup="getMoreContents_vegetables('vegetables5')"
+								placeholder="请输入并选择食物" />
+						</div>
+						<div class="suggest" id="vegetables5_search_suggest"
+							style="display: none">
+							<ul>
+								<li>搜索结果1</li>
+								<li>搜索结果2</li>
 							</ul>
 						</div>
 						<input id="vegetables5" placeholder="请输入您需要的食物，我们会尽快录入"
 							type="text" style="display: none" />
 						</p>
+
 					</div>
 					<div data-role="fieldcontain" name="vegetablesnum"
 						id="vegetablesnums5" style="display: none">
@@ -430,19 +521,23 @@
 					<div name="vegetablestype" id="vegetablestype6"
 						style="display: none">
 						<p>
-							<input type="search" id="searchField_vegetables6"
-								placeholder="请输入并选择食物">
-						<ul id="suggestions_vegetables6" data-role="listview"
-							data-inset="true"></ul>
-						<div id="vegetables6_div"
-							style="margin-left: 20px; margin-right: 20px; display: none">
-							<ul data-role="listview" sdata-inset="true">
-								<li><a href="#" onclick="addnewfood('vegetables6')">未找到合适的食物</a></li>
+						<div id="vegetables6_div">
+							<!-- 输入框 -->
+							<input id="vegetables6_keyword" type="text" size="50"
+								onkeyup="getMoreContents_vegetables('vegetables6')"
+								placeholder="请输入并选择食物" />
+						</div>
+						<div class="suggest" id="vegetables6_search_suggest"
+							style="display: none">
+							<ul>
+								<li>搜索结果1</li>
+								<li>搜索结果2</li>
 							</ul>
 						</div>
 						<input id="vegetables6" placeholder="请输入您需要的食物，我们会尽快录入"
 							type="text" style="display: none" />
 						</p>
+
 					</div>
 					<div data-role="fieldcontain" name="vegetablesnum"
 						id="vegetablesnums6" style="display: none">
@@ -455,19 +550,23 @@
 					<div name="vegetablestype" id="vegetablestype7"
 						style="display: none">
 						<p>
-							<input type="search" id="searchField_vegetables7"
-								placeholder="请输入并选择食物">
-						<ul id="suggestions_vegetables7" data-role="listview"
-							data-inset="true"></ul>
-						<div id="vegetables7_div"
-							style="margin-left: 20px; margin-right: 20px; display: none">
-							<ul data-role="listview" sdata-inset="true">
-								<li><a href="#" onclick="addnewfood('vegetables7')">未找到合适的食物</a></li>
+						<div id="vegetables7_div">
+							<!-- 输入框 -->
+							<input id="vegetables7_keyword" type="text" size="50"
+								onkeyup="getMoreContents_vegetables('vegetables7')"
+								placeholder="请输入并选择食物" />
+						</div>
+						<div class="suggest" id="vegetables7_search_suggest"
+							style="display: none">
+							<ul>
+								<li>搜索结果1</li>
+								<li>搜索结果2</li>
 							</ul>
 						</div>
 						<input id="vegetables7" placeholder="请输入您需要的食物，我们会尽快录入"
 							type="text" style="display: none" />
 						</p>
+
 					</div>
 					<div data-role="fieldcontain" name="vegetablesnum"
 						id="vegetablesnums7" style="display: none">
@@ -480,19 +579,23 @@
 					<div name="vegetablestype" id="vegetablestype8"
 						style="display: none">
 						<p>
-							<input type="search" id="searchField_vegetables8"
-								placeholder="请输入并选择食物">
-						<ul id="suggestions_vegetables8" data-role="listview"
-							data-inset="true"></ul>
-						<div id="vegetables8_div"
-							style="margin-left: 20px; margin-right: 20px; display: none">
-							<ul data-role="listview" sdata-inset="true">
-								<li><a href="#" onclick="addnewfood('vegetables8')">未找到合适的食物</a></li>
+						<div id="vegetables8_div">
+							<!-- 输入框 -->
+							<input id="vegetables8_keyword" type="text" size="50"
+								onkeyup="getMoreContents_vegetables('vegetables8')"
+								placeholder="请输入并选择食物" />
+						</div>
+						<div class="suggest" id="vegetables8_search_suggest"
+							style="display: none">
+							<ul>
+								<li>搜索结果1</li>
+								<li>搜索结果2</li>
 							</ul>
 						</div>
 						<input id="vegetables8" placeholder="请输入您需要的食物，我们会尽快录入"
 							type="text" style="display: none" />
 						</p>
+
 					</div>
 					<div data-role="fieldcontain" name="vegetablesnum"
 						id="vegetablesnums8" style="display: none">
@@ -505,19 +608,23 @@
 					<div name="vegetablestype" id="vegetablestype9"
 						style="display: none">
 						<p>
-							<input type="search" id="searchField_vegetables9"
-								placeholder="请输入并选择食物">
-						<ul id="suggestions_vegetables9" data-role="listview"
-							data-inset="true"></ul>
-						<div id="vegetables9_div"
-							style="margin-left: 20px; margin-right: 20px; display: none">
-							<ul data-role="listview" sdata-inset="true">
-								<li><a href="#" onclick="addnewfood('vegetables9')">未找到合适的食物</a></li>
+						<div id="vegetables9_div">
+							<!-- 输入框 -->
+							<input id="vegetables9_keyword" type="text" size="50"
+								onkeyup="getMoreContents_vegetables('vegetables9')"
+								placeholder="请输入并选择食物" />
+						</div>
+						<div class="suggest" id="vegetables9_search_suggest"
+							style="display: none">
+							<ul>
+								<li>搜索结果1</li>
+								<li>搜索结果2</li>
 							</ul>
 						</div>
 						<input id="vegetables9" placeholder="请输入您需要的食物，我们会尽快录入"
 							type="text" style="display: none" />
 						</p>
+
 					</div>
 					<div data-role="fieldcontain" name="vegetablesnum"
 						id="vegetablesnums9" style="display: none">
@@ -530,19 +637,23 @@
 					<div name="vegetablestype" id="vegetablestype10"
 						style="display: none">
 						<p>
-							<input type="search" id="searchField_vegetables10"
-								placeholder="请输入并选择食物">
-						<ul id="suggestions_vegetables10" data-role="listview"
-							data-inset="true"></ul>
-						<div id="vegetables10_div"
-							style="margin-left: 20px; margin-right: 20px; display: none">
-							<ul data-role="listview" sdata-inset="true">
-								<li><a href="#" onclick="addnewfood('vegetables10')">未找到合适的食物</a></li>
+						<div id="vegetables10_div">
+							<!-- 输入框 -->
+							<input id="vegetables10_keyword" type="text" size="50"
+								onkeyup="getMoreContents_vegetables('vegetables10')"
+								placeholder="请输入并选择食物" />
+						</div>
+						<div class="suggest" id="vegetables10_search_suggest"
+							style="display: none">
+							<ul>
+								<li>搜索结果1</li>
+								<li>搜索结果2</li>
 							</ul>
 						</div>
 						<input id="vegetables10" placeholder="请输入您需要的食物，我们会尽快录入"
 							type="text" style="display: none" />
 						</p>
+
 					</div>
 					<div data-role="fieldcontain" name="vegetablesnum"
 						id="vegetablesnums10" style="display: none">
@@ -564,13 +675,16 @@
 				<div id="drink">
 					<div name="drinktype" id="drinktype1">
 						<p>
-							<input type="search" id="searchField_drink1"
-								placeholder="请输入并选择食物">
-						<ul id="suggestions_drink1" data-role="listview" data-inset="true"></ul>
-						<div id="drink1_div"
-							style="margin-left: 20px; margin-right: 20px; display: none">
-							<ul data-role="listview" sdata-inset="true">
-								<li><a href="#" onclick="addnewfood('drink1')">未找到合适的食物</a></li>
+						<div id="drink1_div">
+							<!-- 输入框 -->
+							<input id="drink1_keyword" type="text" size="50"
+								onkeyup="getMoreContents_drink('drink1')" placeholder="请输入并选择食物" />
+						</div>
+						<div class="suggest" id="drink1_search_suggest"
+							style="display: none">
+							<ul>
+								<li>搜索结果1</li>
+								<li>搜索结果2</li>
 							</ul>
 						</div>
 						<input id="drink1" placeholder="请输入您需要的食物，我们会尽快录入" type="text"
@@ -585,18 +699,22 @@
 
 					<div name="drinktype" id="drinktype2" style="display: none">
 						<p>
-							<input type="search" id="searchField_drink2"
-								placeholder="请输入并选择食物">
-						<ul id="suggestions_drink2" data-role="listview" data-inset="true"></ul>
-						<div id="drink2_div"
-							style="margin-left: 20px; margin-right: 20px; display: none">
-							<ul data-role="listview" sdata-inset="true">
-								<li><a href="#" onclick="addnewfood('drink2')">未找到合适的食物</a></li>
+						<div id="drink2_div">
+							<!-- 输入框 -->
+							<input id="drink2_keyword" type="text" size="50"
+								onkeyup="getMoreContents_drink('drink2')" placeholder="请输入并选择食物" />
+						</div>
+						<div class="suggest" id="drink2_search_suggest"
+							style="display: none">
+							<ul>
+								<li>搜索结果1</li>
+								<li>搜索结果2</li>
 							</ul>
 						</div>
 						<input id="drink2" placeholder="请输入您需要的食物，我们会尽快录入" type="text"
 							style="display: none" />
 						</p>
+
 					</div>
 					<div data-role="fieldcontain" name="drinknum" id="drinknums2"
 						style="display: none">
@@ -607,18 +725,22 @@
 
 					<div name="drinktype" id="drinktype3" style="display: none">
 						<p>
-							<input type="search" id="searchField_drink3"
-								placeholder="请输入并选择食物">
-						<ul id="suggestions_drink3" data-role="listview" data-inset="true"></ul>
-						<div id="drink3_div"
-							style="margin-left: 20px; margin-right: 20px; display: none">
-							<ul data-role="listview" sdata-inset="true">
-								<li><a href="#" onclick="addnewfood('drink3')">未找到合适的食物</a></li>
+						<div id="drink3_div">
+							<!-- 输入框 -->
+							<input id="drink3_keyword" type="text" size="50"
+								onkeyup="getMoreContents_drink('drink3')" placeholder="请输入并选择食物" />
+						</div>
+						<div class="suggest" id="drink3_search_suggest"
+							style="display: none">
+							<ul>
+								<li>搜索结果1</li>
+								<li>搜索结果2</li>
 							</ul>
 						</div>
 						<input id="drink3" placeholder="请输入您需要的食物，我们会尽快录入" type="text"
 							style="display: none" />
 						</p>
+
 					</div>
 					<div data-role="fieldcontain" name="drinknum" id="drinknums3"
 						style="display: none">
@@ -629,18 +751,22 @@
 
 					<div name="drinktype" id="drinktype4" style="display: none">
 						<p>
-							<input type="search" id="searchField_drink4"
-								placeholder="请输入并选择食物">
-						<ul id="suggestions_drink4" data-role="listview" data-inset="true"></ul>
-						<div id="drink4_div"
-							style="margin-left: 20px; margin-right: 20px; display: none">
-							<ul data-role="listview" sdata-inset="true">
-								<li><a href="#" onclick="addnewfood('drink4')">未找到合适的食物</a></li>
+						<div id="drink4_div">
+							<!-- 输入框 -->
+							<input id="drink4_keyword" type="text" size="50"
+								onkeyup="getMoreContents_drink('drink4')" placeholder="请输入并选择食物" />
+						</div>
+						<div class="suggest" id="drink4_search_suggest"
+							style="display: none">
+							<ul>
+								<li>搜索结果1</li>
+								<li>搜索结果2</li>
 							</ul>
 						</div>
 						<input id="drink4" placeholder="请输入您需要的食物，我们会尽快录入" type="text"
 							style="display: none" />
 						</p>
+
 					</div>
 					<div data-role="fieldcontain" name="drinknum" id="drinknums4"
 						style="display: none">
@@ -651,18 +777,22 @@
 
 					<div name="drinktype" id="drinktype5" style="display: none">
 						<p>
-							<input type="search" id="searchField_drink5"
-								placeholder="请输入并选择食物">
-						<ul id="suggestions_drink5" data-role="listview" data-inset="true"></ul>
-						<div id="drink5_div"
-							style="margin-left: 20px; margin-right: 20px; display: none">
-							<ul data-role="listview" sdata-inset="true">
-								<li><a href="#" onclick="addnewfood('drink5')">未找到合适的食物</a></li>
+						<div id="drink5_div">
+							<!-- 输入框 -->
+							<input id="drink5_keyword" type="text" size="50"
+								onkeyup="getMoreContents_drink('drink5')" placeholder="请输入并选择食物" />
+						</div>
+						<div class="suggest" id="drink5_search_suggest"
+							style="display: none">
+							<ul>
+								<li>搜索结果1</li>
+								<li>搜索结果2</li>
 							</ul>
 						</div>
 						<input id="drink5" placeholder="请输入您需要的食物，我们会尽快录入" type="text"
 							style="display: none" />
 						</p>
+
 					</div>
 					<div data-role="fieldcontain" name="drinknum" id="drinknums5"
 						style="display: none">
@@ -678,23 +808,28 @@
 
 				</div>
 			</div>
-
 			<div data-role="collapsible">
 				<h1>干果/油/零食</h1>
 				<div id="nut">
 					<div name="nuttype" id="nuttype1">
 						<p>
-							<input type="search" id="searchField_nut1" placeholder="请输入并选择食物">
-						<ul id="suggestions_nut1" data-role="listview" data-inset="true"></ul>
-						<div id="nut1_div"
-							style="margin-left: 20px; margin-right: 20px; display: none">
-							<ul data-role="listview" sdata-inset="true">
-								<li><a href="#" onclick="addnewfood('nut1')">未找到合适的食物</a></li>
-							</ul>
+
+							<div id="nut1_div">
+							<!-- 输入框 -->
+							<input id="nut1_keyword" type="text" size="50"
+								onkeyup="getMoreContents_nut('nut1')" placeholder="请输入并选择食物" />
 						</div>
-						<input id="nut1" placeholder="请输入您需要的食物，我们会尽快录入" type="text"
-							style="display: none" />
+						<div class="suggest" id="nut1_search_suggest"
+							style="display: none">
+							<ul>
+								<li>搜索结果1</li>
+								<li>搜索结果2</li>
+							</ul>
+						</div><input id="nut1" placeholder="请输入您需要的食物，我们会尽快录入" type="text"
+								style="display: none" />
 						</p>
+
+
 					</div>
 					<div data-role="fieldcontain" name="nutnum" id="nutnums1">
 						<label for="number">食量（克）：</label> <input type="range"
@@ -704,17 +839,23 @@
 
 					<div name="nuttype" id="nuttype2" style="display: none">
 						<p>
-							<input type="search" id="searchField_nut2" placeholder="请输入并选择食物">
-						<ul id="suggestions_nut2" data-role="listview" data-inset="true"></ul>
-						<div id="nut2_div"
-							style="margin-left: 20px; margin-right: 20px; display: none">
-							<ul data-role="listview" sdata-inset="true">
-								<li><a href="#" onclick="addnewfood('nut2')">未找到合适的食物</a></li>
-							</ul>
+
+							<div id="nut2_div">
+							<!-- 输入框 -->
+							<input id="nut2_keyword" type="text" size="50"
+								onkeyup="getMoreContents_nut('nut2')" placeholder="请输入并选择食物" />
 						</div>
-						<input id="nut2" placeholder="请输入您需要的食物，我们会尽快录入" type="text"
-							style="display: none" />
+						<div class="suggest" id="nut2_search_suggest"
+							style="display: none">
+							<ul>
+								<li>搜索结果1</li>
+								<li>搜索结果2</li>
+							</ul>
+						</div><input id="nut2" placeholder="请输入您需要的食物，我们会尽快录入" type="text"
+								style="display: none" />
 						</p>
+
+
 					</div>
 					<div data-role="fieldcontain" name="nutnum" id="nutnums2"
 						style="display: none">
@@ -725,17 +866,23 @@
 
 					<div name="nuttype" id="nuttype3" style="display: none">
 						<p>
-							<input type="search" id="searchField_nut3" placeholder="请输入并选择食物">
-						<ul id="suggestions_nut3" data-role="listview" data-inset="true"></ul>
-						<div id="nut3_div"
-							style="margin-left: 20px; margin-right: 20px; display: none">
-							<ul data-role="listview" sdata-inset="true">
-								<li><a href="#" onclick="addnewfood('nut3')">未找到合适的食物</a></li>
-							</ul>
+
+							<div id="nut3_div">
+							<!-- 输入框 -->
+							<input id="nut3_keyword" type="text" size="50"
+								onkeyup="getMoreContents_nut('nut3')" placeholder="请输入并选择食物" />
 						</div>
-						<input id="nut3" placeholder="请输入您需要的食物，我们会尽快录入" type="text"
-							style="display: none" />
+						<div class="suggest" id="nut3_search_suggest"
+							style="display: none">
+							<ul>
+								<li>搜索结果1</li>
+								<li>搜索结果2</li>
+							</ul>
+						</div><input id="nut3" placeholder="请输入您需要的食物，我们会尽快录入" type="text"
+								style="display: none" />
 						</p>
+
+
 					</div>
 					<div data-role="fieldcontain" name="nutnum" id="nutnums3"
 						style="display: none">
@@ -746,17 +893,23 @@
 
 					<div name="nuttype" id="nuttype4" style="display: none">
 						<p>
-							<input type="search" id="searchField_nut4" placeholder="请输入并选择食物">
-						<ul id="suggestions_nut4" data-role="listview" data-inset="true"></ul>
-						<div id="nut4_div"
-							style="margin-left: 20px; margin-right: 20px; display: none">
-							<ul data-role="listview" sdata-inset="true">
-								<li><a href="#" onclick="addnewfood('nut4')">未找到合适的食物</a></li>
-							</ul>
+
+							<div id="nut4_div">
+							<!-- 输入框 -->
+							<input id="nut4_keyword" type="text" size="50"
+								onkeyup="getMoreContents_nut('nut4')" placeholder="请输入并选择食物" />
 						</div>
-						<input id="nut4" placeholder="请输入您需要的食物，我们会尽快录入" type="text"
-							style="display: none" />
+						<div class="suggest" id="nut4_search_suggest"
+							style="display: none">
+							<ul>
+								<li>搜索结果1</li>
+								<li>搜索结果2</li>
+							</ul>
+						</div><input id="nut4" placeholder="请输入您需要的食物，我们会尽快录入" type="text"
+								style="display: none" />
 						</p>
+
+
 					</div>
 					<div data-role="fieldcontain" name="nutnum" id="nutnums4"
 						style="display: none">
@@ -767,17 +920,23 @@
 
 					<div name="nuttype" id="nuttype5" style="display: none">
 						<p>
-							<input type="search" id="searchField_nut5" placeholder="请输入并选择食物">
-						<ul id="suggestions_nut5" data-role="listview" data-inset="true"></ul>
-						<div id="nut5_div"
-							style="margin-left: 20px; margin-right: 20px; display: none">
-							<ul data-role="listview" sdata-inset="true">
-								<li><a href="#" onclick="addnewfood('nut5')">未找到合适的食物</a></li>
-							</ul>
+
+							<div id="nut5_div">
+							<!-- 输入框 -->
+							<input id="nut5_keyword" type="text" size="50"
+								onkeyup="getMoreContents_nut('nut5')" placeholder="请输入并选择食物" />
 						</div>
-						<input id="nut5" placeholder="请输入您需要的食物，我们会尽快录入" type="text"
-							style="display: none" />
+						<div class="suggest" id="nut5_search_suggest"
+							style="display: none">
+							<ul>
+								<li>搜索结果1</li>
+								<li>搜索结果2</li>
+							</ul>
+						</div><input id="nut5" placeholder="请输入您需要的食物，我们会尽快录入" type="text"
+								style="display: none" />
 						</p>
+
+
 					</div>
 					<div data-role="fieldcontain" name="nutnum" id="nutnums5"
 						style="display: none">
@@ -799,19 +958,23 @@
 				<div id="fruits">
 					<div name="fruitstype" id="fruitstype1">
 						<p>
-							<input type="search" id="searchField_fruits1"
-								placeholder="请输入并选择食物">
-						<ul id="suggestions_fruits1" data-role="listview"
-							data-inset="true"></ul>
-						<div id="fruits1_div"
-							style="margin-left: 20px; margin-right: 20px; display: none">
-							<ul data-role="listview" sdata-inset="true">
-								<li><a href="#" onclick="addnewfood('fruits1')">未找到合适的食物</a></li>
-							</ul>
+
+							<div id="fruits1_div">
+							<!-- 输入框 -->
+							<input id="fruits1_keyword" type="text" size="50"
+								onkeyup="getMoreContents_fruits('fruits1')"
+								placeholder="请输入并选择食物" />
 						</div>
-						<input id="fruits1" placeholder="请输入您需要的食物，我们会尽快录入" type="text"
-							style="display: none" />
+						<div class="suggest" id="fruits1_search_suggest"
+							style="display: none">
+							<ul>
+								<li>搜索结果1</li>
+								<li>搜索结果2</li>
+							</ul>
+						</div><input id="fruits1" placeholder="请输入您需要的食物，我们会尽快录入" type="text"
+								style="display: none" />
 						</p>
+
 					</div>
 					<div data-role="fieldcontain" name="fruitsnum" id="fruitsnums1">
 						<label for="number">食量（克）：</label> <input type="range"
@@ -821,19 +984,23 @@
 
 					<div name="fruitstype" id="fruitstype2" style="display: none">
 						<p>
-							<input type="search" id="searchField_fruits2"
-								placeholder="请输入并选择食物">
-						<ul id="suggestions_fruits2" data-role="listview"
-							data-inset="true"></ul>
-						<div id="fruits2_div"
-							style="margin-left: 20px; margin-right: 20px; display: none">
-							<ul data-role="listview" sdata-inset="true">
-								<li><a href="#" onclick="addnewfood('fruits2')">未找到合适的食物</a></li>
-							</ul>
+
+							<div id="fruits2_div">
+							<!-- 输入框 -->
+							<input id="fruits2_keyword" type="text" size="50"
+								onkeyup="getMoreContents_fruits('fruits2')"
+								placeholder="请输入并选择食物" />
 						</div>
-						<input id="fruits2" placeholder="请输入您需要的食物，我们会尽快录入" type="text"
-							style="display: none" />
+						<div class="suggest" id="fruits2_search_suggest"
+							style="display: none">
+							<ul>
+								<li>搜索结果1</li>
+								<li>搜索结果2</li>
+							</ul>
+						</div><input id="fruits2" placeholder="请输入您需要的食物，我们会尽快录入" type="text"
+								style="display: none" />
 						</p>
+
 					</div>
 					<div data-role="fieldcontain" name="fruitsnum" id="fruitsnums2"
 						style="display: none">
@@ -844,19 +1011,23 @@
 
 					<div name="fruitstype" id="fruitstype3" style="display: none">
 						<p>
-							<input type="search" id="searchField_fruits3"
-								placeholder="请输入并选择食物">
-						<ul id="suggestions_fruits3" data-role="listview"
-							data-inset="true"></ul>
-						<div id="fruits3_div"
-							style="margin-left: 20px; margin-right: 20px; display: none">
-							<ul data-role="listview" sdata-inset="true">
-								<li><a href="#" onclick="addnewfood('fruits3')">未找到合适的食物</a></li>
-							</ul>
+
+							<div id="fruits3_div">
+							<!-- 输入框 -->
+							<input id="fruits3_keyword" type="text" size="50"
+								onkeyup="getMoreContents_fruits('fruits3')"
+								placeholder="请输入并选择食物" />
 						</div>
-						<input id="fruits3" placeholder="请输入您需要的食物，我们会尽快录入" type="text"
-							style="display: none" />
+						<div class="suggest" id="fruits3_search_suggest"
+							style="display: none">
+							<ul>
+								<li>搜索结果1</li>
+								<li>搜索结果2</li>
+							</ul>
+						</div><input id="fruits3" placeholder="请输入您需要的食物，我们会尽快录入" type="text"
+								style="display: none" />
 						</p>
+
 					</div>
 					<div data-role="fieldcontain" name="fruitsnum" id="fruitsnums3"
 						style="display: none">
@@ -867,19 +1038,23 @@
 
 					<div name="fruitstype" id="fruitstype4" style="display: none">
 						<p>
-							<input type="search" id="searchField_fruits4"
-								placeholder="请输入并选择食物">
-						<ul id="suggestions_fruits4" data-role="listview"
-							data-inset="true"></ul>
-						<div id="fruits4_div"
-							style="margin-left: 20px; margin-right: 20px; display: none">
-							<ul data-role="listview" sdata-inset="true">
-								<li><a href="#" onclick="addnewfood('fruits4')">未找到合适的食物</a></li>
-							</ul>
+
+							<div id="fruits4_div">
+							<!-- 输入框 -->
+							<input id="fruits4_keyword" type="text" size="50"
+								onkeyup="getMoreContents_fruits('fruits4')"
+								placeholder="请输入并选择食物" />
 						</div>
-						<input id="fruits4" placeholder="请输入您需要的食物，我们会尽快录入" type="text"
-							style="display: none" />
+						<div class="suggest" id="fruits4_search_suggest"
+							style="display: none">
+							<ul>
+								<li>搜索结果1</li>
+								<li>搜索结果2</li>
+							</ul>
+						</div><input id="fruits4" placeholder="请输入您需要的食物，我们会尽快录入" type="text"
+								style="display: none" />
 						</p>
+
 					</div>
 					<div data-role="fieldcontain" name="fruitsnum" id="fruitsnums4"
 						style="display: none">
@@ -890,19 +1065,23 @@
 
 					<div name="fruitstype" id="fruitstype5" style="display: none">
 						<p>
-							<input type="search" id="searchField_fruits5"
-								placeholder="请输入并选择食物">
-						<ul id="suggestions_fruits5" data-role="listview"
-							data-inset="true"></ul>
-						<div id="fruits5_div"
-							style="margin-left: 20px; margin-right: 20px; display: none">
-							<ul data-role="listview" sdata-inset="true">
-								<li><a href="#" onclick="addnewfood('fruits5')">未找到合适的食物</a></li>
-							</ul>
+
+							<div id="fruits5_div">
+							<!-- 输入框 -->
+							<input id="fruits5_keyword" type="text" size="50"
+								onkeyup="getMoreContents_fruits('fruits5')"
+								placeholder="请输入并选择食物" />
 						</div>
-						<input id="fruits5" placeholder="请输入您需要的食物，我们会尽快录入" type="text"
-							style="display: none" />
+						<div class="suggest" id="fruits5_search_suggest"
+							style="display: none">
+							<ul>
+								<li>搜索结果1</li>
+								<li>搜索结果2</li>
+							</ul>
+						</div><input id="fruits5" placeholder="请输入您需要的食物，我们会尽快录入" type="text"
+								style="display: none" />
 						</p>
+
 					</div>
 					<div data-role="fieldcontain" name="fruitsnum" id="fruitsnums5"
 						style="display: none">
@@ -954,8 +1133,164 @@
 	</div>
 </body>
 <script src="<%=path%>/js/toast.js"></script>
-<script src="<%=path%>/js/search-select.js"></script>
 <script type="text/javascript">
+	//**************************加载食物数据***************************//
+	var mainfood_data = [];
+	var mainfood_data_name = [];
+	var mainfood_select1 = [];
+	var mainfood_select2 = [];
+	var mainfood_select3 = [];
+	var mainfood_select4 = [];
+	var mainfood_select5 = [];
+	var meat_data = [];
+	var meat_data_name = [];
+	var meat_select1 = [];
+	var meat_select2 = [];
+	var meat_select3 = [];
+	var meat_select4 = [];
+	var meat_select5 = [];
+	var vegetables_data = [];
+	var vegetables_data_name = [];
+	var vegetables_select1 = [];
+	var vegetables_select2 = [];
+	var vegetables_select3 = [];
+	var vegetables_select4 = [];
+	var vegetables_select5 = [];
+	var vegetables_select6 = [];
+	var vegetables_select7 = [];
+	var vegetables_select8 = [];
+	var vegetables_select9 = [];
+	var vegetables_select10 = [];
+	var drink_data = [];
+	var drink_data_name = [];
+	var drink_select1 = [];
+	var drink_select2 = [];
+	var drink_select3 = [];
+	var drink_select4 = [];
+	var drink_select5 = [];
+	var nut_data = [];
+	var nut_data_name = [];
+	var nut_select1 = [];
+	var nut_select2 = [];
+	var nut_select3 = [];
+	var nut_select4 = [];
+	var nut_select5 = [];
+	var fruits_data = [];
+	var fruits_data_name = [];
+	var fruits_select1 = [];
+	var fruits_select2 = [];
+	var fruits_select3 = [];
+	var fruits_select4 = [];
+	var fruits_select5 = [];
+
+	$("#pageone").bind(
+			"pageshow",
+			function(e) {
+				$.ajax({
+					data : null,
+					type : "GET",
+					dataType : 'json',
+					url : "../diet/mainfood",
+					error : function() {
+						alert("出错了！！");
+					},
+					success : function(data) {
+						for (i = 0; i < data.length; i++) {
+							mainfood_data[i] = data[i];
+							mainfood_data_name[i] = data[i].name + "["
+									+ data[i].pinyin + "]";
+						}
+					}
+				});
+
+				$.ajax({
+					data : null,
+					type : "GET",
+					dataType : 'json',
+					url : "../diet/meat",
+					error : function() {
+						alert("出错了！！");
+					},
+					success : function(data) {
+						for (i = 0; i < data.length; i++) {
+							meat_data[i] = data[i];
+							meat_data_name[i] = data[i].name + "["
+									+ data[i].pinyin + "]";
+						}
+
+					}
+				});
+
+				$.ajax({
+					data : null,
+					type : "GET",
+					dataType : 'json',
+					url : "../diet/vegetables",
+					error : function() {
+						alert("出错了！！");
+					},
+					success : function(data) {
+						for (i = 0; i < data.length; i++) {
+							vegetables_data[i] = data[i];
+							vegetables_data_name[i] = data[i].name + "["
+									+ data[i].pinyin + "]";
+						}
+					}
+				});
+
+				$.ajax({
+					data : null,
+					type : "GET",
+					dataType : 'json',
+					url : "../diet/drink",
+					error : function() {
+						alert("出错了！！");
+					},
+					success : function(data) {
+						for (i = 0; i < data.length; i++) {
+							drink_data[i] = data[i];
+							drink_data_name[i] = data[i].name + "["
+									+ data[i].pinyin + "]";
+						}
+					}
+				});
+
+				$.ajax({
+					data : null,
+					type : "GET",
+					dataType : 'json',
+					url : "../diet/nut",
+					error : function() {
+						alert("出错了！！");
+					},
+					success : function(data) {
+						for (i = 0; i < data.length; i++) {
+							nut_data[i] = data[i];
+							nut_data_name[i] = data[i].name + "["
+									+ data[i].pinyin + "]";
+						}
+					}
+				});
+
+				$.ajax({
+					data : null,
+					type : "GET",
+					dataType : 'json',
+					url : "../diet/fruits",
+					error : function() {
+						alert("出错了！！");
+					},
+					success : function(data) {
+						for (i = 0; i < data.length; i++) {
+							fruits_data[i] = data[i];
+							fruits_data_name[i] = data[i].name + "["
+									+ data[i].pinyin + "]";
+						}
+					}
+				});
+
+			});
+	//**************************加载食物数据***************************//
 	//在关闭页面时弹出确认提示窗口
 	pushHistory();
 	setTimeout(function() {
@@ -1642,5 +1977,591 @@
 		$('#targetenergy').text(tmpEnergy);
 	}//
 	setTargetEnergy();
+
+	//*****************************饮食录入选择*****************************************//
+	// 判断字符串是否包含
+	function isContains(str, substr) {
+		return str.indexOf(substr) >= 0;
+	}
+
+	// 获得用户输的关联信息(主食)
+	function getMoreContents_mainfood(id) {
+		$("#" + id + "_search_suggest").show();
+		var content = $("#" + id + "_keyword").val();
+		var html = "";
+		for ( var i in mainfood_data_name) {
+			if (isContains(mainfood_data_name[i], content)) {
+				html += "<li id=" + mainfood_data[i].id + " energy="
+						+ mainfood_data[i].energy + " protein="
+						+ mainfood_data[i].protein + " fat="
+						+ mainfood_data[i].fat + " carbohydrate="
+						+ mainfood_data[i].carbohydrate + " cellulose="
+						+ mainfood_data[i].cellulose + " calcium="
+						+ mainfood_data[i].calcium + " ferrum="
+						+ mainfood_data[i].ferrum + " zinc="
+						+ mainfood_data[i].zinc + " carotene="
+						+ mainfood_data[i].carotene
+						+ " onclick=\"selectResult(" + mainfood_data[i].id
+						+ ",'" + id + "')\">" + mainfood_data[i].name + "</li>";
+			}
+		}
+		if(html == ""){
+			html = "<li onclick=\"showAddNewFood('"+id+"')\">找不到您输入的食物</li>"
+		}
+		$("#" + id + "_search_suggest ul").html(html);
+
+	}
+
+	// 获得用户输的关联信息(肉类)
+	function getMoreContents_meat(id) {
+		$("#" + id + "_search_suggest").show();
+		var content = $("#" + id + "_keyword").val();
+		var html = "";
+		for ( var i in meat_data_name) {
+			if (isContains(meat_data_name[i], content)) {
+				// $("#"+id).hide();
+				html += "<li id=" + meat_data[i].id + " energy="
+						+ meat_data[i].energy + " protein="
+						+ meat_data[i].protein + " fat=" + meat_data[i].fat
+						+ " carbohydrate=" + meat_data[i].carbohydrate
+						+ " cellulose=" + meat_data[i].cellulose + " calcium="
+						+ meat_data[i].calcium + " ferrum="
+						+ meat_data[i].ferrum + " zinc=" + meat_data[i].zinc
+						+ " carotene=" + meat_data[i].carotene
+						+ " onclick=\"selectResult(" + meat_data[i].id + ",'"
+						+ id + "')\">" + meat_data[i].name + "</li>";
+			} 
+		}
+		if(html == ""){
+			html = "<li onclick=\"showAddNewFood('"+id+"')\">找不到您输入的食物</li>"
+		}
+		$("#" + id + "_search_suggest ul").html(html);
+
+	}
+
+	// 获得用户输的关联信息(蔬菜)
+	function getMoreContents_vegetables(id) {
+		$("#" + id + "_search_suggest").show();
+		var content = $("#" + id + "_keyword").val();
+		var html = "";
+		for ( var i in vegetables_data_name) {
+			if (isContains(vegetables_data_name[i], content)) {
+				// $("#"+id).hide();
+				html += "<li id=" + vegetables_data[i].id + " energy="
+						+ vegetables_data[i].energy + " protein="
+						+ vegetables_data[i].protein + " fat="
+						+ vegetables_data[i].fat + " carbohydrate="
+						+ vegetables_data[i].carbohydrate + " cellulose="
+						+ vegetables_data[i].cellulose + " calcium="
+						+ vegetables_data[i].calcium + " ferrum="
+						+ vegetables_data[i].ferrum + " zinc="
+						+ vegetables_data[i].zinc + " carotene="
+						+ vegetables_data[i].carotene
+						+ " onclick=\"selectResult(" + vegetables_data[i].id
+						+ ",'" + id + "')\">" + vegetables_data[i].name
+						+ "</li>";
+			} 
+		}
+		if(html == ""){
+			html = "<li onclick=\"showAddNewFood('"+id+"')\">找不到您输入的食物</li>"
+		}
+		$("#" + id + "_search_suggest ul").html(html);
+
+	}
+
+	// 获得用户输的关联信息(饮品)
+	function getMoreContents_drink(id) {
+		$("#" + id + "_search_suggest").show();
+		var content = $("#" + id + "_keyword").val();
+		var html = "";
+		for ( var i in drink_data_name) {
+			if (isContains(drink_data_name[i], content)) {
+				// $("#"+id).hide();
+				html += "<li id=" + drink_data[i].id + " energy="
+						+ drink_data[i].energy + " protein="
+						+ drink_data[i].protein + " fat=" + drink_data[i].fat
+						+ " carbohydrate=" + drink_data[i].carbohydrate
+						+ " cellulose=" + drink_data[i].cellulose + " calcium="
+						+ drink_data[i].calcium + " ferrum="
+						+ drink_data[i].ferrum + " zinc=" + drink_data[i].zinc
+						+ " carotene=" + drink_data[i].carotene
+						+ " onclick=\"selectResult(" + drink_data[i].id + ",'"
+						+ id + "')\">" + drink_data[i].name + "</li>";
+			} 
+		}
+		if(html == ""){
+			html = "<li onclick=\"showAddNewFood('"+id+"')\">找不到您输入的食物</li>"
+		}
+		$("#" + id + "_search_suggest ul").html(html);
+
+	}
+
+	// 获得用户输的关联信息(干果)
+	function getMoreContents_nut(id) {
+		$("#" + id + "_search_suggest").show();
+		var content = $("#" + id + "_keyword").val();
+		var html = "";
+		for ( var i in nut_data_name) {
+			if (isContains(nut_data_name[i], content)) {
+				// $("#"+id).hide();
+				html += "<li id=" + nut_data[i].id + " energy="
+						+ nut_data[i].energy + " protein="
+						+ nut_data[i].protein + " fat=" + nut_data[i].fat
+						+ " carbohydrate=" + nut_data[i].carbohydrate
+						+ " cellulose=" + nut_data[i].cellulose + " calcium="
+						+ nut_data[i].calcium + " ferrum=" + nut_data[i].ferrum
+						+ " zinc=" + nut_data[i].zinc + " carotene="
+						+ nut_data[i].carotene + " onclick=\"selectResult("
+						+ nut_data[i].id + ",'" + id + "')\">"
+						+ nut_data[i].name + "</li>";
+			} 
+		}
+		if(html == ""){
+			html = "<li onclick=\"showAddNewFood('"+id+"')\">找不到您输入的食物</li>"
+		}
+		$("#" + id + "_search_suggest ul").html(html);
+
+	}
+
+	// 获得用户输的关联信息(水果)
+	function getMoreContents_fruits(id) {
+		$("#" + id + "_search_suggest").show();
+		var content = $("#" + id + "_keyword").val();
+		var html = "";
+		for ( var i in fruits_data_name) {
+			if (isContains(fruits_data_name[i], content)) {
+				// $("#"+id).hide();
+				html += "<li id=" + fruits_data[i].id + " energy="
+						+ fruits_data[i].energy + " protein="
+						+ fruits_data[i].protein + " fat=" + fruits_data[i].fat
+						+ " carbohydrate=" + fruits_data[i].carbohydrate
+						+ " cellulose=" + fruits_data[i].cellulose
+						+ " calcium=" + fruits_data[i].calcium + " ferrum="
+						+ fruits_data[i].ferrum + " zinc="
+						+ fruits_data[i].zinc + " carotene="
+						+ fruits_data[i].carotene + " onclick=\"selectResult("
+						+ fruits_data[i].id + ",'" + id + "')\">"
+						+ fruits_data[i].name + "</li>";
+			} 
+		}
+		if(html == ""){
+			html = "<li onclick=\"showAddNewFood('"+id+"')\">找不到您输入的食物</li>"
+		}
+		$("#" + id + "_search_suggest ul").html(html);
+
+	}
+
+	function showAddNewFood(id){
+		$("#"+id).show();
+		$("#" + id + "_keyword").val("");
+		$("#" + id + "_search_suggest").hide();
+	}
+	
+	function selectResult(liId, divId) {
+		var result_data = [];
+		result_data[0] = $("#" + liId).attr("id");
+		result_data[1] = $("#" + liId).text();
+		result_data[2] = $("#" + liId).attr("energy");
+		result_data[3] = $("#" + liId).attr("protein");
+		result_data[4] = $("#" + liId).attr("fat");
+		result_data[5] = $("#" + liId).attr("carbohydrate");
+		result_data[6] = $("#" + liId).attr("cellulose");
+		result_data[7] = $("#" + liId).attr("calcium");
+		result_data[8] = $("#" + liId).attr("ferrum");
+		result_data[9] = $("#" + liId).attr("zinc");
+		result_data[10] = $("#" + liId).attr("carotene");
+		$("#" + divId + "_keyword").val(result_data[1]);
+		$("#" + divId + "_search_suggest").hide();
+		switch (divId) {
+		case "mainfood1": {
+			for ( var i in result_data) {
+				mainfood_select1[i] = result_data[i];
+			}
+			typechange('mainfood', '1', result_data);
+			break;
+		}
+		case "mainfood2": {
+			for ( var i in result_data) {
+				mainfood_select2[i] = result_data[i];
+			}
+			typechange('mainfood', '2', result_data);
+			break;
+		}
+		case "mainfood3": {
+			for ( var i in result_data) {
+				mainfood_select3[i] = result_data[i];
+			}
+			typechange('mainfood', '3', result_data);
+			break;
+		}
+		case "mainfood4": {
+			for ( var i in result_data) {
+				mainfood_select4[i] = result_data[i];
+			}
+			typechange('mainfood', '4', result_data);
+			break;
+		}
+		case "mainfood5": {
+			for ( var i in result_data) {
+				mainfood_select5[i] = result_data[i];
+			}
+			typechange('mainfood', '5', result_data);
+			break;
+		}
+		case "meat1": {
+			for ( var i in result_data) {
+				meat_select1[i] = result_data[i];
+			}
+			typechange('meat', '1', result_data);
+			break;
+		}
+		case "meat2": {
+			for ( var i in result_data) {
+				meat_select2[i] = result_data[i];
+			}
+			typechange('meat', '2', result_data);
+			break;
+		}
+		case "meat3": {
+			for ( var i in result_data) {
+				meat_select3[i] = result_data[i];
+			}
+			typechange('meat', '3', result_data);
+			break;
+		}
+		case "meat4": {
+			for ( var i in result_data) {
+				meat_select4[i] = result_data[i];
+			}
+			typechange('meat', '4', result_data);
+			break;
+		}
+		case "meat5": {
+			for ( var i in result_data) {
+				meat_select5[i] = result_data[i];
+			}
+			typechange('meat', '5', result_data);
+			break;
+		}
+		case "vegetables1": {
+			for ( var i in result_data) {
+				vegetables_select1[i] = result_data[i];
+			}
+			typechange('vegetables', '1', result_data);
+			break;
+		}
+		case "vegetables2": {
+			for ( var i in result_data) {
+				vegetables_select2[i] = result_data[i];
+			}
+			typechange('vegetables', '2', result_data);
+			break;
+		}
+		case "vegetables3": {
+			for ( var i in result_data) {
+				vegetables_select3[i] = result_data[i];
+			}
+			typechange('vegetables', '3', result_data);
+			break;
+		}
+		case "vegetables4": {
+			for ( var i in result_data) {
+				vegetables_select4[i] = result_data[i];
+			}
+			typechange('vegetables', '4', result_data);
+			break;
+		}
+		case "vegetables5": {
+			for ( var i in result_data) {
+				vegetables_select5[i] = result_data[i];
+			}
+			typechange('vegetables', '5', result_data);
+			break;
+		}
+		case "vegetables6": {
+			for ( var i in result_data) {
+				vegetables_select6[i] = result_data[i];
+			}
+			typechange('vegetables', '6', result_data);
+			break;
+		}
+
+		case "vegetables7": {
+			for ( var i in result_data) {
+				vegetables_select7[i] = result_data[i];
+			}
+			typechange('vegetables', '7', result_data);
+			break;
+		}
+		case "vegetables8": {
+			for ( var i in result_data) {
+				vegetables_select8[i] = result_data[i];
+			}
+			typechange('vegetables', '8', result_data);
+			break;
+		}
+		case "vegetables9": {
+			for ( var i in result_data) {
+				vegetables_select9[i] = result_data[i];
+			}
+			typechange('vegetables', '9', result_data);
+			break;
+		}
+		case "vegetables10": {
+			for ( var i in result_data) {
+				vegetables_select10[i] = result_data[i];
+			}
+			typechange('vegetables', '10', result_data);
+			break;
+		}
+		case "drink1": {
+			for ( var i in result_data) {
+				drink_select1[i] = result_data[i];
+			}
+			typechange('drink', '1', result_data);
+			break;
+		}
+		case "drink2": {
+			for ( var i in result_data) {
+				drink_select2[i] = result_data[i];
+			}
+			typechange('drink', '2', result_data);
+			break;
+		}
+		case "drink3": {
+			for ( var i in result_data) {
+				drink_select3[i] = result_data[i];
+			}
+			typechange('drink', '3', result_data);
+			break;
+		}
+		case "drink4": {
+			for ( var i in result_data) {
+				drink_select4[i] = result_data[i];
+			}
+			typechange('drink', '4', result_data);
+			break;
+		}
+		case "drink5": {
+			for ( var i in result_data) {
+				drink_select5[i] = result_data[i];
+			}
+			typechange('drink', '5', result_data);
+			break;
+		}
+		case "nut1": {
+			for ( var i in result_data) {
+				nut_select1[i] = result_data[i];
+			}
+			typechange('nut', '1', result_data);
+			break;
+		}
+		case "nut2": {
+			for ( var i in result_data) {
+				nut_select2[i] = result_data[i];
+			}
+			typechange('nut', '2', result_data);
+			break;
+		}
+		case "nut3": {
+			for ( var i in result_data) {
+				nut_select3[i] = result_data[i];
+			}
+			typechange('nut', '3', result_data);
+			break;
+		}
+		case "nut4": {
+			for ( var i in result_data) {
+				nut_select4[i] = result_data[i];
+			}
+			typechange('nut', '4', result_data);
+			break;
+		}
+		case "nut5": {
+			for ( var i in result_data) {
+				nut_select5[i] = result_data[i];
+			}
+			typechange('nut', '5', result_data);
+			break;
+		}
+		case "fruits1": {
+			for ( var i in result_data) {
+				fruits_select1[i] = result_data[i];
+			}
+			typechange('fruits', '1', result_data);
+			break;
+		}
+		case "fruits2": {
+			for ( var i in result_data) {
+				fruits_select2[i] = result_data[i];
+			}
+			typechange('fruits', '2', result_data);
+			break;
+		}
+		case "fruits3": {
+			for ( var i in result_data) {
+				fruits_select3[i] = result_data[i];
+			}
+			typechange('fruits', '3', result_data);
+			break;
+		}
+		case "fruits4": {
+			for ( var i in result_data) {
+				fruits_select4[i] = result_data[i];
+			}
+			typechange('fruits', '4', result_data);
+			break;
+		}
+		case "fruits5": {
+			for ( var i in result_data) {
+				fruits_select5[i] = result_data[i];
+			}
+			typechange('fruits', '5', result_data);
+			break;
+		}
+		default:
+			break;
+		}
+	}
+	//***************************食量改变********************************//
+	$('#mainfoodnum1').change(function() {
+		numberchange(this.value, 'mainfood', '1', mainfood_select1);
+	});
+
+	$('#mainfoodnum2').change(function() {
+		numberchange(this.value, 'mainfood', '2', mainfood_select2);
+	});
+
+	$('#mainfoodnum3').change(function() {
+		numberchange(this.value, 'mainfood', '3', mainfood_select3);
+	});
+
+	$('#mainfoodnum4').change(function() {
+		numberchange(this.value, 'mainfood', '4', mainfood_select4);
+	});
+
+	$('#mainfoodnum5').change(function() {
+		numberchange(this.value, 'mainfood', '5', mainfood_select5);
+	});
+
+	$('#meatnum1').change(function() {
+		numberchange(this.value, 'meat', '1', meat_select1);
+	});
+
+	$('#meatnum2').change(function() {
+		numberchange(this.value, 'meat', '2', meat_select2);
+	});
+
+	$('#meatnum3').change(function() {
+		numberchange(this.value, 'meat', '3', meat_select3);
+	});
+
+	$('#meatnum4').change(function() {
+		numberchange(this.value, 'meat', '4', meat_select4);
+	});
+
+	$('#meatnum5').change(function() {
+		numberchange(this.value, 'meat', '5', meat_select5);
+	});
+
+	$('#vegetablesnum1').change(function() {
+		numberchange(this.value, 'vegetables', '1', vegetables_select1);
+	});
+
+	$('#vegetablesnum2').change(function() {
+		numberchange(this.value, 'vegetables', '2', vegetables_select2);
+	});
+
+	$('#vegetablesnum3').change(function() {
+		numberchange(this.value, 'vegetables', '3', vegetables_select3);
+	});
+
+	$('#vegetablesnum4').change(function() {
+		numberchange(this.value, 'vegetables', '4', vegetables_select4);
+	});
+
+	$('#vegetablesnum5').change(function() {
+		numberchange(this.value, 'vegetables', '5', vegetables_select5);
+	});
+
+	$('#vegetablesnum6').change(function() {
+		numberchange(this.value, 'vegetables', '6', vegetables_select6);
+	});
+
+	$('#vegetablesnum7').change(function() {
+		numberchange(this.value, 'vegetables', '7', vegetables_select7);
+	});
+
+	$('#vegetablesnum8').change(function() {
+		numberchange(this.value, 'vegetables', '8', vegetables_select8);
+	});
+
+	$('#vegetablesnum9').change(function() {
+		numberchange(this.value, 'vegetables', '9', vegetables_select9);
+	});
+
+	$('#vegetablesnum10').change(function() {
+		numberchange(this.value, 'vegetables', '10', vegetables_select10);
+	});
+
+	$('#drinknum1').change(function() {
+		numberchange(this.value, 'drink', '1', drink_select1);
+	});
+
+	$('#drinknum2').change(function() {
+		numberchange(this.value, 'drink', '2', drink_select2);
+	});
+
+	$('#drinknum3').change(function() {
+		numberchange(this.value, 'drink', '3', drink_select3);
+	});
+
+	$('#drinknum4').change(function() {
+		numberchange(this.value, 'drink', '4', drink_select4);
+	});
+
+	$('#drinknum5').change(function() {
+		numberchange(this.value, 'drink', '5', drink_select5);
+	});
+
+	$('#nutnum1').change(function() {
+		numberchange(this.value, 'nut', '1', nut_select1);
+	});
+
+	$('#nutnum2').change(function() {
+		numberchange(this.value, 'nut', '2', nut_select2);
+	});
+
+	$('#nutnum3').change(function() {
+		numberchange(this.value, 'nut', '3', nut_select3);
+	});
+
+	$('#nutnum4').change(function() {
+		numberchange(this.value, 'nut', '4', nut_select4);
+	});
+
+	$('#nutnum5').change(function() {
+		numberchange(this.value, 'nut', '5', nut_select5);
+	});
+
+	$('#fruitsnum1').change(function() {
+		numberchange(this.value, 'fruits', '1', fruits_select1);
+	});
+
+	$('#fruitsnum2').change(function() {
+		numberchange(this.value, 'fruits', '2', fruits_select2);
+	});
+
+	$('#fruitsnum3').change(function() {
+		numberchange(this.value, 'fruits', '3', fruits_select3);
+	});
+
+	$('#fruitsnum4').change(function() {
+		numberchange(this.value, 'fruits', '4', fruits_select4);
+	});
+
+	$('#fruitsnum5').change(function() {
+		numberchange(this.value, 'fruits', '5', fruits_select5);
+	});
 </script>
 </html>

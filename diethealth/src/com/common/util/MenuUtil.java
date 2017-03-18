@@ -33,7 +33,7 @@ public class MenuUtil {
 		// 此处改为自己想要的结构体，替换即可
 		String menu = "{\"button\":[{\"type\":\"view\",\"name\":\"绑定业务\",\"url\":\"https://open.weixin.qq.com/connect/oauth2/authorize?appid="
 			    +APPID+"&redirect_uri=http://yuntangbao.top/diethealth/user/user_bind&response_type=code&scope=snsapi_userinfo&state="+new Random().nextInt(10000)+"#wechat_redirect\"},"
-				+"{\"type\":\"view\",\"name\":\"我的业务\",\"url\":\"https://open.weixin.qq.com/connect/oauth2/authorize?appid="
+				+"{\"type\":\"view\",\"name\":\"我的主页\",\"url\":\"https://open.weixin.qq.com/connect/oauth2/authorize?appid="
 			    +APPID+"&redirect_uri=http://yuntangbao.top/diethealth/user/toIndex&response_type=code&scope=snsapi_userinfo&state="+new Random().nextInt(10000)+"#wechat_redirect\"},"
 			    + "{\"type\":\"view\",\"name\":\"使用说明 \",\"url\":\"https://open.weixin.qq.com/connect/oauth2/authorize?appid="
 			    +APPID+"&redirect_uri=http://yuntangbao.top/diethealth/user/introduce&response_type=code&scope=snsapi_userinfo&state="+new Random().nextInt(10000)+"#wechat_redirect\"}]}";
