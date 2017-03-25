@@ -139,11 +139,17 @@
 
 				<div data-role="fieldcontain">
 					<p>烹饪方式及说明：${diet.remarks }</p>
-					<p>医生建议${diet.advice }</p>
 				</div>
-				
+
 
 			</c:forEach>
+			
+			<div data-role="fieldcontain">
+				<p>医生建议</p>
+				<c:forEach var="advice" items="${advice}" varStatus="s">
+					<div>${advice.time}&nbsp;&nbsp;${advice.content }</div>
+				</c:forEach>
+			</div>
 		</div>
 	</div>
 </body>

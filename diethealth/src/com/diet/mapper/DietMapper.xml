@@ -149,8 +149,8 @@
 	</select>
 	
 	<insert id="saveAdvice" parameterType="object">
-	INSERT INTO advice(p_id,date,content)
-	values(#{pId},#{date},#{content})
+	INSERT INTO advice(p_id,date,content,time)
+	values(#{pId},#{date},#{content},#{time})
 	</insert>
 	
 	<update id="updateAdvice" parameterType="object">

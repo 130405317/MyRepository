@@ -64,7 +64,6 @@
 		</div>
 		<div data-role="content">
 			<div data-role="fieldcontain">
-				<p style="text-align: center; color: red">如果您是果粉，输入食物没有选项，请换拼音全健输入！</p>
 				<p id="energy" style="display: none">${energy}</p>
 				<p>
 					目标能量(kal)：<span id="targetenergy"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

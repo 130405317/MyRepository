@@ -47,7 +47,7 @@ public interface  DietService {
 
 	public String saveAdvice(Map<String, Object> param);
 
-	public Map<String, Object> showAdviceInfo(Map<String, Object> param);
+	public List<Map<String, Object>> showAdviceInfo(Map<String, Object> param);
 	
 	public Map<String, Object> showSportInfo(Map<String, Object> param);
 	

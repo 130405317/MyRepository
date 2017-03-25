@@ -399,7 +399,7 @@ public class DietServiceImpl implements DietService {
 	 * 查询医生建议
 	 */
 	@Override
-	public Map<String, Object> showAdviceInfo(Map<String, Object> param) {
+	public List<Map<String, Object>> showAdviceInfo(Map<String, Object> param) {
 		return dietDao.getAdviceInfo(param);
 	}
 	

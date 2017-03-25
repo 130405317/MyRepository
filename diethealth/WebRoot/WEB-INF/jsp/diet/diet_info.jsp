@@ -33,30 +33,30 @@
 			<div data-role="fieldcontain">
 				<div class="ui-grid-b">
 					<div class="ui-block-a"
-							style="border: 1px solid black; text-align: center; border-style: ridge ridge ridge ridge;">总蛋白质</div>
-						<div class="ui-block-b"
-							style="border: 1px solid black; text-align: center; border-style: ridge ridge ridge none;">总脂肪</div>
-						<div class="ui-block-c"
-							style="border: 1px solid black; text-align: center; border-style: ridge ridge ridge none;">总碳水化合物</div>
+						style="border: 1px solid black; text-align: center; border-style: ridge ridge ridge ridge;">总蛋白质</div>
+					<div class="ui-block-b"
+						style="border: 1px solid black; text-align: center; border-style: ridge ridge ridge none;">总脂肪</div>
+					<div class="ui-block-c"
+						style="border: 1px solid black; text-align: center; border-style: ridge ridge ridge none;">总碳水化合物</div>
 				</div>
 				<div class="ui-grid-b">
 					<div id="protein" class="ui-block-a"
-							style="border: 1px solid black; text-align: center; border-style: none ridge ridge ridge;">${dietEnergy.protein}</div>
-						<div id="fat" class="ui-block-b"
-							style="border: 1px solid black; text-align: center; border-style: none ridge ridge none;">${dietEnergy.fat}</div>
-						<div id="carbohydrate" class="ui-block-c"
-							style="border: 1px solid black; text-align: center; border-style: none ridge ridge none;">${dietEnergy.carbohydrate}</div>
+						style="border: 1px solid black; text-align: center; border-style: none ridge ridge ridge;">${dietEnergy.protein}</div>
+					<div id="fat" class="ui-block-b"
+						style="border: 1px solid black; text-align: center; border-style: none ridge ridge none;">${dietEnergy.fat}</div>
+					<div id="carbohydrate" class="ui-block-c"
+						style="border: 1px solid black; text-align: center; border-style: none ridge ridge none;">${dietEnergy.carbohydrate}</div>
 				</div>
 				<div class="ui-grid-b">
 					<div id="protein_range" class="ui-block-a"
-							style="border: 1px solid black; text-align: center; border-style: none ridge ridge ridge;">-</div>
-						<div id="fat_range" class="ui-block-b"
-							style="border: 1px solid black; text-align: center; border-style: none ridge ridge none;">-</div>
-						<div id="carbohydrate_range" class="ui-block-c"
-							style="border: 1px solid black; text-align: center; border-style: none ridge ridge none;">-</div>
+						style="border: 1px solid black; text-align: center; border-style: none ridge ridge ridge;">-</div>
+					<div id="fat_range" class="ui-block-b"
+						style="border: 1px solid black; text-align: center; border-style: none ridge ridge none;">-</div>
+					<div id="carbohydrate_range" class="ui-block-c"
+						style="border: 1px solid black; text-align: center; border-style: none ridge ridge none;">-</div>
 				</div>
 			</div>
-			
+
 			<c:forEach var="diet" items="${dietList}" varStatus="s">
 				<h3 style="text-align: center;">${diet.type }&nbsp;&nbsp;&nbsp;总能量：${diet.energy}(kal)</h3>
 				<c:forEach var="mainfood" items="${diet.mainfood}" varStatus="s">
@@ -352,45 +352,52 @@
 				<div data-role="fieldcontain">
 					<p>烹饪方式及说明：${diet.remarks }</p>
 				</div>
-				
+
 			</c:forEach>
+
+			<div data-role="fieldcontain">
+				<p>医生建议</p>
+				<c:forEach var="advice" items="${advice}" varStatus="s">
+					<div>${advice.time}&nbsp;&nbsp;${advice.content }</div>
+				</c:forEach>
+			</div>
+
 		</div>
 	</div>
 </body>
 <script src="<%=path%>/js/jquery-2.2.2.min.js"></script>
 <script src="<%=path%>/jquerymobile/jquery.mobile-1.4.5.min.js"></script>
 <script>
-
-	function init(){
-		var targetEnergy=$("#targetEnergy").text();
-		var protein1=targetEnergy*0.15;
-		var protein2=targetEnergy*0.2;
-		var protein=$("#protein").text();
-		var fat1=targetEnergy*0.25;
-		var fat2=targetEnergy*0.3;
-		var fat=$("#fat").text();
-		var carbohydrate1=targetEnergy*0.5;
-		var carbohydrate2=targetEnergy*0.6;
-		var carbohydrate=$("#carbohydrate").text();
-		if(protein<protein1){
+	function init() {
+		var targetEnergy = $("#targetEnergy").text();
+		var protein1 = targetEnergy * 0.15;
+		var protein2 = targetEnergy * 0.2;
+		var protein = $("#protein").text();
+		var fat1 = targetEnergy * 0.25;
+		var fat2 = targetEnergy * 0.3;
+		var fat = $("#fat").text();
+		var carbohydrate1 = targetEnergy * 0.5;
+		var carbohydrate2 = targetEnergy * 0.6;
+		var carbohydrate = $("#carbohydrate").text();
+		if (protein < protein1) {
 			$("#protein_range").text("不足");
-		}else if(protein>protein2){
+		} else if (protein > protein2) {
 			$("#protein_range").text("偏高");
-		}else{
+		} else {
 			$("#protein_range").text("正常");
 		}
-		if(fat<fat1){
-			$("#fat_range").text("不足");			
-		}else if(fat>fat2){
+		if (fat < fat1) {
+			$("#fat_range").text("不足");
+		} else if (fat > fat2) {
 			$("#fat_range").text("偏高");
-		}else{
+		} else {
 			$("#fat_range").text("正常");
 		}
-		if(carbohydrate<carbohydrate1){
+		if (carbohydrate < carbohydrate1) {
 			$("#carbohydrate_range").text("不足");
-		}else if(carbohydrate>carbohydrate2){
+		} else if (carbohydrate > carbohydrate2) {
 			$("#carbohydrate_range").text("偏高");
-		}else{
+		} else {
 			$("#carbohydrate_range").text("正常");
 		}
 	}

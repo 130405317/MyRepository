@@ -75,7 +75,7 @@ public interface DietMapper {
 	 
 	int countAdvice(Map<String, Object> map);
 
-	Map<String, Object> getAdviceInfo(Map<String, Object> param);
+	List<Map<String, Object>> getAdviceInfo(Map<String, Object> param);
 
 	void updateSportInfo(Map<String, Object> param);
 

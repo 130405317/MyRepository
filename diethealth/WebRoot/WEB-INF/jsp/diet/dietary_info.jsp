@@ -314,7 +314,7 @@
 				</div>
 				<div data-role="fieldcontain">
 					<p>医生建议：</p>
-					<textarea id="content">${advice.content }</textarea>
+					<textarea id="content"></textarea>
 				</div>
 				<div data-role="fieldcontain">
 					<input type="button" value="提交" onclick="onSubmit();">
@@ -370,10 +370,13 @@
 		var content = $('#content').val();
 		var pId = $('#pId').val();
 		var date = $('#bgdate').val();
+		var myDate= new Date();
+		var time = myDate.getFullYear()+"年"+(myDate.getMonth()+1)+"月"+myDate.getDate()+"日"+myDate.getHours()+"时"+myDate.getMinutes()+"分"+myDate.getSeconds()+"秒";
 		$.post("saveAdvice", {
 			content : content,
 			pId : pId,
-			date : date
+			date : date,
+			time : time
 		}, function(text) {
 			if (text == "1") {
 				alert("保存成功！");
