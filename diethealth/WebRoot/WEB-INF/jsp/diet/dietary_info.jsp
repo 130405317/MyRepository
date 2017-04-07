@@ -317,7 +317,7 @@
 					<textarea id="content"></textarea>
 				</div>
 				<div data-role="fieldcontain">
-					<input type="button" value="提交" onclick="onSubmit();">
+					<input id="advice_sub" type="button" value="提交" onclick="onSubmit();">
 				</div>
 			</div>
 
@@ -368,6 +368,11 @@
 
 	function onSubmit() {
 		var content = $('#content').val();
+		if(content == ""){
+			alert("医生建议不能为空！");
+			return;
+		}
+		$("#advice_sub").attr("disabled", true);
 		var pId = $('#pId').val();
 		var date = $('#bgdate').val();
 		var myDate= new Date();
@@ -380,8 +385,10 @@
 		}, function(text) {
 			if (text == "1") {
 				alert("保存成功！");
+				
 			} else {
-				alert("保存失败！")
+				alert("保存失败！");
+				$("#advice_sub").attr("disabled", false);
 			}
 		});
 	}

@@ -622,7 +622,7 @@ public class UserController {
 		Map<String, Object> map = FormDataCollectUtil.getInstance().getFormDataWithPage(request);
 		HttpSession session = request.getSession();
 		String pId = (String) session.getAttribute("pId");
-		// String pId = "o-1WTwgc5wIiSvUy0-8V92XA0sic";
+		//String pId = "o-1WTwgc5wIiSvUy0-8V92XA0sic";
 		map.put("pId", pId);
 		List<Map<String, Object>> list = userService.getAdviceListWithPage(map);
 		model.addAttribute("adviceList", list);

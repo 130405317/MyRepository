@@ -29,6 +29,10 @@
 		<h1>血糖录入</h1>
 	</div>
 	<div data-role="content">
+		<div>
+			<p style="color: red">6.7--7.5血糖较高注意查找原因</p>
+			<p style="color: red">7.5---血糖超出正常值很多及时就诊</p>
+		</div>
 		<form method="post" action="">
 			<div data-role="fieldcontain" style="display: none;">
 				<input type="text" id="pId" value="<%=pId%>">
@@ -288,6 +292,17 @@
 			}
 		}
 
+		if(bloodGlucoseBeforeBreakfast == ""
+			&& bloodGlucoseAfterBreakfast == ""
+			&& bloodGlucoseBeforeLunch == ""
+			&& bloodGlucoseAfterLunch == ""
+			&& bloodGlucoseBeforeDinner == ""
+			&& bloodGlucoseAfterDinner == ""
+			&& bloodGlucoseBeforeSleep == ""
+			&& HbAlc == ""){
+			alert("至少录入一项！");
+			return;
+		}
 		if (isSuccess) {
 			$.post("saveBloodGlucose", {
 				pId : pId,

@@ -29,7 +29,7 @@ String path = request.getContextPath();
 	<div data-role="content">
 		<ol>
 			<c:forEach var="advice" items="${advice}" varStatus="s">
-				<li>${advice.content}</li>
+				<li>${advice.time}&nbsp;&nbsp;&nbsp;&nbsp;${advice.content}</li>
 			</c:forEach>
 		</ol>
 		</div>
