@@ -32,9 +32,9 @@ String path = request.getContextPath();
   </ul>
   </div>
 
-  <div data-role="footer">
+ <%--  <div data-role="footer">
     <h1><a href="" data-role="button" onclick="pageChange(-1)">上一页</a>${curPage }/${totalPage }<a href="" data-role="button" onclick="pageChange(1)">下一页</a></h1>
-  </div>
+  </div> --%>
 </div> 
 </body>
 <script src="<%=path %>/js/jquery-2.2.2.min.js"></script>

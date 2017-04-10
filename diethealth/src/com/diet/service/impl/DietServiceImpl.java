@@ -90,14 +90,14 @@ public class DietServiceImpl implements DietService {
 		if(param.get("id")==null){
 			param.put("id", CommonUtil.getUUID());
 			dietDao.saveFoodInfo(param);  //添加食物信息
-			CacheUtil.getInstance().updateFoodList(param, false);
+			//CacheUtil.getInstance().updateFoodList(param, false);
 		}else{
 			dietDao.updateFoodInfo(param);  //更新食物信息
-			CacheUtil.getInstance().updateFoodList(param, true);
+			//CacheUtil.getInstance().updateFoodList(param, true);
 		}
 		return "1";
 	}
-	
+
 	/**
 	 * 删除食物信息
 	 */
@@ -674,5 +674,11 @@ public class DietServiceImpl implements DietService {
 			result = "其他";
 		}
 		return result;
+	}
+
+	@Override
+	public List<Map<String, Object>> getAllFoodList() {
+		
+		return dietDao.getAllFoodList();
 	}
 }

@@ -39,6 +39,10 @@ String path = request.getContextPath();
 				id="name" required="true" placeholder="名称">
 		</div>
 		<div data-role="fieldcontain">
+			<label for="pinyin">拼音：</label> <input type="text" name="pinyin"
+				id="pinyin" required="true" placeholder="拼音">
+		</div>
+		<div data-role="fieldcontain">
 			<label for="energy">能量（千卡）：</label> <input type="text" name="energy"
 				id="energy" required="true" placeholder="能量">
 		</div>
@@ -95,6 +99,7 @@ String path = request.getContextPath();
 function onSubmit(){
 var type = $('#type').val();
 var name = $('#name').val();
+var pinyin = $('#pinyin').val();
 var energy = $('#energy').val();
 var protein = $('#protein').val();
 var fat = $('#fat').val();
@@ -107,7 +112,7 @@ var zinc = $('#zinc').val();
 var carotene = $('#carotene').val();
 
 
- $.post("saveFoodInfo",{type:type,name:name,energy:energy,protein:protein,calcium:calcium,ferrum:ferrum,
+ $.post("saveFoodInfo",{type:type,name:name,pinyin:pinyin,energy:energy,protein:protein,calcium:calcium,ferrum:ferrum,
 	 fat:fat,carbohydrate:carbohydrate,cellulose:cellulose,ordername:ordername,zinc:zinc,carotene:carotene},function(text){
 		if(text=="1"){
 			alert("保存成功！");

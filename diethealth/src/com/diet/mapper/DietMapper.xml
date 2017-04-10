@@ -52,13 +52,13 @@
 	<include refid="foodsql" />
 	</select>
 	<update id="updateFoodInfo" parameterType="object">
-	UPDATE food SET type = #{type},name = #{name},energy=#{energy},protein=#{protein},fat=#{fat},carbohydrate=#{carbohydrate},
+	UPDATE food SET type = #{type},name = #{name},pinyin = #{pinyin},energy=#{energy},protein=#{protein},fat=#{fat},carbohydrate=#{carbohydrate},
 	cellulose=#{cellulose},calcium=#{calcium},ferrum=#{ferrum},zinc=#{zinc},carotene=#{carotene},ordername=#{ordername}
 	WHERE id = #{id}
 	</update> 
 	 <insert id="saveFoodInfo" parameterType="object">
-	INSERT INTO food(id,name,type,energy,protein,fat,carbohydrate,cellulose,calcium,ferrum,zinc,carotene,ordername)
-	values(#{id},#{name},#{type},#{energy},#{protein},#{fat},#{carbohydrate},#{cellulose},#{calcium},#{ferrum},#{zinc},#{carotene},#{ordername})
+	INSERT INTO food(id,name,pinyin,type,energy,protein,fat,carbohydrate,cellulose,calcium,ferrum,zinc,carotene,ordername)
+	values(#{id},#{name},#{pinyin},#{type},#{energy},#{protein},#{fat},#{carbohydrate},#{cellulose},#{calcium},#{ferrum},#{zinc},#{carotene},#{ordername})
 	</insert>
 	
 	 <insert id="saveSportInfo" parameterType="object">
@@ -210,5 +210,9 @@
 	INSERT INTO new_food(name)
 	values(#{foodname})
 	</insert>
+	
+	<select id="getAllFoodList" resultType="map">
+	    select * from food
+	</select>
 	
 </mapper>                     

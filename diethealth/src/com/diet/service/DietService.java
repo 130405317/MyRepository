@@ -64,4 +64,6 @@ public interface  DietService {
 	public Map<String, Object> getSnacks(Map<String, Object> param);
 
 	public Map<String, Object> getSportInfo(Map<String, Object> param);
+	
+	public List<Map<String, Object>> getAllFoodList();
 }

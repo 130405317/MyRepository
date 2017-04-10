@@ -106,7 +106,7 @@ public class CacheUtil {
 	private void saveFoodList(List<Map<String, Object>> list, Map<String, Object> param){
 		for(int i=0; i<list.size(); i++){
 			Map<String, Object> map = list.get(i);
-			if(((Float)map.get("ordername"))>((Float)param.get("ordername"))){
+			if((Float.parseFloat(map.get("ordername").toString()))>(Float.parseFloat(param.get("ordername").toString()))){
 				list.add(i-1,param);
 				break;
 			}
@@ -148,7 +148,7 @@ public class CacheUtil {
 	 * @param isUpdate true ：更新 ， false : 插入
 	 */
 	public void updateFoodList(Map<String, Object> param, boolean isUpdate){
-		String type = (String)param.get("type");
+		String type = param.get("type").toString();
 		if(type!=null){
 			if("1".equals(type)){
 				if(isUpdate){
